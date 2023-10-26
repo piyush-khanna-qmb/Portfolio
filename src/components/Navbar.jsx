@@ -42,8 +42,8 @@ const Navbar = () => {
         >
           <img src='Main.png' alt='logo' className='w-9 h-9 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-            Piyush &nbsp;
-            <span className='sm:block hidden'> | Emperia Robotics</span>
+            Piyush Khanna &nbsp;
+            <span className='sm:block hidden'></span>
           </p>
         </Link>
 
