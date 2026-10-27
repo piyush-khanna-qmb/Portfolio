@@ -256,8 +256,8 @@ const projects = [
       },
     ],
     image: anushka,
-    source_code_link: "https://github.com/",
-    linked_link: "https://linkedin.com/"
+    source_code_link: "https://anushkathehumanoid.com",
+    linked_link: null
   },
   {
     name: "GyrusGriham",
@@ -279,7 +279,7 @@ const projects = [
     ],
     image: brain,
     source_code_link: "https://github.com/piyush-khanna-qmb/Gyrus-Griham",
-    linked_link: "https://linkedin.com/"
+    linked_link: null
   },
   {
     name: "The Gamchha Diary",
@@ -301,7 +301,7 @@ const projects = [
     ],
     image: diary,
     source_code_link: "https://github.com/piyush-khanna-qmb/Blog-Site",
-    linked_link: "https://linkedin.com/"
+    linked_link: null
   },
   {
     name: "SIGMA",
@@ -323,7 +323,7 @@ const projects = [
     ],
     image: nfs,
     source_code_link: "https://github.com/piyush-khanna-qmb/I-am-Speed",
-    linked_link: "https://linkedin.com/"
+    linked_link: null
   },
   {
     name: "Pigrazzi",
@@ -345,7 +345,7 @@ const projects = [
     ],
     image: bulk,
     source_code_link: "https://github.com/piyush-khanna-qmb/Zucc-Snucc",
-    linked_link: "https://linkedin.com/"
+    linked_link: null
   },
   {
     name: "OptiTone",
@@ -367,7 +367,7 @@ const projects = [
     ],
     image: opti,
     source_code_link: "https://github.com/piyush-khanna-qmb/Hand-Volume-Control",
-    linked_link: "https://linkedin.com/"
+    linked_link: null
   },
   {
     name: "Teerth Purohit Prayagraj",
@@ -389,7 +389,7 @@ const projects = [
     ],
     image: tppi,
     source_code_link: "https://piyush-khanna-qmb.github.io/TeerthPurohitPrayagraj/",
-    linked_link: "https://linkedin.com/"
+    linked_link: null
   },
 
   {
@@ -412,7 +412,7 @@ const projects = [
     ],
     image: AR,
     source_code_link: "https://github.com/piyush-khanna-qmb/AR-4-U",
-    linked_link: "https://linkedin.com/"
+    linked_link: null
   },
   {
     name: "BinGenius",
@@ -434,7 +434,7 @@ const projects = [
     ],
     image: bin,
     source_code_link: "https://github.com/piyush-khanna-qmb/Koodha-Daan",
-    linked_link: "https://linkedin.com/"
+    linked_link: null
   },
 ];
 
