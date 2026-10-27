@@ -15,3 +15,7 @@ npm-debug.log*
 
 # OS
 .DS_Store
+
+# internal planning / record-keeping — not for the public repo
+timeline.txt
+whatsLeft.txt
