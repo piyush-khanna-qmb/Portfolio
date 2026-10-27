@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
-        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`absolute inset-0 top-[90px] sm:top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className='flex flex-col justify-center items-center mt-5'>
           <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
@@ -22,6 +22,29 @@ const Hero = () => {
             I specialise in <br className='sm:block hidden' />
             IoT, Web Development and Robotics
           </p>
+
+          {/* TODO: add the real file at public/resume.pdf — placeholder until Piyush supplies it */}
+          <a
+            href='resume.pdf'
+            download
+            className='mt-4 sm:mt-6 bg-[#915EFF]/60 py-2 sm:py-3 px-5 sm:px-8 rounded-lg sm:rounded-xl outline-none w-fit text-white font-medium sm:font-bold text-sm sm:text-base shadow-[0_0_25px_rgba(145,94,255,0.45)] hover:shadow-[0_0_35px_rgba(145,94,255,0.7)] transition-shadow duration-300 flex items-center gap-1.5 sm:gap-2'
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='w-4 h-4 sm:w-5 sm:h-5'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M12 3v12m0 0l-4-4m4 4l4-4M4 21h16'
+              />
+            </svg>
+            Download Resume
+          </a>
         </div>
       </div>
 
