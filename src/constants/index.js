@@ -22,27 +22,19 @@ import {
   fableroom,
   manojava,
   minerra,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
   android,
   ocv,
   unity,
   tf,
   ros,
-  esp,
-  rasp,
   java,
   py,
-  anushka,
-  tppi,
+  piyushWithAnushka,
+  projSunaina,
+  projDadashree,
+  projOmniVideo,
   brain,
-  nfs,
-  diary,
-  bulk,
-  AR,
-  bin,
   opti,
   hodWala,
   mbsWala,
@@ -224,8 +216,25 @@ const testimonials = [
 ];
 
 const projects = [
+
   {
-    name: "Anushka",
+    name: "Emperia Omni",
+    description:
+      "Part of the Emperia Automation Ecosystem — the IoT/home-automation platform built at Emperia Smart Solutions. Lives on the Emperia site alongside UniHub rather than here.",
+    tags: [
+      { name: "IoT", color: "blue-text-gradient" },
+      { name: "Automation", color: "green-text-gradient" },
+      { name: "Hardware", color: "pink-text-gradient" },
+    ],
+    image: null,
+    video: projOmniVideo,
+    source_code_link: null,
+    linked_link: null,
+    project_link: "https://emperiasmartsolutions.space",
+    project_link_external: true,
+  },
+  {
+    name: "Anushka: The Humanoid",
     description:
       "Anushka is a groundbreaking humanoid robot that redefines human-robot interactions with its lifelike appearance, ability to recognize faces, objects, and gestures as well as understand and respond to human speech in multiple languages.",
     tags: [
@@ -246,9 +255,10 @@ const projects = [
         color: "orange-text-gradient",
       },
     ],
-    image: anushka,
+    image: piyushWithAnushka,
     source_code_link: "https://anushkathehumanoid.com",
-    linked_link: null,
+    linked_link: "https://lnkd.in/p/gR9DaMWm",
+    youtube_link: "https://www.youtube.com/watch?v=9i3s9a6siOM",
     project_link: "https://anushkathehumanoid.com",
     project_link_external: true,
   },
@@ -261,9 +271,11 @@ const projects = [
       { name: "Animatronics", color: "green-text-gradient" },
       { name: "Embedded C", color: "pink-text-gradient" },
     ],
-    image: null,
+    image: projSunaina,
     source_code_link: null,
     linked_link: null,
+    youtube_link: "https://www.youtube.com/shorts/O_rsRYSI9NU",
+    drive_link: "https://drive.google.com/file/d/1XzfQ7SS1-7GX4lQts9_zj4KDZqMoECw-/view?usp=sharing",
     project_link: "/project/sunaina",
     project_link_external: false,
   },
@@ -276,26 +288,12 @@ const projects = [
       { name: "HRI", color: "green-text-gradient" },
       { name: "Embedded", color: "pink-text-gradient" },
     ],
-    image: null,
+    image: projDadashree,
     source_code_link: null,
     linked_link: null,
+    drive_link: "https://drive.google.com/file/d/10rDD39APFqbCoin4u9F7qHHlEE7ZUu_c/view?usp=sharing",
     project_link: "/project/dadashree",
     project_link_external: false,
-  },
-  {
-    name: "Emperia Omni",
-    description:
-      "Part of the Emperia Automation Ecosystem — the IoT/home-automation platform built at Emperia Smart Solutions. Lives on the Emperia site alongside UniHub rather than here.",
-    tags: [
-      { name: "IoT", color: "blue-text-gradient" },
-      { name: "Automation", color: "green-text-gradient" },
-      { name: "Hardware", color: "pink-text-gradient" },
-    ],
-    image: null,
-    source_code_link: null,
-    linked_link: null,
-    project_link: "https://emperiasmartsolutions.space",
-    project_link_external: true,
   },
   {
     name: "GyrusGriham",
@@ -317,73 +315,7 @@ const projects = [
     ],
     image: brain,
     source_code_link: "https://github.com/piyush-khanna-qmb/Gyrus-Griham",
-    linked_link: null
-  },
-  {
-    name: "The Gamchha Diary",
-    description:
-      "The gamchha Diary is a MERN stack-powered blog website that offers fast and secure content retrieval while adding a personal touch with customizable themes and interactive elements. Effortlessly embed multimedia, and craft engaging narratives.",
-    tags: [
-      {
-        name: "ReactJS",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "MongoDB",
-        color: "green-text-gradient",
-      },
-      {
-        name: "ExpressJS",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: diary,
-    source_code_link: "https://github.com/piyush-khanna-qmb/Blog-Site",
-    linked_link: null
-  },
-  {
-    name: "SIGMA",
-    description:
-      "Synchronized Interface for Gaming Machine Augmentation is a gaming simulator made using set of actuators such as joystick, rotary encoders and embedded systems interfaced with PC using pyserial library for precise and accurate driving simulation.",
-    tags: [
-      {
-        name: "Embedded C",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Python",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Computer Vision",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: nfs,
-    source_code_link: "https://github.com/piyush-khanna-qmb/I-am-Speed",
-    linked_link: null
-  },
-  {
-    name: "Pigrazzi",
-    description:
-      "Pigrazzi introduces a paradigm shift in web media retrieval. It simplifies bulk image downloads while offering customization options for visuals, saving you precious time and fostering tech creativity at your fingertips.",
-    tags: [
-      {
-        name: "GUI Automation",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Bash Curl",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Python",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: bulk,
-    source_code_link: "https://github.com/piyush-khanna-qmb/Zucc-Snucc",
-    linked_link: null
+    linked_link: "https://lnkd.in/p/gNNr2JJK"
   },
   {
     name: "OptiTone",
@@ -405,74 +337,7 @@ const projects = [
     ],
     image: opti,
     source_code_link: "https://github.com/piyush-khanna-qmb/Hand-Volume-Control",
-    linked_link: null
-  },
-  {
-    name: "Teerth Purohit Prayagraj",
-    description:
-      "This simple portfolio project enhances marketing and customer interaction for the temple purohit. Created with WhatsApp, Instagram, maps, and email functionalities, it boosted their family profession's marketing and customer engagement significantly.",
-    tags: [
-      {
-        name: "HTML",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "CSS",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Javascript",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tppi,
-    source_code_link: "https://piyush-khanna-qmb.github.io/TeerthPurohitPrayagraj/",
-    linked_link: null
-  },
-
-  {
-    name: "AR4U",
-    description:
-      "AR_4_U, powered by Unity, revolutionizes Augmented Reality content creation. Import custom or library-based 3D models and let its advanced machine learning capabilities automatically suggest lifelike movements for various parts of your models.",
-    tags: [
-      {
-        name: "Unity",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Vuforia",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Machine Learning",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: AR,
-    source_code_link: "https://github.com/piyush-khanna-qmb/AR-4-U",
-    linked_link: null
-  },
-  {
-    name: "BinGenius",
-    description:
-      "BinGenius is your smart waste management companion. With its advanced sensors and AI-driven technology, BinMinder knows when it's full, compacts trash for more space, alerts the collection service when it's time for pickup and even helps you sort recyclables.",
-    tags: [
-      {
-        name: "IoT",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Embedded C",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Bash",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: bin,
-    source_code_link: "https://github.com/piyush-khanna-qmb/Koodha-Daan",
-    linked_link: null
+    linked_link: "https://lnkd.in/p/giH3ppBx"
   },
 ];
 

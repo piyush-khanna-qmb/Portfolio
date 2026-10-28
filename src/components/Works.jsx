@@ -37,6 +37,37 @@ const CardLink = ({ to, external, children, className }) => {
   );
 };
 
+/* One circular launcher in the card's top-right stack. Kept generic so
+   GitHub/LinkedIn (image assets) and YouTube/Drive (inline SVG) all
+   share identical sizing and hover behaviour. */
+const CircleLink = ({ href, label, children }) => (
+  <a
+    href={href}
+    target='_blank'
+    rel='noopener noreferrer'
+    aria-label={label}
+    title={label}
+    onClick={(e) => e.stopPropagation()}
+    className='pointer-events-auto black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-105 transition-transform duration-200'
+  >
+    {children}
+  </a>
+);
+
+const YouTubeIcon = () => (
+  <svg viewBox='0 0 24 24' className='w-[55%] h-[55%]' fill='#fff' aria-hidden='true'>
+    <path d='M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15.5v-7l6 3.5-6 3.5z' />
+  </svg>
+);
+
+const DriveIcon = () => (
+  <svg viewBox='0 0 24 24' className='w-[55%] h-[55%]' aria-hidden='true'>
+    <path d='M7.71 3.5 1.15 15l3.43 6 6.56-11.5L7.71 3.5z' fill='#0066da' />
+    <path d='M16.29 3.5H9.43l6.56 11.5h6.86L16.29 3.5z' fill='#00ac47' />
+    <path d='M4.58 21h13.71l3.43-6H8.01l-3.43 6z' fill='#ea4335' />
+  </svg>
+);
+
 /* Stand-in for projects that do not have artwork yet. Keeps the grid
    even instead of collapsing the card height to nothing. */
 const ImagePlaceholder = ({ name }) => (
@@ -53,8 +84,11 @@ const ProjectCard = ({
   description,
   tags,
   image,
+  video,
   source_code_link,
   linked_link,
+  youtube_link,
+  drive_link,
   project_link,
   project_link_external,
 }) => {
@@ -76,7 +110,25 @@ const ProjectCard = ({
               project_link ? "cursor-pointer group" : ""
             }`}
           >
-            {image ? (
+            {video ? (
+              /* Looping product clip. Muted + playsInline are required for
+                 autoplay to be allowed on iOS/Safari.
+                 The source is square and the card slot is landscape, so this
+                 is `contain` (not `cover`) or the render gets clipped top and
+                 bottom. Backdrop is black to match the clip's own background,
+                 and scale-95 keeps it off the card edges. */
+              <div className='w-full h-full rounded-2xl overflow-hidden bg-black flex items-center justify-center'>
+                <video
+                  src={video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  aria-label={name}
+                  className='w-full h-full object-contain scale-95 transition-transform duration-500 group-hover:scale-100'
+                />
+              </div>
+            ) : image ? (
               <img
                 src={image}
                 alt={name}
@@ -95,30 +147,34 @@ const ProjectCard = ({
             )}
           </CardLink>
 
-          <div className='absolute inset-0 flex justify-end gap-3 m-3 pointer-events-none'>
+          <div className='absolute inset-0 flex justify-end items-start gap-3 m-3 pointer-events-none'>
             {source_code_link && (
-              <div
-                onClick={() => window.open(source_code_link, "_blank")}
-                className='pointer-events-auto black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-              >
+              <CircleLink href={source_code_link} label={`${name} — source`}>
                 <img
                   src={github}
-                  alt='source code'
+                  alt=''
                   className='w-1/2 h-1/2 object-contain'
                 />
-              </div>
+              </CircleLink>
             )}
             {linked_link && (
-              <div
-                onClick={() => window.open(linked_link, "_blank")}
-                className='pointer-events-auto black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-              >
+              <CircleLink href={linked_link} label={`${name} — LinkedIn post`}>
                 <img
                   src={linkedin}
-                  alt='linkedin post'
+                  alt=''
                   className='w-1/2 h-1/2 object-contain'
                 />
-              </div>
+              </CircleLink>
+            )}
+            {youtube_link && (
+              <CircleLink href={youtube_link} label={`${name} — watch on YouTube`}>
+                <YouTubeIcon />
+              </CircleLink>
+            )}
+            {drive_link && (
+              <CircleLink href={drive_link} label={`${name} — watch the video`}>
+                <DriveIcon />
+              </CircleLink>
             )}
           </div>
         </div>

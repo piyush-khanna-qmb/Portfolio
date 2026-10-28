@@ -44,6 +44,14 @@ import fableroom from "./company/fableroom.png";
 import manojava from "./company/manojava.png";
 import minerra from "./company/minerra.png";
 
+import projSunaina from "./projects/sunaina.jpg";
+import projDadashree from "./projects/dadashree.jpg";
+/* Emperia Omni ships as an 8s loop. The mp4 is 1080x1080 / 2.8MB; the
+   equivalent gif is 460x460 / 9MB, so the video wins on both size and
+   resolution. The gif is kept alongside in case a plain <img> is ever
+   needed. */
+import projOmniVideo from "./projects/emperia-omni.mp4";
+
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
@@ -171,5 +179,8 @@ export {
   carrent,
   jobit,
   tripguide,
-  linkedin
+  linkedin,
+  projSunaina,
+  projDadashree,
+  projOmniVideo
 };
