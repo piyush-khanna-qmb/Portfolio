@@ -18,7 +18,11 @@ import {
 } from "../components";
 
 const Home = () => (
-  <div className='relative z-0 bg-primary'>
+  /* overflow-x:clip contains the certificate wall's full-bleed brick layer,
+     which is 100vw and so overshoots by the scrollbar width. `clip` rather
+     than `hidden` because hidden would create a scroll container and can
+     clip the fixed navbar. */
+  <div className='relative z-0 bg-primary [overflow-x:clip]'>
     <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
       <Navbar />
       <Hero />

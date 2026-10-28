@@ -6,22 +6,7 @@ import { styles } from "../styles";
 import { pressReleases } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-
-const ArrowIcon = ({ className = "" }) => (
-  <svg
-    viewBox='0 0 24 24'
-    fill='none'
-    stroke='currentColor'
-    strokeWidth={2}
-    strokeLinecap='round'
-    strokeLinejoin='round'
-    className={className}
-    aria-hidden='true'
-  >
-    <line x1='7' y1='17' x2='17' y2='7' />
-    <polyline points='7 7 17 7 17 17' />
-  </svg>
-);
+import ArrowUpRight from "./ArrowUpRight";
 
 const PressCard = ({ index, item }) => (
   <motion.a
@@ -35,7 +20,7 @@ const PressCard = ({ index, item }) => (
       <span className='text-[#915EFF] text-[12px] font-semibold uppercase tracking-[0.12em]'>
         {item.outlet}
       </span>
-      <ArrowIcon className='w-4 h-4 text-secondary group-hover:text-[#915EFF] transition-colors shrink-0' />
+      <ArrowUpRight className='w-4 h-4 text-secondary group-hover:text-[#915EFF] transition-colors shrink-0' />
     </div>
 
     <h3 className='text-white font-bold text-[17px] leading-[25px]'>
@@ -88,7 +73,7 @@ const Press = () => {
           className='group inline-flex items-center gap-2 bg-[#915EFF]/60 hover:bg-[#915EFF]/75 py-3 px-8 rounded-xl text-white font-bold text-[15px] shadow-[0_0_25px_rgba(145,94,255,0.45)] hover:shadow-[0_0_35px_rgba(145,94,255,0.7)] transition-all duration-300'
         >
           See all {pressReleases.length} press mentions
-          <ArrowIcon className='w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5' />
+          <ArrowUpRight className='w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5' />
         </Link>
       </motion.div>
     </>

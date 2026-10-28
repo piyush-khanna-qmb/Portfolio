@@ -1,23 +1,8 @@
 import React from "react";
 
 import { pressReleases, pressSocial } from "../constants";
+import ArrowUpRight from "../components/ArrowUpRight";
 import PageShell from "./PageShell";
-
-const ArrowIcon = ({ className = "" }) => (
-  <svg
-    viewBox='0 0 24 24'
-    fill='none'
-    stroke='currentColor'
-    strokeWidth={2}
-    strokeLinecap='round'
-    strokeLinejoin='round'
-    className={className}
-    aria-hidden='true'
-  >
-    <line x1='7' y1='17' x2='17' y2='7' />
-    <polyline points='7 7 17 7 17 17' />
-  </svg>
-);
 
 const PressRow = ({ item }) => (
   <a
@@ -45,7 +30,7 @@ const PressRow = ({ item }) => (
         <span className='tabular-nums'>
           {[item.date, item.language].filter(Boolean).join(" · ")}
         </span>
-        <ArrowIcon className='w-4 h-4 group-hover:text-[#915EFF] transition-colors' />
+        <ArrowUpRight className='w-4 h-4 group-hover:text-[#915EFF] transition-colors' />
       </div>
     </div>
   </a>
@@ -91,7 +76,7 @@ const PressPage = () => (
                 {item.handle}
               </p>
             </div>
-            <ArrowIcon className='w-4 h-4 text-secondary group-hover:text-[#915EFF] transition-colors shrink-0' />
+            <ArrowUpRight className='w-4 h-4 text-secondary group-hover:text-[#915EFF] transition-colors shrink-0' />
           </a>
         ))}
       </div>

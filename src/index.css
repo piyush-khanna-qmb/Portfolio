@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* Rock Salt is the display face for the certificate wall title. The Off
+   the Wall sleeve is white chalk hand-lettered on brick, so this needs a
+   rough handwritten face rather than anything typeset. Swapping it is a
+   one-line change: see .font-offwall below. */
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -256,4 +261,37 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* ------------------------------------------------------------------ *
+ * Certificate wall title
+ * Change the font-family on this one class to swap the display face.
+ * The glow is what sells the neon-sign reference, so keep it with
+ * whichever face is used.
+ * ------------------------------------------------------------------ */
+/* Descendants are listed explicitly because the global `*` rule above sets
+   font-family on every element, which beats inheritance from the parent. */
+.font-offwall,
+.font-offwall * {
+  font-family: "Rock Salt", "Poppins", cursive;
+  font-weight: 400;
+  color: #f4f1ea;
+  /* Soft, colourless bloom: chalk catching light, not a neon tube. */
+  text-shadow:
+    0 0 1px rgba(255, 255, 255, 0.5),
+    0 1px 10px rgba(255, 255, 255, 0.14);
+}
+
+/* The hand-drawn rules that sit under each line on the sleeve. */
+.chalk-rule {
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(244, 241, 234, 0.15),
+    rgba(244, 241, 234, 0.85) 12%,
+    rgba(244, 241, 234, 0.9) 85%,
+    rgba(244, 241, 234, 0.2)
+  );
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.18);
 }

@@ -10,8 +10,6 @@ import {
   certOxyana,
   certIitkSecurity,
   certGuvi,
-  certWipro,
-  certRpa,
   certAlgoToolbox,
   certIntroAi,
   certFlipkart,
@@ -291,6 +289,7 @@ const publications = [
  * Every blurb below is grounded in what the certificate itself states.
  * ------------------------------------------------------------------ */
 const certificates = [
+
   {
     image: certOxyana,
     title: "Oxyana: Oxygen Analyzer",
@@ -314,22 +313,6 @@ const certificates = [
     date: "Aug 2021 – Mar 2022",
     blurb:
       "An eight-month certification course at IIT Kanpur's E&ICT Academy. It changed how I build: once you have seen how systems are actually broken into, you stop treating security as a layer added at the end.",
-  },
-  {
-    image: certWipro,
-    title: "Project Based Learning: TalentNext",
-    issuer: "Wipro × KIET Group of Institutions",
-    date: "May – Sep 2022",
-    blurb:
-      "Wipro's Future Skills programme, run as project-based learning rather than lectures. Useful mostly for the habit it drilled in: scoping something to a deliverable before falling in love with the idea.",
-  },
-  {
-    image: certRpa,
-    title: "Robotic Process Automation",
-    issuer: "Automation Anywhere University",
-    date: "13 Sep 2022",
-    blurb:
-      "The 'Empowering Your Workforce with RPA' learning trail. I took it expecting robotics and found process engineering instead, which turned out to be the more transferable half.",
   },
   {
     image: certAlgoToolbox,

@@ -2,6 +2,7 @@ import React from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 
 import { thoughts } from "../constants";
+import ArrowUpRight from "../components/ArrowUpRight";
 import PageShell from "./PageShell";
 
 const Block = ({ block }) => {
@@ -74,8 +75,9 @@ const ThoughtPost = () => {
             to={`/thoughts/${next.slug}`}
             className='group mt-3 block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#915EFF] rounded-sm'
           >
-            <h3 className='text-white font-bold text-[20px] sm:text-[23px] leading-[31px] group-hover:text-[#915EFF] transition-colors duration-300'>
+            <h3 className='flex items-center gap-2 text-white font-bold text-[20px] sm:text-[23px] leading-[31px] group-hover:text-[#915EFF] transition-colors duration-300'>
               {next.title}
+              <ArrowUpRight className='w-4 h-4 shrink-0 text-[#915EFF] opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
             </h3>
             <p className='mt-2 text-secondary text-[15px] leading-[26px]'>
               {next.dek}

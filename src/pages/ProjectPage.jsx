@@ -1,6 +1,9 @@
 import React from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 
+import { projectMedia } from "../constants/projectMedia";
+import ArrowUpRight from "../components/ArrowUpRight";
+import MediaCarousel from "../components/MediaCarousel";
 import PageShell from "./PageShell";
 
 /**
@@ -82,6 +85,7 @@ const projectPages = {
 const ProjectPage = () => {
   const { slug } = useParams();
   const project = projectPages[slug];
+  const media = projectMedia[slug];
 
   if (!project) return <Navigate to='/' replace />;
 
@@ -125,19 +129,7 @@ const ProjectPage = () => {
             <span className='text-white text-[15px] font-medium group-hover:text-[#915EFF] transition-colors'>
               {project.related.label}
             </span>
-            <svg
-              viewBox='0 0 24 24'
-              fill='none'
-              stroke='currentColor'
-              strokeWidth={2}
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              className='w-4 h-4 text-[#915EFF] shrink-0 ml-auto transition-transform group-hover:translate-x-0.5'
-              aria-hidden='true'
-            >
-              <line x1='5' y1='12' x2='19' y2='12' />
-              <polyline points='12 5 19 12 12 19' />
-            </svg>
+            <ArrowUpRight className='w-4 h-4 text-[#915EFF] shrink-0 ml-auto transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5' />
           </Link>
         )}
 
@@ -153,9 +145,9 @@ const ProjectPage = () => {
                   rel='noopener noreferrer'
                   className='group text-secondary hover:text-[#915EFF] text-[15px] leading-[26px] transition-colors duration-300'
                 >
-                  {link.label}
-                  <span aria-hidden='true' className='ml-1.5 inline-block'>
-                    &#8599;
+                  <span className='inline-flex items-center gap-1.5'>
+                    {link.label}
+                    <ArrowUpRight className='w-3.5 h-3.5 shrink-0 text-[#915EFF]' />
                   </span>
                 </a>
               ))}
@@ -163,11 +155,48 @@ const ProjectPage = () => {
           </section>
         )}
 
-        {/* Honest status note: this is a shell, by design, for now. */}
-        <p className='mt-16 text-secondary/60 text-[13px] leading-[22px] border-t border-white/10 pt-6'>
-          A fuller write-up of this project is in progress.
-        </p>
       </div>
+
+      {/* Media highlights sit outside the prose column so the carousel can
+          use the full page width. */}
+      {media && (
+        <section className='mt-16'>
+          <h2 className='text-white font-bold text-[22px] sm:text-[25px] leading-[33px]'>
+            This project got media highlights
+          </h2>
+          <p className='mt-3 text-secondary text-[16px] leading-[28px] max-w-3xl'>
+            Coverage across television, news channels and social media through
+            the festival. Pick any clip to play it.
+          </p>
+
+          {media.mentions && media.mentions.length > 0 && (
+            <div className='mt-5 flex flex-wrap gap-2.5'>
+              {media.mentions.map((mention) => (
+                <span
+                  key={mention.label}
+                  className='flex items-baseline gap-2 bg-tertiary rounded-lg px-3.5 py-2'
+                >
+                  <span className='font-mono text-[10px] tracking-[0.12em] uppercase text-secondary/60'>
+                    {mention.note}
+                  </span>
+                  <span className='text-white text-[14px] font-medium'>
+                    {mention.label}
+                  </span>
+                </span>
+              ))}
+            </div>
+          )}
+
+          <div className='mt-8'>
+            <MediaCarousel videos={media.videos} />
+          </div>
+        </section>
+      )}
+
+      {/* Honest status note: this is a shell, by design, for now. */}
+      <p className='max-w-3xl mt-16 text-secondary/60 text-[13px] leading-[22px] border-t border-white/10 pt-6'>
+        A fuller write-up of this project is in progress.
+      </p>
     </PageShell>
   );
 };

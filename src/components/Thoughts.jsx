@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { thoughts } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import ArrowUpRight from "./ArrowUpRight";
 
 /**
  * Line-by-line list rather than cards: these are meant to be read as an
@@ -17,35 +18,22 @@ const ThoughtRow = ({ index, post }) => (
       to={`/thoughts/${post.slug}`}
       className='group block border-t border-white/10 py-7 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#915EFF] rounded-sm'
     >
-      <div className='flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 sm:gap-8'>
-        <h3 className='text-white font-bold text-[19px] sm:text-[22px] leading-[30px] group-hover:text-[#915EFF] transition-colors duration-300 max-w-2xl'>
+      <div className='flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-8'>
+        <h3 className='flex items-center gap-2 text-white font-bold text-[18px] sm:text-[20px] leading-[1.4] group-hover:text-[#915EFF] transition-colors duration-300'>
           {post.title}
+          {/* Arrow is inline so it costs no vertical space when hidden.
+              The old block-level "Read" affordance reserved its height
+              even at opacity-0, which added ~32px to every row. */}
+          <ArrowUpRight className='w-[18px] h-[18px] shrink-0 text-[#915EFF] opacity-0 -translate-x-1 translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300' />
         </h3>
         <span className='shrink-0 text-secondary/70 text-[13px] tabular-nums'>
           {post.date}
         </span>
       </div>
 
-      <p className='mt-2 text-secondary text-[15px] leading-[26px] max-w-2xl'>
+      <p className='mt-1.5 text-secondary text-[15px] leading-[24px] max-w-4xl'>
         {post.dek}
       </p>
-
-      <span className='mt-3 inline-flex items-center gap-1.5 text-[13px] font-medium text-[#915EFF] opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-        Read
-        <svg
-          viewBox='0 0 24 24'
-          fill='none'
-          stroke='currentColor'
-          strokeWidth={2}
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          className='w-3.5 h-3.5'
-          aria-hidden='true'
-        >
-          <line x1='5' y1='12' x2='19' y2='12' />
-          <polyline points='12 5 19 12 12 19' />
-        </svg>
-      </span>
     </Link>
   </motion.div>
 );
@@ -60,14 +48,14 @@ const Thoughts = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+        className='mt-3 text-secondary text-[15px] max-w-3xl leading-[25px]'
       >
         Longer arguments about why these things exist the way they do: the
         naming, the architecture, and the occasional theological problem that a
         robot creates for you.
       </motion.p>
 
-      <div className='mt-12 border-b border-white/10'>
+      <div className='mt-8 border-b border-white/10'>
         {thoughts.map((post, index) => (
           <ThoughtRow key={post.slug} index={index} post={post} />
         ))}

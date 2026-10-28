@@ -44,6 +44,8 @@ import fableroom from "./company/fableroom.png";
 import manojava from "./company/manojava.png";
 import minerra from "./company/minerra.png";
 
+import brickWall from "./textures/brick-wall.jpg";
+
 import projSunaina from "./projects/sunaina.jpg";
 import projDadashree from "./projects/dadashree.jpg";
 /* Emperia Omni ships as an 8s loop. The mp4 is 1080x1080 / 2.8MB; the
@@ -182,5 +184,6 @@ export {
   linkedin,
   projSunaina,
   projDadashree,
-  projOmniVideo
+  projOmniVideo,
+  brickWall
 };

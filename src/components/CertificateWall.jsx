@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
+import { brickWall } from "../assets";
 import { certificates } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -46,9 +47,48 @@ const CertificateWall = () => {
 
   return (
     <>
+      {/* Brick backdrop. Breaks out of the section's max-width to run the
+          full viewport, sits behind the content, and is heavily darkened
+          so it reads as a dim wall rather than competing with the frames.
+          Gradients at the top and bottom fade it into the sections above
+          and below instead of ending on a hard line. */}
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen -z-10 overflow-hidden'
+      >
+        <div
+          className='absolute inset-0 opacity-[0.22]'
+          style={{
+            backgroundImage: `url(${brickWall})`,
+            backgroundSize: "520px auto",
+            backgroundRepeat: "repeat",
+          }}
+        />
+        <div className='absolute inset-0 bg-primary/55' />
+        <div className='absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary to-transparent' />
+        <div className='absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-primary to-transparent' />
+      </div>
+
+      {/* Set like the sleeve: chalk capitals, a rule under the name, and a
+          second rule under the title. Kept to two lines rather than the
+          sleeve's five so it works as a section heading. */}
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Things I picked up along the way</p>
-        <h2 className={styles.sectionHeadText}>The Wall.</h2>
+        {/* Each line is wrapped in its own w-fit block so the rule beneath
+            it shrinks to that line's width instead of the heading's. */}
+        <h2 className='font-offwall'>
+          <span className='block w-fit'>
+            <span className='block text-[13px] sm:text-[16px] uppercase tracking-[0.06em] leading-[1.5]'>
+              Piyush Khanna
+            </span>
+            <span className='chalk-rule block mt-1.5' />
+          </span>
+
+          <span className='block w-fit mt-3'>
+            <span className='block text-[24px] xs:text-[30px] sm:text-[42px] md:text-[50px] uppercase leading-[1.2]'>
+              Off the Wall
+            </span>
+          </span>
+        </h2>
       </motion.div>
 
       <motion.p
@@ -59,7 +99,14 @@ const CertificateWall = () => {
         frame to read why it is on the wall.
       </motion.p>
 
-      <div className='mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8'>
+      <motion.p
+        variants={fadeIn("", "", 0.2, 1)}
+        className={`mt-8 ${styles.sectionSubText}`}
+      >
+        Things I picked up along the way
+      </motion.p>
+
+      <div className='mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8'>
         {certificates.map((certificate, index) => (
           <FramedCertificate
             key={certificate.title}
