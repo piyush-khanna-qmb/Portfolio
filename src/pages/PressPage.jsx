@@ -40,7 +40,7 @@ const PressPage = () => (
   <PageShell
     eyebrow='What others wrote'
     title='In the Press.'
-    intro={`Coverage of Anushka and the work around it, across ${pressReleases.length} publications in four languages and six countries. The first two pieces are the ones that got the thinking right rather than only the spectacle.`}
+    intro={`Where the work has been written about, across ${pressReleases.length} publications in four languages and six countries. The pieces at the top are the ones that got at the thinking rather than only the spectacle.`}
   >
     <section>
       <h2 className='text-white font-bold text-[22px] mb-2'>Publications</h2>

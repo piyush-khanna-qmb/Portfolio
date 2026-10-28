@@ -31,8 +31,8 @@ const Home = () => (
     <Works />
     <Research />
     <Thoughts />
-    <Press />
     <CertificateWall />
+    <Press />
 
     <div className='relative z-0'>
       <Contact />

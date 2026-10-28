@@ -53,9 +53,9 @@ const Press = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        Anushka was covered across national and international press, from the
-        Indian Express and Mint to outlets in Turkey and Hungary. A selection
-        below.
+        Where the work has been written about, in national and international
+        press, from the Indian Express and Mint to outlets in Turkey and
+        Hungary. A selection below.
       </motion.p>
 
       <div className='mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
