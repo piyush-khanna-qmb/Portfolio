@@ -14,7 +14,7 @@ import ProjectPage from "./pages/ProjectPage";
 
 /**
  * Derived from Vite's base rather than hardcoded, so the router keeps
- * working if `base` changes at deploy time (see Standing Rule 11 — the
+ * working if `base` changes at deploy time (see Standing Rule 11, the
  * real deploy config is still deferred).
  */
 const basename =

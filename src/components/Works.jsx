@@ -149,7 +149,7 @@ const ProjectCard = ({
 
           <div className='absolute inset-0 flex justify-end items-start gap-3 m-3 pointer-events-none'>
             {source_code_link && (
-              <CircleLink href={source_code_link} label={`${name} — source`}>
+              <CircleLink href={source_code_link} label={`${name} source code`}>
                 <img
                   src={github}
                   alt=''
@@ -158,7 +158,7 @@ const ProjectCard = ({
               </CircleLink>
             )}
             {linked_link && (
-              <CircleLink href={linked_link} label={`${name} — LinkedIn post`}>
+              <CircleLink href={linked_link} label={`${name} on LinkedIn`}>
                 <img
                   src={linkedin}
                   alt=''
@@ -167,12 +167,12 @@ const ProjectCard = ({
               </CircleLink>
             )}
             {youtube_link && (
-              <CircleLink href={youtube_link} label={`${name} — watch on YouTube`}>
+              <CircleLink href={youtube_link} label={`${name} on YouTube`}>
                 <YouTubeIcon />
               </CircleLink>
             )}
             {drive_link && (
-              <CircleLink href={drive_link} label={`${name} — watch the video`}>
+              <CircleLink href={drive_link} label={`${name} video`}>
                 <DriveIcon />
               </CircleLink>
             )}

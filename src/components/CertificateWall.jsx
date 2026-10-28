@@ -16,7 +16,7 @@ const FramedCertificate = ({ index, certificate, onOpen }) => (
     className='group text-left w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#915EFF] rounded-sm'
   >
     <div className='wood-frame rounded-sm p-[10px] sm:p-[14px] transition-transform duration-300 group-hover:-translate-y-1.5'>
-      {/* Mat board — the cream border a real frame has between wood and print */}
+      {/* Mat board: the cream border a real frame has between wood and print */}
       <div className='wood-frame-inner bg-[#f2ece1] p-[7px] sm:p-[9px] rounded-[2px]'>
         <div className='bg-white aspect-[4/3] overflow-hidden'>
           <img

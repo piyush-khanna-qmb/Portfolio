@@ -204,7 +204,7 @@
 }
 
 /* ------------------------------------------------------------------ *
- * Certificate wall — wooden frames
+ * Certificate wall: wooden frames
  * Grain is built from layered repeating-linear-gradients rather than a
  * bitmap so it stays crisp at any size and costs no extra request.
  * ------------------------------------------------------------------ */

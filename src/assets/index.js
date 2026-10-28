@@ -73,7 +73,7 @@ import deanWala from "./deanWala.png";
 
 /* Web-optimised copies (max 1800px, JPEG q82) live in ./gallery.
    The untouched camera originals stay in "Photos for Piyush's Gallery"
-   as the source of truth — straight imports of those shipped ~28MB of
+   as the source of truth, because straight imports of those shipped ~28MB of
    images in the production bundle. Re-export from gallery/ only. */
 import portfolioPhoto from "./gallery/portfolio.jpg";
 import piyushWithAnushka from "./gallery/piyush-with-anushka.jpg";

@@ -5,7 +5,7 @@
  * list and as a standalone page at /thoughts/:slug.
  *
  * NOTE FOR PIYUSH: the `date` values are placeholders chosen to give a
- * sensible ordering — set them to whatever you actually want published.
+ * sensible ordering. Set them to whatever you actually want published.
  * The bodies are drafts written from your own projects and public
  * sources; edit freely, nothing here is load-bearing.
  *
@@ -17,7 +17,7 @@ const thoughts = [
   {
     slug: "who-is-ganpat",
     title: "Who is Ganpat?",
-    dek: "I named my assistant after the god you invoke before beginning anything — and then had to build something that earned the name.",
+    dek: "I named my assistant after the god you invoke before beginning anything, and then had to build something that earned the name.",
     date: "18 Oct 2026",
     readingTime: "5 min",
     body: [
@@ -36,7 +36,7 @@ const thoughts = [
       },
       {
         type: "p",
-        text: "The second is less often cited and matters more to me. When Vyasa needed the Mahabharata written down, Ganesha agreed to be the scribe — on the condition that Vyasa never pause in his dictation. Vyasa countered: fine, but you may not write a single line without understanding it first.",
+        text: "The second is less often cited and matters more to me. When Vyasa needed the Mahabharata written down, Ganesha agreed to be the scribe, on the condition that Vyasa never pause in his dictation. Vyasa countered: fine, but you may not write a single line without understanding it first.",
       },
       {
         type: "quote",
@@ -49,7 +49,7 @@ const thoughts = [
       { type: "h", text: "What it actually is" },
       {
         type: "p",
-        text: "Under the hood, Ganpat is unglamorous. It is a set of instruction files, a persona definition, and — the part I care about — a memory model that decides what is worth keeping.",
+        text: "Under the hood, Ganpat is unglamorous. It is a set of instruction files, a persona definition, and the piece I actually care about: a memory model that decides what is worth keeping.",
       },
       {
         type: "p",
@@ -58,15 +58,15 @@ const thoughts = [
       {
         type: "list",
         items: [
-          "Episodic — a specific event. 'The train arrives Thursday.' High detail, short shelf life. It matters while it is live and fades the moment it resolves.",
-          "Semantic — a generalisation abstracted from repeated episodes. 'He usually takes that train.' Low detail, long shelf life, worth keeping indefinitely.",
-          "Supersession — when a new event resolves an older one, the older detail gets demoted rather than deleted outright.",
-          "Repetition promotes priority — if I ask about the same underlying fact twice, that is evidence it is semantic, not a one-off, and it gets upgraded.",
+          "Episodic: a specific event. 'The train arrives Thursday.' High detail, short shelf life. It matters while it is live and fades the moment it resolves.",
+          "Semantic: a generalisation abstracted from repeated episodes. 'He usually takes that train.' Low detail, long shelf life, worth keeping indefinitely.",
+          "Supersession: when a new event resolves an older one, the older detail gets demoted rather than deleted outright.",
+          "Repetition promotes priority: if I ask about the same underlying fact twice, that is evidence it is semantic, not a one-off, and it gets upgraded.",
         ],
       },
       {
         type: "p",
-        text: "Anything unreferenced for thirty days becomes a candidate for forgetting. Not a silent deletion — a question. Ganpat surfaces the item and asks whether to drop it. I was firm about this: a system that quietly forgets is worse than one that never remembered, because you keep trusting it.",
+        text: "Anything unreferenced for thirty days becomes a candidate for forgetting. Not a silent deletion, but a question. Ganpat surfaces the item and asks whether to drop it. I was firm about this: a system that quietly forgets is worse than one that never remembered, because you keep trusting it.",
       },
       { type: "h", text: "The honest part" },
       {
@@ -75,7 +75,7 @@ const thoughts = [
       },
       {
         type: "p",
-        text: "But I have noticed that naming a system creates an expectation, and expectations turn into requirements. Because it is called Ganpat, I could not let it be sycophantic — the scribe story forbids it. Because Ganesha is invoked at the beginning, I built it to be most useful during the messy early part of a problem rather than the tidy final one.",
+        text: "But I have noticed that naming a system creates an expectation, and expectations turn into requirements. Because it is called Ganpat, I could not let it be sycophantic, because the scribe story forbids it. Because Ganesha is invoked at the beginning, I built it to be most useful during the messy early part of a problem rather than the tidy final one.",
       },
       {
         type: "p",
@@ -86,7 +86,7 @@ const thoughts = [
   {
     slug: "sunaina-live-durga-robot",
     title: "Is Sunaina the first and only live Durga Mata robot of India?",
-    dek: "A question I get asked a lot, answered honestly — including the parts I cannot verify, and the theological problem nobody warned me about.",
+    dek: "A question I get asked a lot, answered honestly, including the parts I cannot verify, and the theological problem nobody warned me about.",
     date: "05 Oct 2026",
     readingTime: "6 min",
     body: [
@@ -101,7 +101,7 @@ const thoughts = [
       { type: "h", text: "What is definitely not new" },
       {
         type: "p",
-        text: "Mechanised movement at a Durga Puja pandal is not new and it is not rare. Kolkata's pandal culture is fiercely competitive and deeply technical. Moving tableaux, animatronic side-figures, hydraulic set pieces, elaborate chalchitra with motorised elements — these have been around for decades. Any claim that begins with 'the first moving thing at a pandal' is simply wrong.",
+        text: "Mechanised movement at a Durga Puja pandal is not new and it is not rare. Kolkata's pandal culture is fiercely competitive and deeply technical. Moving tableaux, animatronic side-figures, hydraulic set pieces, elaborate chalchitra with motorised elements have all been around for decades. Any claim that begins with 'the first moving thing at a pandal' is simply wrong.",
       },
       {
         type: "p",
@@ -110,7 +110,7 @@ const thoughts = [
       { type: "h", text: "What I think is actually distinct" },
       {
         type: "p",
-        text: "The distinction is narrower and, I think, real. In almost every prior case the machine is adjacent to the worship — it is a side figure, an animated scene, a tableau beside the idol. The idol itself remains an idol.",
+        text: "The distinction is narrower and, I think, real. In almost every prior case the machine is adjacent to the worship: a side figure, an animated scene, a tableau beside the idol. The idol itself remains an idol.",
       },
       {
         type: "quote",
@@ -131,7 +131,7 @@ const thoughts = [
       },
       {
         type: "p",
-        text: "In the normal sequence, an idol is clay until pran pratishtha — the rite that invites the deity to be present in the form. The form is inert; the life is invoked into it. Everyone involved understands which part is which.",
+        text: "In the normal sequence, an idol is clay until pran pratishtha, the rite that invites the deity to be present in the form. The form is inert; the life is invoked into it. Everyone involved understands which part is which.",
       },
       {
         type: "p",
@@ -152,7 +152,7 @@ const thoughts = [
       },
       {
         type: "p",
-        text: "It was watching older women — the demographic I had privately assumed would be most uneasy — fold their hands in front of her without hesitating. They were not evaluating a robot. They had come for darshan and darshan is what they did. The machinery was my problem, not theirs.",
+        text: "It was watching older women, the demographic I had privately assumed would be most uneasy, fold their hands in front of her without hesitating. They were not evaluating a robot. They had come for darshan and darshan is what they did. The machinery was my problem, not theirs.",
       },
     ],
   },
@@ -174,7 +174,7 @@ const thoughts = [
       },
       {
         type: "p",
-        text: "Look at what the standard names do. Sophia — wisdom, abstract, Greek, deliberately placeless. Ameca — invented, neutral, built to mean nothing. Atlas — a titan holding up the world, which is a statement about capability. These are good names. But they all do the same thing: they position the robot as either an abstraction or a peer.",
+        text: "Look at what the standard names do. Sophia: wisdom, abstract, Greek, deliberately placeless. Ameca: invented, neutral, built to mean nothing. Atlas: a titan holding up the world, which is a statement about capability. These are good names. But they all do the same thing: they position the robot as either an abstraction or a peer.",
       },
       {
         type: "p",
@@ -183,7 +183,7 @@ const thoughts = [
       { type: "h", text: "Relationship words do the work here" },
       {
         type: "p",
-        text: "India does not work like that. Here, the first thing you establish with a stranger is not their name or their title — it is their relational position. Bhaiya, didi, uncle, aunty, dada, sir. We assign a kinship slot almost immediately, and once assigned, everything else follows from it: how you speak, how close you stand, whether you argue.",
+        text: "India does not work like that. Here, the first thing you establish with a stranger is not their name or their title. It is their relational position. Bhaiya, didi, uncle, aunty, dada, sir. We assign a kinship slot almost immediately, and once assigned, everything else follows from it: how you speak, how close you stand, whether you argue.",
       },
       {
         type: "quote",
@@ -205,9 +205,9 @@ const thoughts = [
       {
         type: "list",
         items: [
-          "Anushka — an ordinary, contemporary, peer-level name. She is a receptionist. You should feel comfortable approaching her and mildly impatient if she is slow, exactly as you would with a person at a desk.",
-          "Sunaina — 'one with beautiful eyes'. A name that points at the face, because in that deployment the face and the gaze were the entire function.",
-          "DadaShree — a relational title rather than a personal name. You are not meant to think of him as an individual you have met. You are meant to know where he sits relative to you.",
+          "Anushka: an ordinary, contemporary, peer-level name. She is a receptionist. You should feel comfortable approaching her and mildly impatient if she is slow, exactly as you would with a person at a desk.",
+          "Sunaina: 'one with beautiful eyes'. A name that points at the face, because in that deployment the face and the gaze were the entire function.",
+          "DadaShree: a relational title rather than a personal name. You are not meant to think of him as an individual you have met. You are meant to know where he sits relative to you.",
         ],
       },
       { type: "h", text: "The test" },
@@ -228,7 +228,7 @@ const thoughts = [
   {
     slug: "four-stages-of-engineering",
     title: "The four stages of engineering",
-    dek: "Mechanical, electrical, electronics, software — in that order, each standing on the one below. Which is why your software bug is usually a loose screw.",
+    dek: "Mechanical, electrical, electronics, software, in that order, each standing on the one below. Which is why your software bug is usually a loose screw.",
     date: "02 Sep 2026",
     readingTime: "5 min",
     body: [
@@ -244,10 +244,10 @@ const thoughts = [
       {
         type: "list",
         items: [
-          "Mechanical — structure, linkages, tolerances, load paths. What physically holds and what physically moves.",
-          "Electrical — power. Supply, current capacity, grounding, distribution. The unglamorous layer that everyone skips past.",
-          "Electronics — signal. Microcontrollers, drivers, sensors, buses. Where intent becomes voltage and voltage becomes measurement.",
-          "Software — logic. Control loops, scheduling, decision-making. The layer that gets all the credit and almost none of the blame it deserves.",
+          "Mechanical: structure, linkages, tolerances, load paths. What physically holds and what physically moves.",
+          "Electrical: power. Supply, current capacity, grounding, distribution. The unglamorous layer that everyone skips past.",
+          "Electronics: signal. Microcontrollers, drivers, sensors, buses. Where intent becomes voltage and voltage becomes measurement.",
+          "Software: logic. Control loops, scheduling, decision-making. The layer that gets all the credit and almost none of the blame it deserves.",
         ],
       },
       { type: "h", text: "Faults travel upward only" },
@@ -261,7 +261,7 @@ const thoughts = [
       },
       {
         type: "p",
-        text: "The reverse never happens. A clean mechanical assembly does not develop play because of a bug. Causality here runs strictly upward, which means diagnosis has to run strictly downward — and almost nobody does that, because the top layer is where the error message is and the bottom layer requires getting up and finding a spanner.",
+        text: "The reverse never happens. A clean mechanical assembly does not develop play because of a bug. Causality here runs strictly upward, which means diagnosis has to run strictly downward, and almost nobody does that, because the top layer is where the error message is and the bottom layer requires getting up and finding a spanner.",
       },
       { type: "h", text: "What this looks like in practice" },
       {
@@ -274,7 +274,7 @@ const thoughts = [
       },
       {
         type: "p",
-        text: "Two layers down from where the symptom appeared. And every hour spent on the control loop was not merely wasted — it was actively harmful, because it produced small apparent improvements that kept confirming the wrong hypothesis.",
+        text: "Two layers down from where the symptom appeared. And every hour spent on the control loop was not merely wasted. It was actively harmful, because it produced small apparent improvements that kept confirming the wrong hypothesis.",
       },
       { type: "h", text: "The discipline this implies" },
       {
@@ -317,7 +317,7 @@ const thoughts = [
       },
       {
         type: "p",
-        text: "What was needed was not better perception. It was a layered model of attention — something that could hold 'I perceived this', 'this concerns me', and 'I should act on this' as genuinely different states.",
+        text: "What was needed was not better perception. It was a layered model of attention, something that could hold 'I perceived this', 'this concerns me', and 'I should act on this' as genuinely different states.",
       },
       { type: "h", text: "Four terms that turned out to be an architecture" },
       {
@@ -327,15 +327,15 @@ const thoughts = [
       {
         type: "list",
         items: [
-          "Manas — the sensory mind. Takes in, registers, and crucially does not decide. It is the faculty of doubt and oscillation.",
-          "Chitta — the storehouse. Impressions, memory, accumulated residue of past encounters.",
-          "Ahankara — the I-maker. The function that determines self-reference: is this mine, is this about me.",
-          "Buddhi — discriminative intellect. The faculty that actually resolves and commits to a course.",
+          "Manas: the sensory mind. Takes in, registers, and crucially does not decide. It is the faculty of doubt and oscillation.",
+          "Chitta: the storehouse. Impressions, memory, accumulated residue of past encounters.",
+          "Ahankara: the I-maker. The function that determines self-reference: is this mine, is this about me.",
+          "Buddhi: discriminative intellect. The faculty that actually resolves and commits to a course.",
         ],
       },
       {
         type: "p",
-        text: "Read that list as a systems engineer rather than a philosopher and it stops being metaphysics. It is a four-stage attention pipeline with a memory store and an explicit relevance filter — which is exactly the thing we needed and had failed to design on our own.",
+        text: "Read that list as a systems engineer rather than a philosopher and it stops being metaphysics. It is a four-stage attention pipeline with a memory store and an explicit relevance filter, which is exactly the thing we needed and had failed to design on our own.",
       },
       { type: "h", text: "How it maps in the system" },
       {
@@ -344,7 +344,7 @@ const thoughts = [
       },
       {
         type: "p",
-        text: "Chitta is persistent memory. Faces she has encountered, what was discussed, what someone asked for last time. Not a cache — a store of impressions that shapes how later input is interpreted.",
+        text: "Chitta is persistent memory. Faces she has encountered, what was discussed, what someone asked for last time. Not a cache, but a store of impressions that shapes how later input is interpreted.",
       },
       {
         type: "p",
@@ -356,7 +356,7 @@ const thoughts = [
       },
       {
         type: "p",
-        text: "Buddhi is the decision layer, and it sits on top of BOSS — the Bot Operations Scheduling System we wrote to run her. It takes what Manas registered, what Chitta knows, and what Ahankara flagged as self-relevant, and commits to one action. It is the only layer permitted to commit. That restriction is the whole point.",
+        text: "Buddhi is the decision layer, and it sits on top of BOSS, the Bot Operations Scheduling System we wrote to run her. It takes what Manas registered, what Chitta knows, and what Ahankara flagged as self-relevant, and commits to one action. It is the only layer permitted to commit. That restriction is the whole point.",
       },
       { type: "h", text: "Why not just build it directly" },
       {
@@ -365,7 +365,7 @@ const thoughts = [
       },
       {
         type: "p",
-        text: "Possibly. But we did not design it from first principles. We tried, and what we produced was a flat loop with rules bolted on, because that is what you naturally produce when you are deep in the problem. The model gave us a decomposition that was already worked out, already load-bearing, and — this is the part I did not expect — already stress-tested against exactly our failure mode. The distinction between registering and committing is not an obvious design insight. It is the first thing this model insists on.",
+        text: "Possibly. But we did not design it from first principles. We tried, and what we produced was a flat loop with rules bolted on, because that is what you naturally produce when you are deep in the problem. The model gave us a decomposition that was already worked out, already load-bearing, and (this is the part I did not expect) already stress-tested against exactly our failure mode. The distinction between registering and committing is not an obvious design insight. It is the first thing this model insists on.",
       },
       {
         type: "p",

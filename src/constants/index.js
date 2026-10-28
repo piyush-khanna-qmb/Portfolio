@@ -148,7 +148,7 @@ const experiences = [
     iconBg: "#29abe2",
     date: "Jan 2024 - Apr 2025",
     points: [
-      "Designed and built scalable RESTful APIs with Node.js and Express.js — documented in Swagger, end-to-end tested in Postman, and backed by a MongoDB layer tuned through Mongoose for production query performance.",
+      "Designed and built scalable RESTful APIs with Node.js and Express.js, documented in Swagger, end-to-end tested in Postman, and backed by a MongoDB layer tuned through Mongoose for production query performance.",
       "Acted as System Architect, translating the founders' concept into a structured, scalable technical roadmap and development plan.",
     ],
   },
@@ -220,7 +220,7 @@ const projects = [
   {
     name: "Emperia Omni",
     description:
-      "Part of the Emperia Automation Ecosystem — the IoT/home-automation platform built at Emperia Smart Solutions. Lives on the Emperia site alongside UniHub rather than here.",
+      "Part of the Emperia Automation Ecosystem, the IoT/home-automation platform built at Emperia Smart Solutions. Lives on the Emperia site alongside UniHub rather than here.",
     tags: [
       { name: "IoT", color: "blue-text-gradient" },
       { name: "Automation", color: "green-text-gradient" },
@@ -282,7 +282,7 @@ const projects = [
   {
     name: "DadaShree Robot",
     description:
-      "A humanoid named with a relational honorific rather than a personal name — 'respected elder brother'. The naming is the interface: an Indian visitor already knows how to approach a Dada without being told.",
+      "A humanoid named with a relational honorific rather than a personal name: 'respected elder brother'. The naming is the interface: an Indian visitor already knows how to approach a Dada without being told.",
     tags: [
       { name: "Robotics", color: "blue-text-gradient" },
       { name: "HRI", color: "green-text-gradient" },

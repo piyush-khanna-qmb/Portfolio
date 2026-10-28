@@ -6,7 +6,7 @@ import PageShell from "./PageShell";
 /**
  * Shell pages for the two robots that live on this site rather than on
  * an external domain. Piyush is writing the full project write-ups
- * himself — these establish the route, the chrome and the factual
+ * himself. These establish the route, the chrome and the factual
  * skeleton so the project cards have somewhere real to land.
  */
 const projectPages = {
@@ -14,7 +14,7 @@ const projectPages = {
     eyebrow: "Robotics · Durga Puja 2025",
     title: "Sunaina",
     intro:
-      "A robotic Durga that stood as the presiding figure at Chakraberia Sarbojanin Durgotsab in Kolkata during Durga Puja 2025 — not an animatronic beside the idol, but the idol itself.",
+      "A robotic Durga that stood as the presiding figure at Chakraberia Sarbojanin Durgotsab in Kolkata during Durga Puja 2025. Not an animatronic beside the idol, but the idol itself.",
     facts: [
       { label: "Deployment", value: "Chakraberia Sarbojanin Durgotsab, Kolkata" },
       { label: "Occasion", value: "Durga Puja 2025" },
@@ -28,7 +28,7 @@ const projectPages = {
       },
       {
         heading: "Why it was harder than it looks",
-        body: "The engineering was the easy half. The difficult part was theological — an idol is conventionally inert until pran pratishtha invites the deity to be present in it. A form that already moves on its own complicates that separation in a way nobody on the build team was qualified to resolve.",
+        body: "The engineering was the easy half. The difficult part was theological, because an idol is conventionally inert until pran pratishtha invites the deity to be present in it. A form that already moves on its own complicates that separation in a way nobody on the build team was qualified to resolve.",
       },
     ],
     related: {
@@ -37,7 +37,7 @@ const projectPages = {
     },
     links: [
       {
-        label: "First look — Chakraberia Sarbojanin Durgotsab 2025",
+        label: "First look: Chakraberia Sarbojanin Durgotsab 2025",
         url: "https://www.facebook.com/explorewitharitra/videos/exclusive-first-look-of-chakraberia-sarbojanin-durgotsab-2k25kolkatas-first-pand/1499913928098170/",
       },
       {
@@ -55,20 +55,20 @@ const projectPages = {
     eyebrow: "Robotics · Human-robot interaction",
     title: "DadaShree",
     intro:
-      "A humanoid named with a relational honorific instead of a personal name — Dada, elder brother, plus the honorific Shree. The naming is the interface.",
+      "A humanoid named with a relational honorific instead of a personal name: Dada, elder brother, plus the honorific Shree. The naming is the interface.",
     facts: [
       { label: "Type", value: "Humanoid robot" },
       { label: "Focus", value: "Human-robot interaction" },
-      { label: "Naming", value: "Relational honorific — 'respected elder brother'" },
+      { label: "Naming", value: "Relational honorific, 'respected elder brother'" },
     ],
     sections: [
       {
         heading: "The argument behind the name",
-        body: "Western humanoids get names that imply either an abstraction or a peer — Sophia, Ameca, Atlas. That works where the default relationship between person and machine is transactional. In India the first thing established with a stranger is not their name but their relational position, and once that slot is assigned, everything else follows from it.",
+        body: "Western humanoids get names that imply either an abstraction or a peer: Sophia, Ameca, Atlas. That works where the default relationship between person and machine is transactional. In India the first thing established with a stranger is not their name but their relational position, and once that slot is assigned, everything else follows from it.",
       },
       {
         heading: "Why it matters in practice",
-        body: "Name a robot something abstract and someone has to stand beside it explaining how to interact. Name it DadaShree and an Indian visitor already has the protocol — they know how to talk to a Dada. The name does the onboarding that would otherwise cost you software.",
+        body: "Name a robot something abstract and someone has to stand beside it explaining how to interact. Name it DadaShree and an Indian visitor already has the protocol, because they know how to talk to a Dada. The name does the onboarding that would otherwise cost you software.",
       },
     ],
     related: {
@@ -163,7 +163,7 @@ const ProjectPage = () => {
           </section>
         )}
 
-        {/* Honest status note — this is a shell, by design, for now. */}
+        {/* Honest status note: this is a shell, by design, for now. */}
         <p className='mt-16 text-secondary/60 text-[13px] leading-[22px] border-t border-white/10 pt-6'>
           A fuller write-up of this project is in progress.
         </p>

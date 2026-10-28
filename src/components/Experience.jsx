@@ -39,7 +39,7 @@ const ExperienceCard = ({ experience }) => {
               }
             />
           ) : (
-            /* No logo on file yet — initial letter, same treatment the
+            /* No logo on file yet: initial letter, same treatment the
                project cards use for artwork-less entries. */
             <span className='text-[#915EFF] text-[22px] font-black leading-none'>
               {experience.company_name.charAt(0)}

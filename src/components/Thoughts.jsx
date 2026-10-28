@@ -62,7 +62,7 @@ const Thoughts = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        Longer arguments about why these things exist the way they do — the
+        Longer arguments about why these things exist the way they do: the
         naming, the architecture, and the occasional theological problem that a
         robot creates for you.
       </motion.p>

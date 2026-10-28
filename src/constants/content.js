@@ -28,7 +28,7 @@ import {
  * they are the ones that foreground "Young Visionary Piyush Khanna"
  * rather than only the robot.
  * `date` is only set where it is actually derivable from the source
- * URL — nothing here is invented.
+ * URL. Nothing here is invented.
  * ------------------------------------------------------------------ */
 const pressReleases = [
   {
@@ -36,7 +36,7 @@ const pressReleases = [
     title:
       "Young Visionary Piyush Khanna Unveils Anushka, India's First Vedic-Principled Humanoid Robot",
     blurb:
-      "A profile piece on the thinking behind Anushka — why a humanoid built in India should model the mind the way Indian philosophy already does.",
+      "A profile piece on the thinking behind Anushka, and why a humanoid built in India should model the mind the way Indian philosophy already does.",
     url: "https://tycoonworld.in/young-visionary-piyush-khanna-unveils-anushka-indias-first-vedic-principled-humanoid-robot-redefining-the-future-of-human-robot-interaction/",
     featured: true,
   },
@@ -79,7 +79,7 @@ const pressReleases = [
     outlet: "Supercar Blondie",
     title: "Students build humanoid robot with a beating heart",
     blurb:
-      "International pickup of the detail that made Anushka travel furthest — a mechanically simulated heartbeat.",
+      "International pickup of the detail that made Anushka travel furthest: a mechanically simulated heartbeat.",
     url: "https://supercarblondie.com/students-build-humanoid-robot-beating-heart/",
     featured: true,
   },
@@ -100,13 +100,13 @@ const pressReleases = [
   {
     outlet: "News18 Hindi",
     title:
-      "Ghaziabad's humanoid robot Anushka — a robot that is expert in all tasks",
+      "Ghaziabad's humanoid robot Anushka, a robot that is expert in all tasks",
     url: "https://hindi.news18.com/news/uttar-pradesh/ghaziabad-human-robot-anushka-prepared-in-ghaziabad-this-robot-is-expert-in-all-tasks-8208533.html",
     language: "Hindi",
   },
   {
     outlet: "Dainik Bhaskar",
-    title: "Anushka — the robot whose heart beats",
+    title: "Anushka, the robot whose heart beats",
     url: "https://www.bhaskar.com/local/uttar-pradesh/ghaziabad/news/anushkaa-robot-whose-heart-beats-132765604.html",
     language: "Hindi",
   },
@@ -139,7 +139,7 @@ const pressReleases = [
   },
   {
     outlet: "ShiftDelete",
-    title: "Humanoid robot with a beating heart — it knows 61 languages",
+    title: "Humanoid robot with a beating heart that knows 61 languages",
     url: "https://en.shiftdelete.net/humanoid-robot-with-a-beating-heart-it-knows-61-languages/",
     language: "Turkey",
   },
@@ -158,7 +158,7 @@ const pressReleases = [
   {
     outlet: "PC-Tablet",
     title:
-      "Encountering Anushka — a low-budget humanoid robot with a unique story",
+      "Encountering Anushka, a low-budget humanoid robot with a unique story",
     url: "https://www.pc-tablet.co.in/encountering-anushka-a-low-budget-humanoid-robot-with-a-unique-story/37605/",
   },
   {
@@ -179,12 +179,12 @@ const pressReleases = [
   },
   {
     outlet: "Shah Times",
-    title: "Anushka — KIET college unveils its first humanoid robot",
+    title: "Anushka: KIET college unveils its first humanoid robot",
     url: "https://www.shahtimesnews.com/anushka-kite-college-unveils-its-first-humanoid-robot/",
   },
   {
     outlet: "KnowTechTics",
-    title: "Anushka — a budget-friendly humanoid robot",
+    title: "Anushka, a budget-friendly humanoid robot",
     url: "https://knowtechtics.com/anushka-a-budget-friendly-humanoid-robot/",
   },
   {
@@ -200,7 +200,7 @@ const pressReleases = [
   },
 ];
 
-/* Broadcast / social pickups — short-form video coverage. */
+/* Broadcast and social pickups: short-form video coverage. */
 const pressSocial = [
   {
     platform: "X",
@@ -214,12 +214,12 @@ const pressSocial = [
   },
   {
     platform: "YouTube",
-    handle: "Anushka — full feature",
+    handle: "Anushka, full feature",
     url: "https://www.youtube.com/watch?v=p8jCVTSa3Ww",
   },
   {
     platform: "YouTube",
-    handle: "Anushka — demonstration",
+    handle: "Anushka, demonstration",
     url: "https://www.youtube.com/watch?v=yc4h9O5DSXg",
   },
   {
@@ -251,28 +251,30 @@ const pressSocial = [
 
 /* ------------------------------------------------------------------ *
  * RESEARCH & PATENTS
- * Deliberately no venue/DOI claimed for the paper — none is stated in
+ * Deliberately no venue/DOI claimed for the paper, because none is stated in
  * the manuscript. The patent's filing address is intentionally omitted.
  * ------------------------------------------------------------------ */
 const publications = [
   {
     kind: "Patent",
+    entryDate: "19 Aug 2026",
+    entryRef: "App. No. 202611100293",
+    entryStatus: "Filed \u00b7 Patent application",
     title:
       "A Modular IoT Ecosystem Comprising Independent Sensor-Relay Extension Modules",
-    meta: "Application No. 202611100293",
-    date: "Filed 19 Aug 2026",
-    authors: "Piyush Khanna",
-    body: "A patent filing covering the architecture behind the Emperia automation ecosystem: a hub that stays deliberately simple, and sensor/relay modules that can be added independently without the hub needing to know in advance what they are. The claim is about the extension model — modules that extend the system's capability without extending its complexity.",
-    status: "Filed with the Controller General of Patents, Designs & Trade Marks",
+    subtitle:
+      "Controller General of Patents, Designs & Trade Marks",
+    body: "The architecture behind the Emperia automation ecosystem: a hub that stays deliberately simple, and sensor/relay modules that can be added independently without the hub needing to know in advance what they are. The claim is the extension model itself: modules that extend what the system can do without extending how complicated it is.",
   },
   {
     kind: "Research Paper",
+    entryDate: "IEEE format",
+    entryStatus: "Written up \u00b7 Manuscript",
     title:
       "Elevating Customer Engagement: The Role of Humanoid Robots as Receptionists",
-    meta: "IEEE-format manuscript",
-    authors:
-      "Piyush Khanna, Neha Shukla — Dept. of Computer Science, KIET Group of Institutions, Ghaziabad",
-    body: "A study of what actually changes when a humanoid robot takes a receptionist's seat in an educational institution. The paper looks at multithreaded interaction handling, semantic analysis of visitor intent, and what the authors call empathetic technology — the gap between a system that answers correctly and one that a person feels attended to by.",
+    subtitle:
+      "Piyush Khanna, Neha Shukla",
+    body: "A study of what actually changes when a humanoid robot takes a receptionist's seat in an educational institution. The paper looks at multithreaded interaction handling, semantic analysis of visitor intent, and what the authors call empathetic technology, meaning the gap between a system that answers correctly and one that a person feels attended to by.",
     keywords: [
       "Humanoid Robots",
       "Customer Engagement",
@@ -291,19 +293,19 @@ const publications = [
 const certificates = [
   {
     image: certOxyana,
-    title: "Oxyana — Oxygen Analyzer",
+    title: "Oxyana: Oxygen Analyzer",
     issuer: "MBS India · KIET Group of Institutions",
     date: "Aug – Sep 2022",
     blurb:
-      "Awarded for my work as Research Intern on the Oxyana oxygen analyzer, a ₹70,000 consultancy project with MBS India. This is the one I keep closest — it was the first time something I worked on was destined for a hospital rather than a demo table, and biomedical hardware forgives nothing.",
+      "Awarded for my work as Research Intern on the Oxyana oxygen analyzer, a ₹70,000 consultancy project with MBS India. This is the one I keep closest, because it was the first time something I worked on was destined for a hospital rather than a demo table, and biomedical hardware forgives nothing.",
   },
   {
     image: certGuvi,
-    title: "Guinness World Record — Participant",
+    title: "Guinness World Record: Participant",
     issuer: "GUVI, in association with AICTE & NEAT",
     date: "24–25 April 2021",
     blurb:
-      "Part of the Guinness World Record event for the most users taking an online computer programming lesson in 24 hours. Not a skill award — a reminder that scale is its own kind of engineering problem, and I was one data point inside a very large one.",
+      "Part of the Guinness World Record event for the most users taking an online computer programming lesson in 24 hours. Not a skill award, but a reminder that scale is its own kind of engineering problem, and I was one data point inside a very large one.",
   },
   {
     image: certIitkSecurity,
@@ -315,11 +317,11 @@ const certificates = [
   },
   {
     image: certWipro,
-    title: "Project Based Learning — TalentNext",
+    title: "Project Based Learning: TalentNext",
     issuer: "Wipro × KIET Group of Institutions",
     date: "May – Sep 2022",
     blurb:
-      "Wipro's Future Skills programme, run as project-based learning rather than lectures. Useful mostly for the habit it drilled in — scoping something to a deliverable before falling in love with the idea.",
+      "Wipro's Future Skills programme, run as project-based learning rather than lectures. Useful mostly for the habit it drilled in: scoping something to a deliverable before falling in love with the idea.",
   },
   {
     image: certRpa,
@@ -327,7 +329,7 @@ const certificates = [
     issuer: "Automation Anywhere University",
     date: "13 Sep 2022",
     blurb:
-      "The 'Empowering Your Workforce with RPA' learning trail. I took it expecting robotics and found process engineering instead — which turned out to be the more transferable half.",
+      "The 'Empowering Your Workforce with RPA' learning trail. I took it expecting robotics and found process engineering instead, which turned out to be the more transferable half.",
   },
   {
     image: certAlgoToolbox,
@@ -335,7 +337,7 @@ const certificates = [
     issuer: "UC San Diego & HSE University (Coursera)",
     date: "18 Jan 2022",
     blurb:
-      "The fundamentals course I wish I had taken earlier. Greedy, divide-and-conquer, dynamic programming — the vocabulary that lets you recognise a problem you have already solved in a different costume.",
+      "The fundamentals course I wish I had taken earlier. Greedy, divide-and-conquer, dynamic programming: the vocabulary that lets you recognise a problem you have already solved in a different costume.",
   },
   {
     image: certIntroAi,
@@ -347,11 +349,11 @@ const certificates = [
   },
   {
     image: certFlipkart,
-    title: "Flipkart GRiD 5.0 — Robotics Challenge",
+    title: "Flipkart GRiD 5.0: Robotics Challenge",
     issuer: "Flipkart",
     date: "Level 1 qualifier",
     blurb:
-      "Cleared Level 1 of Flipkart's national robotics challenge. A good calibration exercise — competing against teams outside your own college tells you quickly which of your strengths are real.",
+      "Cleared Level 1 of Flipkart's national robotics challenge. A good calibration exercise, because competing against teams outside your own college tells you quickly which of your strengths are real.",
   },
   {
     image: certTata,
@@ -426,7 +428,7 @@ const galleryPhotos = [
     image: galleryDtuTalk,
     title: "Innovating on a Budget",
     caption:
-      "The talk itself — 'Innovating on a Budget: Guide for Engineers'. Most of it was about constraint as a design input rather than an apology.",
+      "The talk itself, 'Innovating on a Budget: Guide for Engineers'. Most of it was about constraint as a design input rather than an apology.",
   },
   {
     image: galleryAnushkaRobot,
@@ -438,7 +440,7 @@ const galleryPhotos = [
     image: portfolioPhoto,
     title: "At the desk",
     caption:
-      "Where most of the actual work happens — considerably less photogenic than the robot, considerably more hours.",
+      "Where most of the actual work happens. Considerably less photogenic than the robot, considerably more hours.",
   },
   {
     image: profilePhoto,

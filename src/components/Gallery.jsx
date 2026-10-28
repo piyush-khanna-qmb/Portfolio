@@ -8,7 +8,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 import Lightbox from "./Lightbox";
 
 /**
- * Deliberate, hand-set spans rather than a uniform grid — a photo wall
+ * Deliberate, hand-set spans rather than a uniform grid, because a photo wall
  * should have rhythm. Index-based so the pattern survives reordering of
  * the data without the layout collapsing.
  */
@@ -44,7 +44,7 @@ const GalleryTile = ({ index, photo, onOpen }) => (
     />
 
     {/* Caption plate. The description collapses to zero height rather
-        than going transparent — otherwise it reserves space and pushes
+        than going transparent, because otherwise it reserves space and pushes
         the title up into the middle of the photo. */}
     <span className='absolute inset-x-0 bottom-0 p-3 sm:p-4 text-left bg-gradient-to-t from-black/85 via-black/45 to-transparent'>
       <span className='block text-white text-[13px] sm:text-[15px] font-semibold leading-tight'>
