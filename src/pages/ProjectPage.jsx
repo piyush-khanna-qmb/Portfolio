@@ -50,10 +50,6 @@ const projectPages = {
         body: "Whether she was the first live Durga robot in India is a claim I will not make flatly. Mechanised movement at pandals goes back decades, and robotic deities exist elsewhere. What I can say is narrower: neither we nor the organisers could find a prior instance of an articulated robotic Durga serving as the presiding idol rather than as a figure beside it. That is the distinction worth arguing about, and I would rather be accurate than impressive.",
       },
     ],
-    related: {
-      label: "I wrote about the theological problem in more detail",
-      to: "/thoughts/sunaina-live-durga-robot",
-    },
     links: [
       {
         label: "First look: Chakraberia Sarbojanin Durgotsab 2025",
@@ -90,10 +86,6 @@ const projectPages = {
         body: "Name a robot something abstract and someone has to stand beside it explaining how to interact. Name it DadaShree and an Indian visitor already has the protocol, because they know how to talk to a Dada. The name does the onboarding that would otherwise cost you software.",
       },
     ],
-    related: {
-      label: "The full argument for the naming",
-      to: "/thoughts/why-dadashree",
-    },
     links: [],
   },
 };

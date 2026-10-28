@@ -43,7 +43,7 @@ const Thoughts = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>The reasoning behind the work</p>
-        <h2 className={styles.sectionHeadText}>Why I Built It.</h2>
+        <h2 className={styles.sectionHeadText}>Why I Built What I Built.</h2>
       </motion.div>
 
       <motion.p

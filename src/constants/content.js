@@ -1,10 +1,4 @@
 import {
-  galleryAnushkaRss,
-  galleryAnushkaYogi,
-  piyushWithAnushka,
-  dtuChiefSpeaker,
-  portfolioPhoto,
-  profilePhoto,
   certOxyana,
   certIitkSecurity,
   certGuvi,
@@ -383,52 +377,5 @@ const certificates = [
   },
 ];
 
-/* ------------------------------------------------------------------ *
- * GALLERY
- * ------------------------------------------------------------------ */
-const galleryPhotos = [
-  {
-    image: piyushWithAnushka,
-    title: "Anushka with its creator",
-    caption:
-      "The Mechatronics lab, standing next to the thing that took a year and a half of my life. She is in a saree because we wanted her to read as Indian before she read as a robot.",
-  },
-  {
-    image: galleryAnushkaYogi,
-    title: "Anushka meets the Chief Minister",
-    caption:
-      "Anushka presented to Hon'ble Chief Minister Yogi Adityanath. Watching a machine you soldered together hold a room is a strange, excellent feeling.",
-  },
-  {
-    image: galleryAnushkaRss,
-    title: "Anushka Meets Dr. Atul Kothari",
-    caption:
-      "Presenting Anushka to Dr. Atul Kothari, chief secretary of SSUN, India. Demonstrations like this taught us more about her than any test we designed ourselves.",
-  },
-  {
-    image: dtuChiefSpeaker,
-    title: "Chief Speaker at DTU",
-    caption:
-      "Invited to Delhi Technological University as Chief Speaker on Mechatronics. First time I had been introduced as the person others came to hear rather than the student in the third row.",
-  },
-  {
-    image: portfolioPhoto,
-    title: "At the desk",
-    caption:
-      "Where most of the actual work happens. Considerably less photogenic than the robot, considerably more hours.",
-  },
-  {
-    image: profilePhoto,
-    title: "Off the clock",
-    caption:
-      "Somewhere in the Nilgiris, deliberately far from a terminal. The ideas that survive are usually the ones that followed me on a trip like this.",
-  },
-];
 
-export {
-  pressReleases,
-  pressSocial,
-  publications,
-  certificates,
-  galleryPhotos,
-};
+export { pressReleases, pressSocial, publications, certificates };

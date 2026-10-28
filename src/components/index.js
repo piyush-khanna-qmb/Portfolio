@@ -12,7 +12,6 @@ import Press from "./Press";
 import Thoughts from "./Thoughts";
 import Research from "./Research";
 import CertificateWall from "./CertificateWall";
-import Gallery from "./Gallery";
 import Lightbox from "./Lightbox";
 
 
@@ -34,6 +33,5 @@ export {
   Thoughts,
   Research,
   CertificateWall,
-  Gallery,
   Lightbox
 };

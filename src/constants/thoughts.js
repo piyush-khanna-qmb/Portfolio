@@ -13,10 +13,213 @@
  * "quote" (pull quote), "list" (bulleted list).
  * ------------------------------------------------------------------ */
 
+import {
+  galleryDtuTalk,
+  dtuChiefSpeaker,
+  galleryAnushkaYogi,
+  galleryAnushkaRss,
+  portfolioPhoto,
+  profilePhoto,
+  galleryTeamEmperia,
+} from "../assets";
+
 const thoughts = [
+
+  {
+    slug: "palangtodh-sprint",
+    title: "The Weird (and Dangerous) Culture of the Palangtodh Sprint",
+    dek: "Three days, two nights, no sleeping longer than thirty minutes, and a bucket of water if you tried. I would not recommend it. I would also do it again.",
+    date: "24 Oct 2026",
+    readingTime: "6 min",
+    body: [
+      {
+        type: "p",
+        text: "Team31 was not a club I started with friends. I had built Anushka on my own first, and afterwards I needed people who worked the way I did to carry that forward. So I interviewed across the entire college and filtered down from there. Everyone who made it was junior to me: some by a year, some by three, most by two. Seven of us in the end. We had a sprint format we called the Palangtodh Sprint. Palangtodh translates roughly as bed-breaking. The name was the warning label.",
+      },
+      {
+        type: "h",
+        text: "How it ran",
+      },
+      {
+        type: "p",
+        text: "I would tell the team to keep three days clear and be in the Robotics CoE lab. I picked the start day. A sprint ran three days and two nights, and the nights were the point. Everyone got a printed task list handed to them at the start, paper, not a ticket board, and that list had to be finished before the sprint ended.",
+      },
+      {
+        type: "p",
+        text: "My own job was two things: my share of the tasks, and keeping food and drink flowing without a gap. A sprint dies the moment someone leaves the room to find dinner.",
+      },
+      {
+        type: "p",
+        text: "There was one rule. Until your list was done you stayed awake. Sleep was permitted only on the bean bags and never more than thirty minutes at a stretch. Go past it and the rest of the team emptied a bucket of water over you.",
+      },
+      {
+        type: "image",
+        src: galleryTeamEmperia,
+        alt: "The team",
+        caption: "The people who signed up for this voluntarily, repeatedly.",
+      },
+      {
+        type: "h",
+        text: "Why it existed",
+      },
+      {
+        type: "p",
+        text: "This was not hazing for its own sake. I brought in freelance work through my own contacts and we would ship a real deliverable in three or four days, usually a full-scale web application. ShareLog came out of one of these: a ForEx and equities tracker covering stocks, F&O and notekeeping for intraday positions.",
+      },
+      {
+        type: "p",
+        text: "The money from the freelance paid for the tools and the food during the sprint, and the pool party afterwards. The sprint funded itself and then funded the celebration.",
+      },
+      {
+        type: "h",
+        text: "The honest accounting",
+      },
+      {
+        type: "p",
+        text: "The cost was real. Most of us needed three days afterwards to recover, and we looked like pandas for a week. I am not going to pretend this is a healthy way to build software, and I would not ask a team I was paid to manage to do it.",
+      },
+      {
+        type: "p",
+        text: "I genuinely do not know how much of it was seven young men running on testosterone and how much was the pull of building something new on a clock. Probably both.",
+      },
+      {
+        type: "quote",
+        text: "Not one person, ever, heard the next sprint was coming and did not light up.",
+      },
+      {
+        type: "p",
+        text: "That is the part I cannot explain away. We all knew exactly what it cost. We looked forward to it like mad dogs anyway.",
+      },
+    ],
+  },
+  {
+    slug: "all-work-no-play",
+    title: "All Work and No Play Makes Man a Machine...?",
+    dek: "Hustle culture sells you a sprint toward retiring at thirty. I think that is a strange thing to want: a life whose only goal is to stop, sooner and faster.",
+    date: "20 Oct 2026",
+    readingTime: "6 min",
+    body: [
+      {
+        type: "p",
+        text: "Somewhere in my second year of college I picked up the phrase hustle culture. The pitch is simple: lock in, work unreasonably hard and fast, retire in your thirties.",
+      },
+      {
+        type: "p",
+        text: "I have two questions about that, and neither is rhetorical.",
+      },
+      {
+        type: "quote",
+        text: "Do you really want to sprint through a vocation you are trying to be finished with? Is a life worth living if its only aim is to stop working?",
+      },
+      {
+        type: "image",
+        src: profilePhoto,
+        size: "half",
+        alt: "Piyush Khanna in Munnar, Kerala",
+        caption: "Munnar, Kerala.",
+      },
+      {
+        type: "p",
+        text: "That photograph is from Munnar. I spent seven days in Kerala with my parents, a gift for their twenty-fifth anniversary, paid for out of what I had earned from work.",
+      },
+      {
+        type: "p",
+        text: "I mention it because it is the clearest example I have of what I think the money is actually for. You do not earn in order to survive, and you do not earn in order to accumulate. You earn for the quiet of having put people somewhere they would not otherwise have been, together. That is the return I care about.",
+      },
+      {
+        type: "h",
+        text: "The obvious objection",
+      },
+      {
+        type: "p",
+        text: "You could reasonably point at the Palangtodh Sprint and ask what I am talking about. Three days without sleep is not exactly balance.",
+      },
+      {
+        type: "p",
+        text: "But the aim was never to get the sprint over with. The kick of being inside it was the whole reason we did it. We moved fast so we could reach the next one, not so we could be done with projects for good. That is a different thing from grinding toward an exit.",
+      },
+      {
+        type: "p",
+        text: "There is a saying where I am from: khaali dimaag shaitan ka ghar. An idle mind is the devil's workshop. It is usually said to children as a warning against boredom, and I think it is half right. Idleness is corrosive. But the cure is work you want to be inside, not work you are racing to escape.",
+      },
+      {
+        type: "h",
+        text: "Why I think life is like mathematics",
+      },
+      {
+        type: "p",
+        text: "Mathematics is the language the universe is written in, and it has a property I keep noticing: every chapter turns out to be a tool for the next one.",
+      },
+      {
+        type: "p",
+        text: "As a child I thought sums and differences were all there was. Then multiplication arrived and proved me wrong. Then it became clear that arithmetic was really there to let you do algebra. Then algebra turned out to be a tool for geometry. Geometry became a tool for trigonometry.",
+      },
+      {
+        type: "p",
+        text: "When trigonometry showed up I finally thought: this is it, this is the peak, everything so far was practice for this. I was wrong again. The further you go, the more obvious it becomes that every concept is scaffolding for a larger one, and there is no final chapter where the tools stop being tools.",
+      },
+      {
+        type: "p",
+        text: "Life reads the same way. Every project, every decision, every stretch of work is a stepping stone, or more precisely a tool, for becoming a better version of yourself. Which is exactly why optimising for the moment the work stops is the wrong objective. There is no last chapter. There is only the next tool.",
+      },
+    ],
+  },
+  {
+    slug: "guest-lecture-at-dtu",
+    title: "Why DTU Invited a Third-Year to Lecture",
+    dek: "I was still an undergraduate when Delhi Technological University asked me to speak on Mechatronics as Chief Speaker. Here is what I think they were actually buying.",
+    date: "12 Oct 2026",
+    readingTime: "4 min",
+    body: [
+      {
+        type: "p",
+        text: "Delhi Technological University invited me to deliver a guest lecture on Mechatronics as Chief Speaker while I was still a third-year undergraduate. That is not the usual profile for the slot, and the obvious question is why.",
+      },
+      {
+        type: "image",
+        src: dtuChiefSpeaker,
+        alt: "Piyush Khanna speaking at DTU",
+        caption: "At the lectern at DTU, still an undergraduate.",
+      },
+      {
+        type: "h",
+        text: "What I was actually asked to talk about",
+      },
+      {
+        type: "p",
+        text: "The talk was titled Innovating on a Budget: A Guide for Engineers. Not a survey of humanoid robotics, not a research presentation. A talk about constraint.",
+      },
+      {
+        type: "image",
+        src: galleryDtuTalk,
+        alt: "The title slide: Innovating on a Budget, Guide for Engineers",
+        caption: "The actual subject. Constraint as a design input rather than an apology.",
+      },
+      {
+        type: "p",
+        text: "That framing is the answer to the question. A professor can teach Mechatronics far better than I can. What a department cannot easily supply is somebody who recently built a working humanoid without the budget to do it properly, and who still remembers which corners were safe to cut.",
+      },
+      {
+        type: "h",
+        text: "Constraint is not an apology",
+      },
+      {
+        type: "p",
+        text: "Most of the talk argued one point: a tight budget is a design input, not an excuse you attach to the result. Anushka was assembled largely from salvaged parts, and almost every interesting decision in her came directly from not being able to buy the obvious component.",
+      },
+      {
+        type: "p",
+        text: "Students do not need to be told that money helps. They need to see that the constraint itself can be the thing that makes a design specific rather than generic.",
+      },
+      {
+        type: "p",
+        text: "I suspect that is why a third-year was standing there. Not seniority, and not expertise. Proximity to the problem.",
+      },
+    ],
+  },
   {
     slug: "who-is-ganpat",
-    title: "Who is Ganpat?",
+    title: "Who Is Ganpat?",
     dek: "I named my assistant after the god you invoke before beginning anything, and then had to build something that earned the name.",
     date: "18 Oct 2026",
     readingTime: "5 min",
@@ -84,150 +287,8 @@ const thoughts = [
     ],
   },
   {
-    slug: "sunaina-live-durga-robot",
-    title: "Is Sunaina the first and only live Durga Mata robot of India?",
-    dek: "A question I get asked a lot, answered honestly, including the parts I cannot verify, and the theological problem nobody warned me about.",
-    date: "05 Oct 2026",
-    readingTime: "6 min",
-    body: [
-      {
-        type: "p",
-        text: "During Durga Puja 2025, a robotic Durga stood as the presiding figure at Chakraberia Sarbojanin Durgotsab in Kolkata. Her name is Sunaina. She moved, she held the gaze of the people in front of her, and for five days lakhs of people did darshan of a machine.",
-      },
-      {
-        type: "p",
-        text: "The question I get asked, constantly, is whether she was the first. I want to answer that carefully, because it is the kind of claim that is very easy to make and very hard to withdraw.",
-      },
-      { type: "h", text: "What is definitely not new" },
-      {
-        type: "p",
-        text: "Mechanised movement at a Durga Puja pandal is not new and it is not rare. Kolkata's pandal culture is fiercely competitive and deeply technical. Moving tableaux, animatronic side-figures, hydraulic set pieces, elaborate chalchitra with motorised elements have all been around for decades. Any claim that begins with 'the first moving thing at a pandal' is simply wrong.",
-      },
-      {
-        type: "p",
-        text: "Robotic and animatronic deities more broadly also exist. Temples in Japan have an android Kannon. There have been mechanised Ganesha tableaux in Maharashtra. So 'first robot deity' is also wrong.",
-      },
-      { type: "h", text: "What I think is actually distinct" },
-      {
-        type: "p",
-        text: "The distinction is narrower and, I think, real. In almost every prior case the machine is adjacent to the worship: a side figure, an animated scene, a tableau beside the idol. The idol itself remains an idol.",
-      },
-      {
-        type: "quote",
-        text: "Sunaina was not a robot next to the Durga. She was the Durga.",
-      },
-      {
-        type: "p",
-        text: "She occupied the position of the presiding deity. The puja was performed before her. That is a different thing from an animatronic set piece, and as far as I and the organisers were able to establish, we could not find a prior instance of an articulated robotic Durga serving as the presiding idol of a Durga Puja.",
-      },
-      {
-        type: "p",
-        text: "I want to be precise about the epistemics there: 'we could not find a prior instance' is not the same sentence as 'there has never been one'. India is large, Durga Puja is enormous, and most pandals do not publish technical documentation. I am comfortable saying she is the first I am aware of. I am not comfortable saying she is the first, full stop, and I would rather be accurate than impressive.",
-      },
-      { type: "h", text: "The problem nobody warned me about" },
-      {
-        type: "p",
-        text: "The engineering was the easy half. The hard half was theological, and I did not see it coming.",
-      },
-      {
-        type: "p",
-        text: "In the normal sequence, an idol is clay until pran pratishtha, the rite that invites the deity to be present in the form. The form is inert; the life is invoked into it. Everyone involved understands which part is which.",
-      },
-      {
-        type: "p",
-        text: "Now build a form that moves on its own. The clean separation stops being clean. If the idol is already moving before the rite, what exactly is the rite doing? I had engineered my way into a question that priests, not engineers, are equipped to answer.",
-      },
-      {
-        type: "p",
-        text: "The answer I was given, and which I have thought about a great deal since, was roughly this: the motion is not the life. A fan moves and is not alive. What pran pratishtha invites is not movement but presence, and those were never the same category. The machine's motion is decoration on the form, no more alive than a painted eye.",
-      },
-      {
-        type: "p",
-        text: "That reframing was more rigorous than most engineering reviews I have sat in. It also settled the thing properly, rather than by avoidance.",
-      },
-      { type: "h", text: "What she was received as" },
-      {
-        type: "p",
-        text: "The pandal placed in UltraTech's top seven that year, and the coverage ran on ABP Ananda and Pratidin among others. But the response I keep returning to was not the press.",
-      },
-      {
-        type: "p",
-        text: "It was watching older women, the demographic I had privately assumed would be most uneasy, fold their hands in front of her without hesitating. They were not evaluating a robot. They had come for darshan and darshan is what they did. The machinery was my problem, not theirs.",
-      },
-    ],
-  },
-  {
-    slug: "why-dadashree",
-    title: "Why a robot named DadaShree",
-    dek: "Sophia, Ameca, Atlas. Western robots get names that imply a peer or an abstraction. I wanted one that told you where to stand.",
-    date: "21 Sep 2026",
-    readingTime: "4 min",
-    body: [
-      {
-        type: "p",
-        text: "When we named the robot DadaShree, I was asked more than once whether it was a joke. It is not. It is the most deliberate decision in the entire project, and it was made before a single bracket was machined.",
-      },
-      { type: "h", text: "What names do" },
-      {
-        type: "p",
-        text: "A name is a user manual that people read without noticing. Before a person has seen a robot move, the name has already told them how to behave around it.",
-      },
-      {
-        type: "p",
-        text: "Look at what the standard names do. Sophia: wisdom, abstract, Greek, deliberately placeless. Ameca: invented, neutral, built to mean nothing. Atlas: a titan holding up the world, which is a statement about capability. These are good names. But they all do the same thing: they position the robot as either an abstraction or a peer.",
-      },
-      {
-        type: "p",
-        text: "That works in contexts where the default relationship between a person and a machine is transactional. You operate it. It serves you. The name does not need to describe a relationship because there is barely one.",
-      },
-      { type: "h", text: "Relationship words do the work here" },
-      {
-        type: "p",
-        text: "India does not work like that. Here, the first thing you establish with a stranger is not their name or their title. It is their relational position. Bhaiya, didi, uncle, aunty, dada, sir. We assign a kinship slot almost immediately, and once assigned, everything else follows from it: how you speak, how close you stand, whether you argue.",
-      },
-      {
-        type: "quote",
-        text: "We do not address people by what they do. We address them by who they are to us.",
-      },
-      {
-        type: "p",
-        text: "Dada is elder brother. Shree is the honorific. Together: respected elder brother. Someone slightly senior to you. Someone you defer to a little, approach without fear, and can ask for help without it costing you anything.",
-      },
-      {
-        type: "p",
-        text: "That is precisely the posture I wanted a person to have in front of this machine. Not the wariness you bring to equipment. Not the condescension you bring to a toy. The specific, comfortable, mildly respectful stance you take with an elder in the family.",
-      },
-      { type: "h", text: "The same logic, three ways" },
-      {
-        type: "p",
-        text: "You can see the thinking repeated across the robots I have worked on, and the names map directly onto roles:",
-      },
-      {
-        type: "list",
-        items: [
-          "Anushka: an ordinary, contemporary, peer-level name. She is a receptionist. You should feel comfortable approaching her and mildly impatient if she is slow, exactly as you would with a person at a desk.",
-          "Sunaina: 'one with beautiful eyes'. A name that points at the face, because in that deployment the face and the gaze were the entire function.",
-          "DadaShree: a relational title rather than a personal name. You are not meant to think of him as an individual you have met. You are meant to know where he sits relative to you.",
-        ],
-      },
-      { type: "h", text: "The test" },
-      {
-        type: "p",
-        text: "The measure of whether this worked is simple: does a first-time visitor need to be told how to interact? With a robot named something abstract, someone always has to stand beside it and explain. The name has given the visitor nothing to go on.",
-      },
-      {
-        type: "p",
-        text: "Name it DadaShree and an Indian visitor has already been handed the protocol. They know how to talk to a Dada. Nobody has to explain anything. The name did the onboarding.",
-      },
-      {
-        type: "p",
-        text: "That is a cheaper and more reliable interface than anything I could have built in software.",
-      },
-    ],
-  },
-  {
     slug: "four-stages-of-engineering",
-    title: "The four stages of engineering",
+    title: "The 4 Domains of Robotics Engineering, and My Views On Each",
     dek: "Mechanical, electrical, electronics, software, in that order, each standing on the one below. Which is why your software bug is usually a loose screw.",
     date: "02 Sep 2026",
     readingTime: "5 min",
@@ -290,6 +351,13 @@ const thoughts = [
         text: "It is slower to start and dramatically faster to finish. The instinct to debug where the error appeared is the single most expensive habit in this field.",
       },
       {
+        type: "image",
+        src: portfolioPhoto,
+        size: "half",
+        alt: "Piyush Khanna at his desk",
+        caption: "Where the top layer gets debugged. The bottom three usually need a spanner.",
+      },
+      {
         type: "p",
         text: "Or, the version I say out loud more often: you cannot write your way out of a loose screw.",
       },
@@ -297,14 +365,61 @@ const thoughts = [
   },
   {
     slug: "vedic-mind-inside-anushka",
-    title: "The Vedic mind inside Anushka",
-    dek: "Chitta, Manas, Ahankaram, Buddhi. Why a 3,000-year-old model of the mind turned out to be a usable software architecture.",
+    title: "How (and Why) Would a Robot Have a 'Vedic' Mind",
+    dek: "Chitta, Manas, Ahankaram, Buddhi. It started with me trying to work out how my own mind worked, which turns out to be a strange thing to attempt with the mind in question.",
     date: "14 Aug 2026",
     readingTime: "7 min",
     body: [
       {
         type: "p",
         text: "Anushka is usually described in the press as India's first Vedic-principled humanoid robot. It is a good line and it has carried the project a long way, but it is also the kind of phrase that sounds like marketing. I want to explain what it actually means in code, because the engineering reason was real and came first.",
+      },
+      { type: "h", text: "First, what 'Vedic' actually means here" },
+      {
+        type: "p",
+        text: "The Vedas are the oldest layer of Sanskrit scripture, and the philosophical tradition that grew out of them spent a very long time on one question: what is a mind made of. I use Vedic loosely here, the way it is usually used in conversation, to mean that Indic tradition of thinking about consciousness rather than a specific verse in a specific text. The particular model I borrowed, the antahkarana or inner instrument, is set out most clearly in the Vedantic and Samkhya material that came later.",
+      },
+      {
+        type: "p",
+        text: "So it is not scripture in a robot. It is a decomposition of mind, worked out over centuries by people who had nothing to study except their own attention, applied to a scheduling problem.",
+      },
+      { type: "h", text: "Where this actually started" },
+      {
+        type: "p",
+        text: "This did not begin with Anushka. It began in my second year, before ChatGPT existed and before any of this was a conversation anyone was having casually. I was a curious student who wanted to build a system that could think, and I had no idea what that sentence even meant.",
+      },
+      {
+        type: "p",
+        text: "So I went backwards. I dug out the books I had read between seventh and twelfth standard on psychology, how the brain works, consciousness, and what actually drives a person to act. Not because I expected a blueprint, but because I had nowhere else to look.",
+      },
+      {
+        type: "p",
+        text: "The problem was never perception. I had been comfortable with computer vision and NLP since twelfth standard, and a system that sees or hears is a solved exercise. The problem was making those faculties coexist without tripping over each other.",
+      },
+      {
+        type: "list",
+        items: [
+          "The hearing system has to mindfully ignore the robot's own voice. Otherwise she hears herself speak, treats it as input, and starts answering herself.",
+          "The microcontrollers in the hand have no way of knowing whether the arm is rising to wave at someone she recognises or because a speech command told it to. Those are different intentions behind an identical movement.",
+          "And the harder question underneath that one: does the arm need to know? Which layer is supposed to hold the intent, and which layers are allowed to stay ignorant?",
+        ],
+      },
+      {
+        type: "p",
+        text: "That last question is the one that sent me looking for a model rather than writing more rules.",
+      },
+      { type: "h", text: "Hacking your own system" },
+      {
+        type: "p",
+        text: "To design an artificial brain I first had to understand how a real one works, so I could copy it. And there is something genuinely strange about that task: it was my brain, trying to account for everything it does and why it does it.",
+      },
+      {
+        type: "quote",
+        text: "It is like trying to hack a system while running inside it, using the only instrument you are trying to reverse engineer.",
+      },
+      {
+        type: "p",
+        text: "You cannot step outside it to get a clean look. Every observation you make about your own attention is itself an act of attention. That is the point at which I stopped trying to derive the thing from scratch and went looking for people who had already spent centuries on exactly this, with exactly the same handicap.",
       },
       { type: "h", text: "The problem with the standard loop" },
       {
@@ -322,7 +437,7 @@ const thoughts = [
       { type: "h", text: "Four terms that turned out to be an architecture" },
       {
         type: "p",
-        text: "The Vedic model of the inner instrument, the antahkarana, splits mind into four functions rather than treating it as one thing. We researched the structure and found that it mapped onto our problem with uncomfortable precision.",
+        text: "The Vedic model of the inner instrument, the antahkarana, splits mind into four functions rather than treating it as one thing. I researched the structure and found that it mapped onto my problem with uncomfortable precision.",
       },
       {
         type: "list",
@@ -335,7 +450,7 @@ const thoughts = [
       },
       {
         type: "p",
-        text: "Read that list as a systems engineer rather than a philosopher and it stops being metaphysics. It is a four-stage attention pipeline with a memory store and an explicit relevance filter, which is exactly the thing we needed and had failed to design on our own.",
+        text: "Read that list as a systems engineer rather than a philosopher and it stops being metaphysics. It is a four-stage attention pipeline with a memory store and an explicit relevance filter, which is exactly the thing I needed and had failed to design on my own.",
       },
       { type: "h", text: "How it maps in the system" },
       {
@@ -356,7 +471,7 @@ const thoughts = [
       },
       {
         type: "p",
-        text: "Buddhi is the decision layer, and it sits on top of BOSS, the Bot Operations Scheduling System we wrote to run her. It takes what Manas registered, what Chitta knows, and what Ahankara flagged as self-relevant, and commits to one action. It is the only layer permitted to commit. That restriction is the whole point.",
+        text: "Buddhi is the decision layer, and it sits on top of BOSS, the Bot Operations Scheduling System I wrote to run her. It takes what Manas registered, what Chitta knows, and what Ahankara flagged as self-relevant, and commits to one action. It is the only layer permitted to commit. That restriction is the whole point.",
       },
       { type: "h", text: "Why not just build it directly" },
       {
@@ -365,7 +480,19 @@ const thoughts = [
       },
       {
         type: "p",
-        text: "Possibly. But we did not design it from first principles. We tried, and what we produced was a flat loop with rules bolted on, because that is what you naturally produce when you are deep in the problem. The model gave us a decomposition that was already worked out, already load-bearing, and (this is the part I did not expect) already stress-tested against exactly our failure mode. The distinction between registering and committing is not an obvious design insight. It is the first thing this model insists on.",
+        text: "Possibly. But I did not design it from first principles. I tried, and what I produced was a flat loop with rules bolted on, because that is what you naturally produce when you are deep in the problem. The model gave me a decomposition that was already worked out, already load-bearing, and (this is the part I did not expect) already stress-tested against exactly my failure mode. The distinction between registering and committing is not an obvious design insight. It is the first thing this model insists on.",
+      },
+      {
+        type: "image",
+        src: galleryAnushkaYogi,
+        alt: "Anushka presented to Chief Minister Yogi Adityanath",
+        caption: "Anushka presented to Hon'ble Chief Minister Yogi Adityanath.",
+      },
+      {
+        type: "image",
+        src: galleryAnushkaRss,
+        alt: "Anushka presented to Dr. Atul Kothari",
+        caption: "With Dr. Atul Kothari, chief secretary of SSUN, India. The questions strangers asked taught me more about her than my own tests did.",
       },
       {
         type: "p",

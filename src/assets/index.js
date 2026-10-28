@@ -85,6 +85,7 @@ import profilePhoto from "./gallery/profile.jpg";
 import galleryAnushkaRss from "./gallery/anushka-with-rss.jpg";
 import galleryAnushkaYogi from "./gallery/anushka-with-yogi.jpg";
 import galleryDtuTalk from "./gallery/dtu-innovating-on-a-budget.jpg";
+import galleryTeamEmperia from "./gallery/team-emperia.jpg";
 
 import certOxyana from "./Certificates/oxyana-research-intern.jpg";
 import certIitkSecurity from "./Certificates/iitk-computer-system-security.jpg";
@@ -108,6 +109,7 @@ export {
   galleryAnushkaRss,
   galleryAnushkaYogi,
   galleryDtuTalk,
+  galleryTeamEmperia,
   certOxyana,
   certIitkSecurity,
   certGuvi,

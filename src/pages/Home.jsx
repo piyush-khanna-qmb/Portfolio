@@ -13,7 +13,6 @@ import {
   Thoughts,
   Research,
   CertificateWall,
-  Gallery,
 } from "../components";
 
 const Home = () => (
@@ -34,7 +33,6 @@ const Home = () => (
     <Thoughts />
     <Press />
     <CertificateWall />
-    <Gallery />
 
     <div className='relative z-0'>
       <Contact />

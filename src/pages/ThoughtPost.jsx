@@ -7,6 +7,29 @@ import PageShell from "./PageShell";
 
 const Block = ({ block }) => {
   switch (block.type) {
+    case "image":
+      return (
+        /* `size: "half"` keeps a portrait or incidental shot from taking
+           over the column. Full width stays the default. */
+        <figure
+          className={`my-10 ${
+            block.size === "half" ? "max-w-[50%] sm:max-w-[48%]" : ""
+          }`}
+        >
+          <img
+            src={block.src}
+            alt={block.alt || ""}
+            loading='lazy'
+            className='w-full rounded-[18px] border border-[#915EFF]/20 shadow-card'
+          />
+          {block.caption && (
+            <figcaption className='mt-3 text-secondary/80 text-[13.5px] leading-[22px]'>
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+
     case "h":
       return (
         <h2 className='text-white font-bold text-[22px] sm:text-[26px] leading-[34px] mt-12 mb-1'>

@@ -181,7 +181,7 @@ const projects = [
   {
     name: "Emperia Omni",
     description:
-      "A mobile device automation tool that takes plain natural language and translates it into native Android code (Swift to follow) to automate your phone. Think IFTTT or Tasker, but with an LLM doing the hard part.",
+      "A mobile device automation tool that takes plain natural language and translates it into native Android code (Swift to follow) to automate your phone. IFTTT or Tasker, but on steroids, with an LLM doing the hard part.",
     tags: [
       { name: "LLM", color: "blue-text-gradient" },
       { name: "Android", color: "green-text-gradient" },
@@ -308,6 +308,5 @@ export {
   pressSocial,
   publications,
   certificates,
-  galleryPhotos,
 } from "./content";
 export { thoughts } from "./thoughts";
