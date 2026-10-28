@@ -3,7 +3,6 @@ import React from "react";
 import {
   Contact,
   Experience,
-  Feedbacks,
   Hero,
   Navbar,
   Tech,
@@ -34,7 +33,6 @@ const Home = () => (
     <Research />
     <Thoughts />
     <Press />
-    <Feedbacks />
     <CertificateWall />
     <Gallery />
 

@@ -82,7 +82,6 @@ import piyushWithAnushka from "./gallery/piyush-with-anushka.jpg";
 import dtuChiefSpeaker from "./gallery/dtu-chief-speaker.jpg";
 import profilePhoto from "./gallery/profile.jpg";
 
-import galleryAnushkaRobot from "./gallery/anushka-robot.jpg";
 import galleryAnushkaRss from "./gallery/anushka-with-rss.jpg";
 import galleryAnushkaYogi from "./gallery/anushka-with-yogi.jpg";
 import galleryDtuTalk from "./gallery/dtu-innovating-on-a-budget.jpg";
@@ -106,7 +105,6 @@ export {
   piyushWithAnushka,
   dtuChiefSpeaker,
   profilePhoto,
-  galleryAnushkaRobot,
   galleryAnushkaRss,
   galleryAnushkaYogi,
   galleryDtuTalk,

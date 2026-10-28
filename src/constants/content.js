@@ -1,8 +1,6 @@
 import {
-  galleryAnushkaRobot,
   galleryAnushkaRss,
   galleryAnushkaYogi,
-  galleryDtuTalk,
   piyushWithAnushka,
   dtuChiefSpeaker,
   portfolioPhoto,
@@ -29,6 +27,8 @@ import {
  * URL. Nothing here is invented.
  * ------------------------------------------------------------------ */
 const pressReleases = [
+
+
   {
     outlet: "Tycoon World",
     title:
@@ -36,33 +36,6 @@ const pressReleases = [
     blurb:
       "A profile piece on the thinking behind Anushka, and why a humanoid built in India should model the mind the way Indian philosophy already does.",
     url: "https://tycoonworld.in/young-visionary-piyush-khanna-unveils-anushka-indias-first-vedic-principled-humanoid-robot-redefining-the-future-of-human-robot-interaction/",
-    featured: true,
-  },
-  {
-    outlet: "Medium",
-    title:
-      "Young Visionary Piyush Khanna Unveils Anushka, India's First Vedic-Principled Humanoid Robot",
-    blurb:
-      "The long-form version of the Tycoon World profile, covering the Vedic architecture behind Anushka's decision-making.",
-    url: "https://medium.com/@tycoonworld.in/young-visionary-piyush-khanna-unveils-anushka-indias-first-vedic-principled-humanoid-robot-b82cbfa4595a",
-    featured: true,
-  },
-  {
-    outlet: "The Indian Express",
-    title: "Meeting Anushka, a low-budget humanoid robot",
-    blurb:
-      "National coverage of how a student team built a working humanoid on frugal, largely salvaged hardware.",
-    url: "https://indianexpress.com/article/technology/tech-news-technology/meeting-anushka-humanoid-robot-low-budget-frugal-tech-9507520/",
-    featured: true,
-  },
-  {
-    outlet: "Mint",
-    title:
-      "AI humanoid robots: Anushka, Sophia, Vyommitra and the state of Indian robotics",
-    blurb:
-      "Anushka placed alongside Sophia and Vyommitra in a survey of where humanoid robotics stands in India.",
-    url: "https://www.livemint.com/technology/ai-humanoid-robots-anushka-sophia-vyommitra-robotics-vinayak-boston-dynamics-brain-computer-interface-11724904446613.html",
-    date: "Aug 2024",
     featured: true,
   },
   {
@@ -74,26 +47,67 @@ const pressReleases = [
     featured: true,
   },
   {
+    outlet: "Dainik Bhaskar",
+    title: "Anushka, the robot whose heart beats",
+    url: "https://www.bhaskar.com/local/uttar-pradesh/ghaziabad/news/anushkaa-robot-whose-heart-beats-132765604.html",
+    language: "Hindi",
+    featured: true,
+  },
+  {
+    outlet: "Amar Ujala",
+    title:
+      "Anushka, a humanoid robot built from waste material by Piyush Khanna's team",
+    url: "https://www.amarujala.com/delhi-ncr/ghaziabad/kite-collage-students-create-their-first-humanoid-robot-anushka-from-waste-material-2024-03-23",
+    date: "Mar 2024",
+    language: "Hindi",
+    featured: true,
+  },
+  {
+    outlet: "ShiftDelete",
+    title: "Humanoid robot with a beating heart that knows 61 languages",
+    blurb:
+      "Turkish tech press on the two details that travelled furthest: the simulated heartbeat and the language range.",
+    url: "https://en.shiftdelete.net/humanoid-robot-with-a-beating-heart-it-knows-61-languages/",
+    language: "Turkey",
+    featured: true,
+  },
+  {
+    outlet: "IT Business",
+    title: "Dobogó szívű robot Indiából",
+    blurb:
+      "Hungarian coverage of a humanoid built in India on a fraction of the usual budget.",
+    url: "https://itbusiness.hu/technology/gadget/dobogo-szivu-robot-indiabol/",
+    language: "Hungary",
+    featured: true,
+  },
+  {
+    outlet: "The Indian Express",
+    title: "Meeting Anushka, a low-budget humanoid robot",
+    blurb:
+      "National coverage of how a student team built a working humanoid on frugal, largely salvaged hardware.",
+    url: "https://indianexpress.com/article/technology/tech-news-technology/meeting-anushka-humanoid-robot-low-budget-frugal-tech-9507520/",
+  },
+  {
+    outlet: "Mint",
+    title:
+      "AI humanoid robots: Anushka, Sophia, Vyommitra and the state of Indian robotics",
+    blurb:
+      "Anushka placed alongside Sophia and Vyommitra in a survey of where humanoid robotics stands in India.",
+    url: "https://www.livemint.com/technology/ai-humanoid-robots-anushka-sophia-vyommitra-robotics-vinayak-boston-dynamics-brain-computer-interface-11724904446613.html",
+    date: "Aug 2024",
+  },
+  {
     outlet: "Supercar Blondie",
     title: "Students build humanoid robot with a beating heart",
     blurb:
       "International pickup of the detail that made Anushka travel furthest: a mechanically simulated heartbeat.",
     url: "https://supercarblondie.com/students-build-humanoid-robot-beating-heart/",
-    featured: true,
   },
   {
     outlet: "UNILAD Tech",
     title: "Students build robot with beating heart",
     url: "https://www.uniladtech.com/news/ai/students-build-robot-with-beating-heart-402592-20240819",
     date: "Aug 2024",
-  },
-  {
-    outlet: "Amar Ujala",
-    title:
-      "KIET students create their first humanoid robot Anushka from waste material",
-    url: "https://www.amarujala.com/delhi-ncr/ghaziabad/kite-collage-students-create-their-first-humanoid-robot-anushka-from-waste-material-2024-03-23",
-    date: "Mar 2024",
-    language: "Hindi",
   },
   {
     outlet: "News18 Hindi",
@@ -103,19 +117,13 @@ const pressReleases = [
     language: "Hindi",
   },
   {
-    outlet: "Dainik Bhaskar",
-    title: "Anushka, the robot whose heart beats",
-    url: "https://www.bhaskar.com/local/uttar-pradesh/ghaziabad/news/anushkaa-robot-whose-heart-beats-132765604.html",
-    language: "Hindi",
-  },
-  {
     outlet: "Tricity Today",
-    title: "KIET college students invent heart-beating robot in Ghaziabad",
+    title: "A humanoid robot with a beating heart, invented in Ghaziabad",
     url: "https://tricitytoday.com/ghaziabad/kite-college-students-invented-heart-beating-robot-in-ghaziabad-53475.html",
   },
   {
     outlet: "Channel iam",
-    title: "Anushka, the humanoid robot from KIET Ghaziabad",
+    title: "Anushka, the humanoid robot from Ghaziabad",
     url: "https://en.channeliam.com/2024/08/12/anushka-humanoid-robot-kiet-ghaziabad/",
     date: "Aug 2024",
   },
@@ -136,16 +144,12 @@ const pressReleases = [
     url: "https://www.asianetnews.com/technology/watch-anushka-2-lakh-costs-humanoid-robot-built-by-students-in-india-si3933",
   },
   {
-    outlet: "ShiftDelete",
-    title: "Humanoid robot with a beating heart that knows 61 languages",
-    url: "https://en.shiftdelete.net/humanoid-robot-with-a-beating-heart-it-knows-61-languages/",
-    language: "Turkey",
-  },
-  {
-    outlet: "IT Business",
-    title: "Dobogó szívű robot Indiából",
-    url: "https://itbusiness.hu/technology/gadget/dobogo-szivu-robot-indiabol/",
-    language: "Hungary",
+    outlet: "Medium",
+    title:
+      "Young Visionary Piyush Khanna Unveils Anushka, India's First Vedic-Principled Humanoid Robot",
+    blurb:
+      "The long-form version of the Tycoon World profile, covering the Vedic architecture behind Anushka's decision-making.",
+    url: "https://medium.com/@tycoonworld.in/young-visionary-piyush-khanna-unveils-anushka-indias-first-vedic-principled-humanoid-robot-b82cbfa4595a",
   },
   {
     outlet: "Business Tech Africa",
@@ -167,7 +171,7 @@ const pressReleases = [
   },
   {
     outlet: "Zollege",
-    title: "KIET officially unveils its first-ever humanoid robot, Anushka",
+    title: "Anushka, a first-of-its-kind humanoid robot, officially unveiled",
     url: "https://zollege.in/news/c-173359-kiet-officially-unveils-its-first-ever-humanoid-robot-anushka",
   },
   {
@@ -177,7 +181,7 @@ const pressReleases = [
   },
   {
     outlet: "Shah Times",
-    title: "Anushka: KIET college unveils its first humanoid robot",
+    title: "Anushka: a first humanoid robot unveiled in Ghaziabad",
     url: "https://www.shahtimesnews.com/anushka-kite-college-unveils-its-first-humanoid-robot/",
   },
   {
@@ -293,7 +297,7 @@ const certificates = [
   {
     image: certOxyana,
     title: "Oxyana: Oxygen Analyzer",
-    issuer: "MBS India · KIET Group of Institutions",
+    issuer: "MBS India",
     date: "Aug – Sep 2022",
     blurb:
       "Awarded for my work as Research Intern on the Oxyana oxygen analyzer, a ₹70,000 consultancy project with MBS India. This is the one I keep closest, because it was the first time something I worked on was destined for a hospital rather than a demo table, and biomedical hardware forgives nothing.",
@@ -385,9 +389,9 @@ const certificates = [
 const galleryPhotos = [
   {
     image: piyushWithAnushka,
-    title: "With Anushka",
+    title: "Anushka with its creator",
     caption:
-      "The Mechatronics lab at KIET, standing next to the thing that took a year and a half of my life. She is in a saree because we wanted her to read as Indian before she read as a robot.",
+      "The Mechatronics lab, standing next to the thing that took a year and a half of my life. She is in a saree because we wanted her to read as Indian before she read as a robot.",
   },
   {
     image: galleryAnushkaYogi,
@@ -397,27 +401,15 @@ const galleryPhotos = [
   },
   {
     image: galleryAnushkaRss,
-    title: "A wider audience",
+    title: "Anushka Meets Dr. Atul Kothari",
     caption:
-      "One of many demonstrations during the months after launch. We learned more about Anushka from strangers' questions than from any test we designed ourselves.",
+      "Presenting Anushka to Dr. Atul Kothari, chief secretary of SSUN, India. Demonstrations like this taught us more about her than any test we designed ourselves.",
   },
   {
     image: dtuChiefSpeaker,
     title: "Chief Speaker at DTU",
     caption:
       "Invited to Delhi Technological University as Chief Speaker on Mechatronics. First time I had been introduced as the person others came to hear rather than the student in the third row.",
-  },
-  {
-    image: galleryDtuTalk,
-    title: "Innovating on a Budget",
-    caption:
-      "The talk itself, 'Innovating on a Budget: Guide for Engineers'. Most of it was about constraint as a design input rather than an apology.",
-  },
-  {
-    image: galleryAnushkaRobot,
-    title: "Anushka, up close",
-    caption:
-      "The build without the saree and the stage lights. Salvaged actuators, a lot of custom brackets, and a mechanically simulated heartbeat somewhere behind that chest plate.",
   },
   {
     image: portfolioPhoto,

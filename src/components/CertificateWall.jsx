@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-import { styles } from "../styles";
 import { brickWall } from "../assets";
 import { certificates } from "../constants";
 import { SectionWrapper } from "../hoc";
@@ -83,9 +82,31 @@ const CertificateWall = () => {
             <span className='chalk-rule block mt-1.5' />
           </span>
 
-          <span className='block w-fit mt-3'>
-            <span className='block text-[24px] xs:text-[30px] sm:text-[42px] md:text-[50px] uppercase leading-[1.2]'>
+          <span className='relative group block w-fit mt-3'>
+            <span
+              tabIndex={0}
+              className='block text-[24px] xs:text-[30px] sm:text-[42px] md:text-[50px] uppercase leading-[1.2] cursor-help focus:outline-none'
+            >
               Off the Wall
+            </span>
+
+            {/* Inline font/colour/shadow because `.font-offwall *` sets all
+                three on every descendant, which would otherwise render this
+                tooltip in chalk. */}
+            <span
+              role='tooltip'
+              style={{
+                fontFamily: '"Poppins", sans-serif',
+                color: "#fff",
+                textShadow: "none",
+              }}
+              className='pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-5 whitespace-nowrap rounded-md bg-tertiary px-3 py-2 text-[13px] font-normal leading-[1.4] normal-case tracking-normal opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100 z-20'
+            >
+              &apos;Cos I was listening to this while creating this site
+              <span
+                aria-hidden='true'
+                className='absolute right-full top-1/2 -translate-y-1/2 -mr-1 w-2 h-2 rotate-45 bg-tertiary'
+              />
             </span>
           </span>
         </h2>
@@ -95,18 +116,11 @@ const CertificateWall = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        Certifications, contests and the occasional world record. Click any
-        frame to read why it is on the wall.
+        Certifications, contests and the occasional world record. Things I
+        picked up along the way. Click any frame to read why it is on the wall.
       </motion.p>
 
-      <motion.p
-        variants={fadeIn("", "", 0.2, 1)}
-        className={`mt-8 ${styles.sectionSubText}`}
-      >
-        Things I picked up along the way
-      </motion.p>
-
-      <div className='mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8'>
+      <div className='mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8'>
         {certificates.map((certificate, index) => (
           <FramedCertificate
             key={certificate.title}

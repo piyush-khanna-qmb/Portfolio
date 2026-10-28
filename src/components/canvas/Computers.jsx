@@ -22,7 +22,10 @@ const Computers = ({ isMobile }) => {
       <primitive
         object={computer.scene}
         scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
+        /* Desktop sits the machine slightly right of centre so it clears
+           the hero copy. Screen-right for a camera at [20, 3, 5] is
+           roughly +x / -z, hence both values moving together. */
+        position={isMobile ? [0, -3, -2.2] : [0.2, -3.25, -2.2]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>

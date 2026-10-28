@@ -16,22 +16,22 @@ const ThoughtRow = ({ index, post }) => (
   <motion.div variants={fadeIn("up", "spring", index * 0.1, 0.6)}>
     <Link
       to={`/thoughts/${post.slug}`}
-      className='group block border-t border-white/10 py-7 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#915EFF] rounded-sm'
+      className='group block border-t border-white/10 py-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#915EFF] rounded-sm'
     >
       <div className='flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-8'>
-        <h3 className='flex items-center gap-2 text-white font-bold text-[18px] sm:text-[20px] leading-[1.4] group-hover:text-[#915EFF] transition-colors duration-300'>
+        <h3 className='flex items-center gap-2 text-white font-bold text-[16px] sm:text-[17px] leading-[1.35] group-hover:text-[#915EFF] transition-colors duration-300'>
           {post.title}
           {/* Arrow is inline so it costs no vertical space when hidden.
               The old block-level "Read" affordance reserved its height
               even at opacity-0, which added ~32px to every row. */}
-          <ArrowUpRight className='w-[18px] h-[18px] shrink-0 text-[#915EFF] opacity-0 -translate-x-1 translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300' />
+          <ArrowUpRight className='w-4 h-4 shrink-0 text-[#915EFF] opacity-0 -translate-x-1 translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300' />
         </h3>
-        <span className='shrink-0 text-secondary/70 text-[13px] tabular-nums'>
+        <span className='shrink-0 text-secondary/70 text-[12px] tabular-nums'>
           {post.date}
         </span>
       </div>
 
-      <p className='mt-1.5 text-secondary text-[15px] leading-[24px] max-w-4xl'>
+      <p className='mt-1 text-secondary text-[13.5px] leading-[21px] max-w-4xl'>
         {post.dek}
       </p>
     </Link>

@@ -35,11 +35,7 @@ import {
   projDadashree,
   projOmniVideo,
   brain,
-  opti,
-  hodWala,
-  mbsWala,
-  tppWala,
-  deanWala
+  opti
 } from "../assets";
 
 export const navLinks = [
@@ -179,41 +175,6 @@ const experiences = [
   },
 ];
 
-const testimonials = [
-  // {
-  //   testimonial:
-  //     "Piyush is a very honest and humble boy with extraordinary skillset and diligent mindset. He has already brought many laurels to us and the KIET family and I wish him all the luck for his future endeavours.",
-  //   name: "Dr. Ajay Kr. Srivastava",
-  //   designation: "HOD",
-  //   company: "KIET CS",
-  //   image: hodWala,
-  // },
-  {
-    testimonial:
-      "Piyush is a very honest and humble boy with extraordinary skillset and diligent mindset. He has already brought many laurels to us and the KIET family and I wish him all the luck for his future endeavours.",
-    name: "Dr. Shubham Shukla",
-    designation: "Dean",
-    company: "KIET R&D",
-    image: deanWala,
-  },
-  {
-    testimonial:
-      "We liked the work of Mr. Piyush very much. He was very cooperative during the entire process of site design and implementation and gave us creative ideas for the [User Interface] as well.",
-    name: "Mr. Rasik Tiwari",
-    designation: "CEO",
-    company: "Teerth Purohit Prayagraj",
-    image: tppWala,
-  },
-  {
-    testimonial:
-      "...We appreciate Mr. Piyush Khanna for his remarkable contribution for Oxyana: Oxygen Analyzer for Soldiers ©️. He is a dutiful person with a powerful skillset.",
-    name: "Dr. Sundeep Rohilla",
-    designation: "CEO",
-    company: "MBS India",
-    image: mbsWala,
-  },
-
-];
 
 const projects = [
 
@@ -341,7 +302,7 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, projects };
 export {
   pressReleases,
   pressSocial,
