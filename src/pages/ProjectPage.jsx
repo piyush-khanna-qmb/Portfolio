@@ -33,6 +33,22 @@ const projectPages = {
         heading: "Why it was harder than it looks",
         body: "The engineering was the easy half. The difficult part was theological, because an idol is conventionally inert until pran pratishtha invites the deity to be present in it. A form that already moves on its own complicates that separation in a way nobody on the build team was qualified to resolve.",
       },
+      {
+        heading: "Why a pandal is a difficult place to deploy",
+        body: "A lab demo runs for ten minutes in front of people who want it to work. A pandal runs for five days in front of people who did not come to see a robot at all. There is no pausing to reset, no explaining a fault to the crowd, and no second attempt. Whatever she did at two in the afternoon on the busiest day was what everybody saw.",
+      },
+      {
+        heading: "Built to be read, not operated",
+        body: "Almost every design decision followed from one constraint: a visitor arriving for darshan should need nothing explained to them. No instructions, no attendant translating her behaviour, no interface. The movement had to be slow enough to read as presence rather than machinery, and the costume and jewellery had to carry more visual weight than the hardware underneath.",
+      },
+      {
+        heading: "What the five days showed",
+        body: "The response that stayed with me was not the press coverage or the award. It was older visitors, the group I had privately assumed would be most uneasy, folding their hands without hesitating. They were not evaluating a machine. They had come for darshan and that is what they did. The machinery was our problem, not theirs.",
+      },
+      {
+        heading: "What is still open",
+        body: "Whether she was the first live Durga robot in India is a claim I will not make flatly. Mechanised movement at pandals goes back decades, and robotic deities exist elsewhere. What I can say is narrower: neither we nor the organisers could find a prior instance of an articulated robotic Durga serving as the presiding idol rather than as a figure beside it. That is the distinction worth arguing about, and I would rather be accurate than impressive.",
+      },
     ],
     related: {
       label: "I wrote about the theological problem in more detail",

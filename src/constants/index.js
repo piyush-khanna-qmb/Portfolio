@@ -181,11 +181,11 @@ const projects = [
   {
     name: "Emperia Omni",
     description:
-      "Part of the Emperia Automation Ecosystem, the IoT/home-automation platform built at Emperia Smart Solutions. Lives on the Emperia site alongside UniHub rather than here.",
+      "A mobile device automation tool that takes plain natural language and translates it into native Android code (Swift to follow) to automate your phone. Think IFTTT or Tasker, but with an LLM doing the hard part.",
     tags: [
-      { name: "IoT", color: "blue-text-gradient" },
-      { name: "Automation", color: "green-text-gradient" },
-      { name: "Hardware", color: "pink-text-gradient" },
+      { name: "LLM", color: "blue-text-gradient" },
+      { name: "Android", color: "green-text-gradient" },
+      { name: "Automation", color: "pink-text-gradient" },
     ],
     image: null,
     video: projOmniVideo,

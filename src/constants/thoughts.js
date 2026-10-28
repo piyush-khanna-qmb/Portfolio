@@ -370,16 +370,7 @@ const thoughts = [
       {
         type: "p",
         text: "Borrowing a structure that has been refined for three thousand years is not mysticism. It is the same instinct as reaching for a known algorithm instead of inventing one at three in the morning.",
-      },
-      { type: "h", text: "What I am not claiming" },
-      {
-        type: "p",
-        text: "Anushka is not conscious. She has no inner life, the architecture is an engineering borrowing and not a metaphysical assertion, and I would be embarrassed to suggest otherwise. Naming a scheduler Buddhi does not give it discriminative wisdom.",
-      },
-      {
-        type: "p",
-        text: "What I will claim is narrower and I think more interesting: the tradition was describing the architecture of attention with real precision, and that description survives translation into software. We did not use it because it was Indian and the press would like it. We used it because after months of failing to design the thing ourselves, it was the best decomposition we found.",
-      },
+      }
     ],
   },
 ];

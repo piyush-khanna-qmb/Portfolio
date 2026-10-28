@@ -51,7 +51,7 @@ const Tile = ({ item, onOpen }) => (
     type='button'
     onClick={() => onOpen(item)}
     aria-label={`Play ${item.label}`}
-    className='group relative shrink-0 snap-start w-[150px] sm:w-[168px] aspect-[9/16] rounded-xl overflow-hidden border border-white/10 bg-black-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#915EFF]'
+    className='group relative shrink-0 w-[210px] sm:w-[235px] aspect-[9/16] rounded-xl overflow-hidden border border-white/10 bg-black-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#915EFF]'
   >
     {item.kind === "youtube" ? (
       <img
@@ -188,13 +188,17 @@ const MediaCarousel = ({ videos }) => {
     const track = trackRef.current;
     if (!track) return;
     const card = track.firstElementChild;
-    const step = card ? card.offsetWidth + 12 : 180;
+    const step = card ? card.offsetWidth + 12 : 240;
     track.scrollBy({ left: direction * step * 2, behavior: "smooth" });
   }, []);
 
-  /* The "rolling" part. Pauses on hover, on focus within, when the tab is
-     hidden, and entirely for anyone who prefers reduced motion. Wraps back
-     to the start once it reaches the end. */
+  /* Continuous drift rather than stepped jumps. The track renders the clip
+     list twice; once the scroll passes the halfway mark we subtract that
+     half, which lands on an identical frame, so the loop is seamless and
+     never visibly rewinds.
+
+     Pauses on hover, on focus within, and when the tab is hidden. Skipped
+     entirely for anyone who prefers reduced motion. */
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return undefined;
@@ -202,21 +206,24 @@ const MediaCarousel = ({ videos }) => {
       return undefined;
     }
 
-    const tick = () => {
-      if (paused || document.hidden) return;
-      const atEnd =
-        track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
-      if (atEnd) {
-        track.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        const card = track.firstElementChild;
-        const step = card ? card.offsetWidth + 12 : 180;
-        track.scrollBy({ left: step, behavior: "smooth" });
+    const SPEED = 0.35; // px per ms, roughly 21px/s
+    let raf = 0;
+    let last = performance.now();
+
+    const frame = (now) => {
+      const dt = now - last;
+      last = now;
+      if (!paused && !document.hidden) {
+        const half = track.scrollWidth / 2;
+        let next = track.scrollLeft + SPEED * dt;
+        if (half > 0 && next >= half) next -= half;
+        track.scrollLeft = next;
       }
+      raf = window.requestAnimationFrame(frame);
     };
 
-    const id = window.setInterval(tick, 3800);
-    return () => window.clearInterval(id);
+    raf = window.requestAnimationFrame(frame);
+    return () => window.cancelAnimationFrame(raf);
   }, [paused]);
 
   if (!videos || videos.length === 0) return null;
@@ -239,10 +246,18 @@ const MediaCarousel = ({ videos }) => {
         onMouseLeave={() => setPaused(false)}
         onFocusCapture={() => setPaused(true)}
         onBlurCapture={() => setPaused(false)}
-        className='flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2 -mx-1 px-1 scroll-smooth'
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent, #000 5%, #000 95%, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, #000 5%, #000 95%, transparent)",
+          scrollbarWidth: "none",
+        }}
+        className='flex gap-3 overflow-x-auto pb-2 -mx-1 px-1 [&::-webkit-scrollbar]:hidden'
       >
-        {videos.map((item) => (
-          <Tile key={item.id || item.url} item={item} onOpen={setActive} />
+        {/* Rendered twice so the drift can wrap without a visible jump. */}
+        {[...videos, ...videos].map((item, i) => (
+          <Tile key={`${item.id || item.url}-${i}`} item={item} onOpen={setActive} />
         ))}
       </div>
 
