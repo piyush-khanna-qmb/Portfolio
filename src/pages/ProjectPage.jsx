@@ -67,23 +67,28 @@ const projectPages = {
   },
 
   dadashree: {
-    eyebrow: "Robotics · Human-robot interaction",
+    eyebrow: "Robotics \u00b7 Parasdham, Junagadh",
     title: "DadaShree",
     intro:
-      "A humanoid named with a relational honorific instead of a personal name: Dada, elder brother, plus the honorific Shree. The naming is the interface.",
+      "A wisdom tree robot deployed at Parasdham, a Jain monastery in Junagadh, Gujarat. I lived on site for two months through July and August 2025 while building it.",
     facts: [
-      { label: "Type", value: "Humanoid robot" },
-      { label: "Focus", value: "Human-robot interaction" },
-      { label: "Naming", value: "Relational honorific, 'respected elder brother'" },
+      { label: "Deployment", value: "Parasdham, Junagadh, Gujarat" },
+      { label: "Setting", value: "Jain monastery" },
+      { label: "On site", value: "July to August 2025" },
+      { label: "Type", value: "Wisdom tree robot" },
     ],
     sections: [
       {
-        heading: "The argument behind the name",
-        body: "Western humanoids get names that imply either an abstraction or a peer: Sophia, Ameca, Atlas. That works where the default relationship between person and machine is transactional. In India the first thing established with a stranger is not their name but their relational position, and once that slot is assigned, everything else follows from it.",
+        heading: "The name",
+        body: "Dada means grandfather. Shree is the honorific. Put together it points at a respected elder figure, and that is deliberate: it tells a visitor what posture to arrive in before anyone explains anything. You do not approach a grandfather the way you approach a kiosk. In a monastery, where people come with questions they have been carrying for a while, that framing does more work than any interface could.",
       },
       {
-        heading: "Why it matters in practice",
-        body: "Name a robot something abstract and someone has to stand beside it explaining how to interact. Name it DadaShree and an Indian visitor already has the protocol, because they know how to talk to a Dada. The name does the onboarding that would otherwise cost you software.",
+        heading: "Living on site",
+        body: "I stayed at Parasdham for two months while the build came together. Working inside the place a machine is meant for is a different exercise from building it in a lab and shipping it. You see who actually walks up to it, what they ask, and how long they are willing to wait for an answer.",
+      },
+      {
+        heading: "Junagadh in the monsoon",
+        body: "It was a wholesome couple of months, and a good deal of that was the place itself. The weather in Junagadh was kind, and the rains arriving over those two months were the cherry on the cake. I also climbed Girnar, which is famous for roughly ten thousand steep steps and earns the reputation somewhere around step four thousand.",
       },
     ],
     links: [],

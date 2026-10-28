@@ -129,7 +129,7 @@ const experiences = [
     company_name: "MBS India",
     icon: mbs,
     iconBg: "#E6DEDD",
-    date: "May 2021 - July 2021",
+    date: "Aug 2022 - Sep 2022",
     points: [
       "Reinforced and enhanced the design of Oxyana - Oxygen Concentrator for Soldiers, a patented product of MBS India.",
       "Researched applying Machine Learning to filter noisy signals in heartbeat and pulse forms, and engineered a design for a smart stethoscope using the same technology.",
@@ -217,7 +217,7 @@ const projects = [
       },
     ],
     image: piyushWithAnushka,
-    source_code_link: "https://anushkathehumanoid.com",
+    source_code_link: null,
     linked_link: "https://lnkd.in/p/gR9DaMWm",
     youtube_link: "https://www.youtube.com/watch?v=9i3s9a6siOM",
     project_link: "https://anushkathehumanoid.com",
@@ -243,7 +243,7 @@ const projects = [
   {
     name: "DadaShree Robot",
     description:
-      "A humanoid named with a relational honorific rather than a personal name: 'respected elder brother'. The naming is the interface: an Indian visitor already knows how to approach a Dada without being told.",
+      "A wisdom tree robot deployed at Parasdham, a Jain monastery in Junagadh, Gujarat. Named for a respected elder figure, because that is the posture a visitor should arrive in.",
     tags: [
       { name: "Robotics", color: "blue-text-gradient" },
       { name: "HRI", color: "green-text-gradient" },

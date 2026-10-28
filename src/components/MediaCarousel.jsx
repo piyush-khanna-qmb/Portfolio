@@ -25,6 +25,9 @@ const embedUrl = (item) => {
   if (item.kind === "instagram") {
     return `https://www.instagram.com/reel/${item.id}/embed/`;
   }
+  if (item.kind === "drive") {
+    return `https://drive.google.com/file/d/${item.id}/preview`;
+  }
   return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
     item.url
   )}&autoplay=true`;
@@ -33,8 +36,13 @@ const embedUrl = (item) => {
 const watchUrl = (item) => {
   if (item.kind === "youtube") return `https://www.youtube.com/watch?v=${item.id}`;
   if (item.kind === "instagram") return `https://www.instagram.com/reel/${item.id}/`;
+  if (item.kind === "drive") return `https://drive.google.com/file/d/${item.id}/view`;
   return item.url;
 };
+
+/* Drive and Facebook clips are usually landscape; reels and shorts are not. */
+const isPortrait = (item) =>
+  item.kind === "youtube" || item.kind === "instagram";
 
 const PlayBadge = () => (
   <span className='absolute inset-0 flex items-center justify-center'>
@@ -46,37 +54,60 @@ const PlayBadge = () => (
   </span>
 );
 
-const Tile = ({ item, onOpen }) => (
-  <button
-    type='button'
-    onClick={() => onOpen(item)}
-    aria-label={`Play ${item.label}`}
-    className='group relative shrink-0 w-[210px] sm:w-[235px] aspect-[9/16] rounded-xl overflow-hidden border border-white/10 bg-black-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#915EFF]'
-  >
-    {item.kind === "youtube" ? (
-      <img
-        src={ytThumb(item.id)}
-        alt=''
-        loading='lazy'
-        className='w-full h-full object-cover opacity-85 transition-opacity duration-300 group-hover:opacity-100'
-      />
-    ) : (
-      <span
-        className={`absolute inset-0 ${
-          item.kind === "instagram"
-            ? "bg-gradient-to-br from-[#833ab4] via-[#c13584] to-[#f77737]"
-            : "bg-gradient-to-br from-[#1877f2] to-[#0b5fce]"
-        } opacity-70 transition-opacity duration-300 group-hover:opacity-90`}
-      />
-    )}
+const Tile = ({ item, onOpen }) => {
+  const [thumbFailed, setThumbFailed] = useState(false);
+  const portrait = isPortrait(item);
 
-    <PlayBadge />
+  /* Drive exposes a thumbnail for publicly shared files. It is not
+     guaranteed, so a failed load falls back to the branded tile. */
+  const thumb =
+    item.kind === "youtube"
+      ? ytThumb(item.id)
+      : item.kind === "drive" && !thumbFailed
+      ? `https://drive.google.com/thumbnail?id=${item.id}&sz=w640`
+      : null;
 
-    <span className='absolute inset-x-0 bottom-0 px-2.5 py-2 text-left text-[10.5px] font-mono tracking-[0.06em] text-white/90 bg-gradient-to-t from-black/85 to-transparent'>
-      {item.label}
-    </span>
-  </button>
-);
+  return (
+    <button
+      type='button'
+      onClick={() => onOpen(item)}
+      aria-label={`Play ${item.label}`}
+      /* Tiles follow the shape of the clip: reels and shorts are tall,
+         Drive and Facebook uploads are usually landscape. */
+      className={`group relative shrink-0 rounded-xl overflow-hidden border border-white/10 bg-black-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#915EFF] ${
+        portrait
+          ? "w-[210px] sm:w-[235px] aspect-[9/16]"
+          : "w-[300px] sm:w-[360px] aspect-video"
+      }`}
+    >
+      {thumb ? (
+        <img
+          src={thumb}
+          alt=''
+          loading='lazy'
+          onError={() => setThumbFailed(true)}
+          className='w-full h-full object-cover opacity-85 transition-opacity duration-300 group-hover:opacity-100'
+        />
+      ) : (
+        <span
+          className={`absolute inset-0 ${
+            item.kind === "instagram"
+              ? "bg-gradient-to-br from-[#833ab4] via-[#c13584] to-[#f77737]"
+              : item.kind === "drive"
+              ? "bg-gradient-to-br from-[#0066da] via-[#00ac47] to-[#ea4335]"
+              : "bg-gradient-to-br from-[#1877f2] to-[#0b5fce]"
+          } opacity-70 transition-opacity duration-300 group-hover:opacity-90`}
+        />
+      )}
+
+      <PlayBadge />
+
+      <span className='absolute inset-x-0 bottom-0 px-2.5 py-2 text-left text-[10.5px] font-mono tracking-[0.06em] text-white/90 bg-gradient-to-t from-black/85 to-transparent'>
+        {item.label}
+      </span>
+    </button>
+  );
+};
 
 const Player = ({ item, onClose }) => {
   const handleKey = useCallback(
@@ -126,9 +157,15 @@ const Player = ({ item, onClose }) => {
             exit={{ scale: 0.95, y: 10 }}
             transition={{ type: "spring", damping: 26, stiffness: 260 }}
             onClick={(e) => e.stopPropagation()}
-            className='w-full max-w-[420px] flex flex-col gap-3'
+            className={`w-full flex flex-col gap-3 ${
+              isPortrait(item) ? "max-w-[420px]" : "max-w-[900px]"
+            }`}
           >
-            <div className='relative w-full aspect-[9/16] max-h-[76vh] rounded-xl overflow-hidden bg-black'>
+            <div
+              className={`relative w-full max-h-[76vh] rounded-xl overflow-hidden bg-black ${
+                isPortrait(item) ? "aspect-[9/16]" : "aspect-video"
+              }`}
+            >
               <iframe
                 key={item.id || item.url}
                 src={embedUrl(item)}
@@ -183,6 +220,10 @@ const MediaCarousel = ({ videos }) => {
   const trackRef = useRef(null);
   const [active, setActive] = useState(null);
   const [paused, setPaused] = useState(false);
+  /* The list is only duplicated, and only drifts, when it is actually wider
+     than the track. With three clips the duplicate was simply visible as
+     repeats, and there was nothing to scroll anyway. */
+  const [loop, setLoop] = useState(false);
 
   const scrollByCards = useCallback((direction) => {
     const track = trackRef.current;
@@ -191,6 +232,20 @@ const MediaCarousel = ({ videos }) => {
     const step = card ? card.offsetWidth + 12 : 240;
     track.scrollBy({ left: direction * step * 2, behavior: "smooth" });
   }, []);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return undefined;
+
+    const measure = () => {
+      const contentWidth = loop ? track.scrollWidth / 2 : track.scrollWidth;
+      setLoop(contentWidth > track.clientWidth + 24);
+    };
+
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [loop, videos]);
 
   /* Continuous drift rather than stepped jumps. The track renders the clip
      list twice; once the scroll passes the halfway mark we subtract that
@@ -201,7 +256,7 @@ const MediaCarousel = ({ videos }) => {
      entirely for anyone who prefers reduced motion. */
   useEffect(() => {
     const track = trackRef.current;
-    if (!track) return undefined;
+    if (!track || !loop) return undefined;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return undefined;
     }
@@ -224,7 +279,7 @@ const MediaCarousel = ({ videos }) => {
 
     raf = window.requestAnimationFrame(frame);
     return () => window.cancelAnimationFrame(raf);
-  }, [paused]);
+  }, [paused, loop]);
 
   if (!videos || videos.length === 0) return null;
 
@@ -234,10 +289,12 @@ const MediaCarousel = ({ videos }) => {
         <p className='font-mono text-[11px] tracking-[0.12em] uppercase text-secondary/70'>
           {videos.length} clips
         </p>
-        <div className='flex gap-2'>
-          <Arrow dir='prev' onClick={() => scrollByCards(-1)} />
-          <Arrow dir='next' onClick={() => scrollByCards(1)} />
-        </div>
+        {loop && (
+          <div className='flex gap-2'>
+            <Arrow dir='prev' onClick={() => scrollByCards(-1)} />
+            <Arrow dir='next' onClick={() => scrollByCards(1)} />
+          </div>
+        )}
       </div>
 
       <div
@@ -247,16 +304,19 @@ const MediaCarousel = ({ videos }) => {
         onFocusCapture={() => setPaused(true)}
         onBlurCapture={() => setPaused(false)}
         style={{
-          maskImage:
-            "linear-gradient(to right, transparent, #000 5%, #000 95%, transparent)",
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent, #000 5%, #000 95%, transparent)",
+          maskImage: loop
+            ? "linear-gradient(to right, transparent, #000 5%, #000 95%, transparent)"
+            : undefined,
+          WebkitMaskImage: loop
+            ? "linear-gradient(to right, transparent, #000 5%, #000 95%, transparent)"
+            : undefined,
           scrollbarWidth: "none",
         }}
         className='flex gap-3 overflow-x-auto pb-2 -mx-1 px-1 [&::-webkit-scrollbar]:hidden'
       >
-        {/* Rendered twice so the drift can wrap without a visible jump. */}
-        {[...videos, ...videos].map((item, i) => (
+        {/* Duplicated only when the row overflows, so the drift can wrap
+            without a visible jump. A short list renders once. */}
+        {(loop ? [...videos, ...videos] : videos).map((item, i) => (
           <Tile key={`${item.id || item.url}-${i}`} item={item} onOpen={setActive} />
         ))}
       </div>

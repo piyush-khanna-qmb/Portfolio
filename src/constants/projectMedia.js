@@ -104,6 +104,18 @@ const projectMedia = {
       },
     ],
   },
+
+  dadashree: {
+    mentions: [
+      { label: "Parasdham, Junagadh", note: "Deployment" },
+      { label: "July to August 2025", note: "On site" },
+    ],
+    videos: [
+      { kind: "drive", id: "1YALWbCN4ymte-p9hj-EKipHjoCpKaFk3", label: "Drive" },
+      { kind: "drive", id: "1pPluZWA4Zb0EqxwEJ8oyXNXvJlFxeKwo", label: "Drive" },
+      { kind: "drive", id: "10rDD39APFqbCoin4u9F7qHHlEE7ZUu_c", label: "Drive" },
+    ],
+  },
 };
 
 export { projectMedia };
