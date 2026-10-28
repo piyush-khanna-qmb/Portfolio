@@ -16,6 +16,10 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  /* Inline status instead of alert(). alert() blocks every subsequent
+     browser interaction and hides the real failure reason, which is why
+     this form appeared to do nothing at all when the send failed. */
+  const [status, setStatus] = useState(null); // { ok: boolean, text: string }
 
   const handleChange = (e) => {
     const { target } = e;
@@ -29,37 +33,57 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const message = form.message.trim();
+
+    if (!name || !email || !message) {
+      setStatus({ ok: false, text: "Please fill in your name, email and message." });
+      return;
+    }
+
     setLoading(true);
+    setStatus(null);
 
     emailjs
       .send(
-        "service_j9olqqt",
+        "service_um8nucw",
         "template_i612x8s",
         {
-          from_name: form.name,
+          from_name: name,
           to_name: "Piyush Khanna",
-          from_email: form.email,
+          /* The template reads {{from_mail}}. `from_email` is sent too so
+             the form keeps working if the template is ever changed to the
+             more conventional name. */
+          from_mail: email,
+          from_email: email,
+          reply_to: email,
           to_email: "piyushkhannavb@gmail.com",
-          message: form.message,
+          message,
         },
         "2cuJ5paqCDI0a06Dg"
       )
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
+          setStatus({
+            ok: true,
+            text: "Thank you. I will get back to you as soon as possible.",
           });
+          setForm({ name: "", email: "", message: "" });
         },
         (error) => {
           setLoading(false);
-          console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
+          console.error("EmailJS send failed:", error);
+          /* Surface what the provider actually said. A silent failure here
+             is worse than an ugly one. */
+          const detail =
+            (error && (error.text || error.message)) || "Unknown error";
+          setStatus({
+            ok: false,
+            text: `Could not send: ${detail}. You can reach me directly at piyushkhannavb@gmail.com.`,
+          });
         }
       );
   };
@@ -116,10 +140,22 @@ const Contact = () => {
 
           <button
             type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            disabled={loading}
+            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary disabled:opacity-60'
           >
             {loading ? "Sending..." : "Send"}
           </button>
+
+          {status && (
+            <p
+              role='status'
+              className={`text-[14px] leading-[22px] ${
+                status.ok ? "text-[#5de0a0]" : "text-[#ff8a8a]"
+              }`}
+            >
+              {status.text}
+            </p>
+          )}
         </form>
       </motion.div>
 

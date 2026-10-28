@@ -13,6 +13,7 @@ import Thoughts from "./Thoughts";
 import Research from "./Research";
 import CertificateWall from "./CertificateWall";
 import Lightbox from "./Lightbox";
+import BackToTop from "./BackToTop";
 
 
 export {
@@ -33,5 +34,6 @@ export {
   Thoughts,
   Research,
   CertificateWall,
-  Lightbox
+  Lightbox,
+  BackToTop
 };

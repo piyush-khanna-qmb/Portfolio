@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Navbar, Footer } from "../components";
+import { Navbar, Footer, BackToTop } from "../components";
 
 /**
  * Common chrome for every standalone page, so a subpage never looks
@@ -55,6 +55,7 @@ const PageShell = ({ eyebrow, title, intro, children }) => (
 
     <main className='flex-1 max-w-7xl mx-auto w-full sm:px-16 px-6 pb-24'>
       {children}
+      <BackToTop />
     </main>
 
     <Footer />

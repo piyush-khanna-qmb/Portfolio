@@ -21,11 +21,12 @@ const Computers = ({ isMobile }) => {
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
+        scale={isMobile ? 0.45 : 0.75}
         /* Desktop sits the machine slightly right of centre so it clears
            the hero copy. Screen-right for a camera at [20, 3, 5] is
-           roughly +x / -z, hence both values moving together. */
-        position={isMobile ? [0, -3, -2.2] : [0.2, -3.25, -2.2]}
+           roughly +x / -z, hence both values moving together.
+           Mobile is smaller now, so it is lifted to stay optically centred. */
+        position={isMobile ? [0, -2.4, -1.6] : [0.2, -3.25, -2.2]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -34,31 +35,31 @@ const Computers = ({ isMobile }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 500px)");
-
-    // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
-
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
-
-    // Add the callback function as a listener for changes to the media query
+    const handleMediaQueryChange = (event) => setIsMobile(event.matches);
     mediaQuery.addEventListener("change", handleMediaQueryChange);
+    return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
+  }, []);
 
-    // Remove the listener when the component is unmounted
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mq.matches);
+    const onChange = (e) => setReducedMotion(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
   }, []);
 
   return (
     <Canvas
-      frameloop='demand'
+      /* The drift needs a continuous loop. Under frameloop="demand" the
+         canvas only paints when something invalidates it, so autoRotate
+         would advance its target and never render. Anyone who prefers
+         reduced motion keeps the cheaper on-demand behaviour. */
+      frameloop={reducedMotion ? "demand" : "always"}
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
@@ -69,6 +70,11 @@ const ComputersCanvas = () => {
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
+          /* Slow idle spin so it reads as three-dimensional without
+             demanding attention. Roughly one turn every 85 seconds.
+             Dragging takes over, then the drift resumes. */
+          autoRotate={!reducedMotion}
+          autoRotateSpeed={0.7}
         />
         <Computers isMobile={isMobile} />
       </Suspense>
