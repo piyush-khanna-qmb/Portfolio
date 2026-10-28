@@ -13,6 +13,8 @@ import {
   nodejs,
   mongodb,
   git,
+  docker,
+  flutter,
   tpp,
   wipro,
   auto,
@@ -112,16 +114,16 @@ const technologies = [
     icon: ros,
   },
   {
-    name: "ESP",
-    icon: esp,
+    name: "Flutter",
+    icon: flutter,
   },
   {
     name: "Android",
     icon: android,
   },
   {
-    name: "Raspberry Pi",
-    icon: rasp,
+    name: "Docker",
+    icon: docker,
   },
   {
     name: "OpenCV",
@@ -173,6 +175,7 @@ const experiences = [
   {
     title: "Forward Deployed Engineer",
     company_name: "Fableroom",
+    location: "DLF Golf Course, Gurgaon",
     icon: fableroom,
     iconFill: true,
     iconBg: "#9c6a14",
