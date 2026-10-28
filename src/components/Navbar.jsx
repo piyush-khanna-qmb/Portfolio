@@ -40,7 +40,15 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src='Main.png' alt='logo' className='w-9 h-9 object-contain' />
+          {/* Base-relative, not page-relative: a bare 'Main.png' resolves
+              against the current route and 404s on nested paths like
+              /thoughts/:slug. BASE_URL keeps it correct under the
+              deployed base path too (Standing Rule 5). */}
+          <img
+            src={`${import.meta.env.BASE_URL}Main.png`}
+            alt='logo'
+            className='w-9 h-9 object-contain'
+          />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
             Piyush Khanna &nbsp;
             <span className='sm:block hidden'></span>

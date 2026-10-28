@@ -17,6 +17,9 @@ import {
   wipro,
   auto,
   mbs,
+  fableroom,
+  manojava,
+  minerra,
   carrent,
   jobit,
   tripguide,
@@ -46,10 +49,6 @@ import {
 } from "../assets";
 
 export const navLinks = [
-  {
-    id: "about",
-    title: "About",
-  },
   {
     id: "work",
     title: "Work",
@@ -142,56 +141,45 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "May 2021 - July 2021",
     points: [
-      "Reinforced and enhanced the design of Oxyana- Oxygen Concentrator for Soldiers, a patented product of MBS India.",
-      "Researched in the field of applying Machine Learning to filter out noisy signals in heartbeat and pulse forms. Also Engineered a design for smart stethoscope using the same technology.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Reinforced and enhanced the design of Oxyana - Oxygen Concentrator for Soldiers, a patented product of MBS India.",
+      "Researched applying Machine Learning to filter noisy signals in heartbeat and pulse forms, and engineered a design for a smart stethoscope using the same technology.",
     ],
   },
   {
-    title: "Frontend developer",
-    company_name: "Teerth Purohit Prayagraj",
-    icon: tpp,
-    iconBg: "#E6DEDD",
-    date: "Sept 2021 - Nov 2021",
+    title: "Backend Developer",
+    company_name: "Manojava Software India",
+    location: "Noida (Sec-63), India",
+    icon: manojava,
+    iconFill: true,
+    iconBg: "#29abe2",
+    date: "Jan 2024 - Apr 2025",
     points: [
-      "Designed the company's portfolio website with frontend using HTML, CSS and JS with integrated map, contacts and social links.",
-
-      "Increased their approach manifolds.",
+      "Designed and built scalable RESTful APIs with Node.js and Express.js — documented in Swagger, end-to-end tested in Postman, and backed by a MongoDB layer tuned through Mongoose for production query performance.",
+      "Acted as System Architect, translating the founders' concept into a structured, scalable technical roadmap and development plan.",
     ],
   },
   {
-    title: "Full Stack Web Developer",
-    company_name: "MBS India",
-    icon: mbs,
-    iconBg: "#E6DEDD",
-    date: "Jan 2022 - Mar 2022",
+    title: "FullStack Developer",
+    company_name: "Minerra Health",
+    location: "Remote (US)",
+    icon: minerra,
+    iconBg: "#ffffff",
+    date: "Apr 2025 - July 2026",
     points: [
-      "Designed and developed a fullstack portfolio website for the company with frontend designed in ReactJS and backend support of NodeJS, ExpressJS and MongoDB for database with mongoose integration.",
-      "It includes product display Index and the functionality to place order for respective products with payment portal support.",
-      "The website doubled the sales of the company's products within 2 months of publishing with SEO manipulation."
+      "Developed and maintained scalable backend services in Python (Django & DRF), implementing secure, modular and reusable RESTful APIs consumed across web and mobile clients.",
+      "Implemented JWT-based authentication and role-based access control for HIPAA-compliant data handling, and deployed the services on AWS EC2 with automated GitHub Actions CI/CD pipelines.",
     ],
   },
   {
-    title: "Summer Intern",
-    company_name: "Wipro",
-    icon: wipro,
-    iconBg: "#E6DEDD",
-    date: "May 2022 - Sept 2022",
+    title: "Forward Deployed Engineer",
+    company_name: "Fableroom",
+    icon: fableroom,
+    iconFill: true,
+    iconBg: "#9c6a14",
+    date: "July 2026 - Present",
     points: [
-      "Successfully completed a comprehensive online training program in Project-Based Learning under the esteemed Wipro Talent Next - Future Skills Program, spanning from May to September 2022.",
-      "This training not only enhanced my understanding of project-driven methodologies but also equipped me with valuable skills essential for the ever-evolving tech landscape."
-    ],
-  },
-  {
-    title: "Project Intern",
-    company_name: "Automation Anywhere",
-    icon: auto,
-    iconBg: "#E6DEDD",
-    date: "Sept 2022 - Nov 2022",
-    points: [
-      "Completed the 'Empowering Your Workforce with Robotic Process Automation (RPA)' Learning Trail from Automation Anywhere University.",
-      "This training has equipped me with valuable skills and knowledge to excel in the field of Robotics Process Automation."
+      "Integrating logistics solutions into the company's in-house tooling, wiring third-party delivery and fulfilment workflows into systems built and owned internally.",
+      "Working across a Python stack on AWS, with the customer-facing frontend built on Alpine.js.",
     ],
   },
 ];
@@ -257,7 +245,54 @@ const projects = [
     ],
     image: anushka,
     source_code_link: "https://anushkathehumanoid.com",
-    linked_link: null
+    linked_link: null,
+    project_link: "https://anushkathehumanoid.com",
+    project_link_external: true,
+  },
+  {
+    name: "Sunaina Robot",
+    description:
+      "A robotic Durga that served as the presiding figure at Chakraberia Sarbojanin Durgotsab, Kolkata, during Durga Puja 2025. Articulated gaze, neck and hand movement, built to be looked at by lakhs of people rather than operated by any of them.",
+    tags: [
+      { name: "Robotics", color: "blue-text-gradient" },
+      { name: "Animatronics", color: "green-text-gradient" },
+      { name: "Embedded C", color: "pink-text-gradient" },
+    ],
+    image: null,
+    source_code_link: null,
+    linked_link: null,
+    project_link: "/project/sunaina",
+    project_link_external: false,
+  },
+  {
+    name: "DadaShree Robot",
+    description:
+      "A humanoid named with a relational honorific rather than a personal name — 'respected elder brother'. The naming is the interface: an Indian visitor already knows how to approach a Dada without being told.",
+    tags: [
+      { name: "Robotics", color: "blue-text-gradient" },
+      { name: "HRI", color: "green-text-gradient" },
+      { name: "Embedded", color: "pink-text-gradient" },
+    ],
+    image: null,
+    source_code_link: null,
+    linked_link: null,
+    project_link: "/project/dadashree",
+    project_link_external: false,
+  },
+  {
+    name: "Emperia Omni",
+    description:
+      "Part of the Emperia Automation Ecosystem — the IoT/home-automation platform built at Emperia Smart Solutions. Lives on the Emperia site alongside UniHub rather than here.",
+    tags: [
+      { name: "IoT", color: "blue-text-gradient" },
+      { name: "Automation", color: "green-text-gradient" },
+      { name: "Hardware", color: "pink-text-gradient" },
+    ],
+    image: null,
+    source_code_link: null,
+    linked_link: null,
+    project_link: "https://emperiasmartsolutions.space",
+    project_link_external: true,
   },
   {
     name: "GyrusGriham",
@@ -439,3 +474,11 @@ const projects = [
 ];
 
 export { services, technologies, experiences, testimonials, projects };
+export {
+  pressReleases,
+  pressSocial,
+  publications,
+  certificates,
+  galleryPhotos,
+} from "./content";
+export { thoughts } from "./thoughts";

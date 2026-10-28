@@ -9,6 +9,12 @@ import Feedbacks from "./Feedbacks";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import Footer from "./Footer";
+import Press from "./Press";
+import Thoughts from "./Thoughts";
+import Research from "./Research";
+import CertificateWall from "./CertificateWall";
+import Gallery from "./Gallery";
+import Lightbox from "./Lightbox";
 
 
 export {
@@ -25,5 +31,11 @@ export {
   EarthCanvas,
   BallCanvas,
   ComputersCanvas,
-  StarsCanvas
+  StarsCanvas,
+  Press,
+  Thoughts,
+  Research,
+  CertificateWall,
+  Gallery,
+  Lightbox
 };

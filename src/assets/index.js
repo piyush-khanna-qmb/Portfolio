@@ -39,6 +39,9 @@ import tpp from "./company/tpp.png";
 import mbs from "./company/mbs.png";
 import wipro from "./company/wipro.png";
 import auto from "./company/auto.png";
+import fableroom from "./company/fableroom.png";
+import manojava from "./company/manojava.png";
+import minerra from "./company/minerra.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -59,7 +62,56 @@ import mbsWala from "./mbsWala.png";
 import tppWala from "./tppWala.png";
 import deanWala from "./deanWala.png";
 
+/* Web-optimised copies (max 1800px, JPEG q82) live in ./gallery.
+   The untouched camera originals stay in "Photos for Piyush's Gallery"
+   as the source of truth — straight imports of those shipped ~28MB of
+   images in the production bundle. Re-export from gallery/ only. */
+import portfolioPhoto from "./gallery/portfolio.jpg";
+import piyushWithAnushka from "./gallery/piyush-with-anushka.jpg";
+import dtuChiefSpeaker from "./gallery/dtu-chief-speaker.jpg";
+import profilePhoto from "./gallery/profile.jpg";
+
+import galleryAnushkaRobot from "./gallery/anushka-robot.jpg";
+import galleryAnushkaRss from "./gallery/anushka-with-rss.jpg";
+import galleryAnushkaYogi from "./gallery/anushka-with-yogi.jpg";
+import galleryDtuTalk from "./gallery/dtu-innovating-on-a-budget.jpg";
+
+import certOxyana from "./Certificates/oxyana-research-intern.jpg";
+import certIitkSecurity from "./Certificates/iitk-computer-system-security.jpg";
+import certGuvi from "./Certificates/guvi-guinness-world-record.jpg";
+import certWipro from "./Certificates/wipro-talentnext.jpg";
+import certRpa from "./Certificates/automation-anywhere-rpa.jpg";
+import certAlgoToolbox from "./Certificates/coursera-algorithmic-toolbox.jpg";
+import certIntroAi from "./Certificates/coursera-intro-ai.jpg";
+import certFlipkart from "./Certificates/flipkart-grid-robotics.jpg";
+import certTata from "./Certificates/tata-imagination-challenge.jpg";
+import certScaler from "./Certificates/scaler-codex.jpg";
+import certNasa from "./Certificates/techlearn-nasa-colourise.jpg";
+import certNetflix from "./Certificates/techlearn-netflix-recsys.jpg";
+import certSwiggy from "./Certificates/techlearn-swiggy-chatbot.jpg";
+
 export {
+  portfolioPhoto,
+  piyushWithAnushka,
+  dtuChiefSpeaker,
+  profilePhoto,
+  galleryAnushkaRobot,
+  galleryAnushkaRss,
+  galleryAnushkaYogi,
+  galleryDtuTalk,
+  certOxyana,
+  certIitkSecurity,
+  certGuvi,
+  certWipro,
+  certRpa,
+  certAlgoToolbox,
+  certIntroAi,
+  certFlipkart,
+  certTata,
+  certScaler,
+  certNasa,
+  certNetflix,
+  certSwiggy,
   deanWala,
   hodWala,
   tppWala,
@@ -84,6 +136,9 @@ export {
   unity,
   wipro,
   auto,
+  fableroom,
+  manojava,
+  minerra,
   tpp,
   mbs,
   logo,
