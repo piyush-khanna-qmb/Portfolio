@@ -14,6 +14,10 @@ import Research from "./Research";
 import CertificateWall from "./CertificateWall";
 import Lightbox from "./Lightbox";
 import BackToTop from "./BackToTop";
+import CapabilityGrid from "./CapabilityGrid";
+import PromptCards from "./PromptCards";
+import TriggerViz from "./TriggerViz";
+import AdvancedFeature from "./AdvancedFeature";
 
 
 export {
@@ -35,5 +39,9 @@ export {
   Research,
   CertificateWall,
   Lightbox,
-  BackToTop
+  BackToTop,
+  CapabilityGrid,
+  PromptCards,
+  TriggerViz,
+  AdvancedFeature
 };

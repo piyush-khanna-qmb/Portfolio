@@ -287,7 +287,7 @@ const MediaCarousel = ({ videos }) => {
     <>
       <div className='flex items-center justify-between gap-4 mb-4'>
         <p className='font-mono text-[11px] tracking-[0.12em] uppercase text-secondary/70'>
-          {videos.length} clips
+          {videos.length} {videos.length === 1 ? "clip" : "clips"}
         </p>
         {loop && (
           <div className='flex gap-2'>

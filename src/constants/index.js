@@ -193,8 +193,8 @@ const projects = [
     linked_link: null,
     drive_link:
       "https://drive.google.com/file/d/11EHuZ9VHYd-JlD7CsypZdItsiTtsShL_/view?usp=sharing",
-    project_link: "https://emperiasmartsolutions.space",
-    project_link_external: true,
+    project_link: "/project/omni",
+    project_link_external: false,
   },
   {
     name: "Anushka: The Humanoid",

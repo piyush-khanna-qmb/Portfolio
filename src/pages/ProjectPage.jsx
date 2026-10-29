@@ -3,6 +3,8 @@ import { useParams, Link, Navigate } from "react-router-dom";
 
 import { projectMedia } from "../constants/projectMedia";
 import ArrowUpRight from "../components/ArrowUpRight";
+import CapabilityGrid from "../components/CapabilityGrid";
+import PromptCards from "../components/PromptCards";
 import MediaCarousel from "../components/MediaCarousel";
 import PageShell from "./PageShell";
 
@@ -66,6 +68,187 @@ const projectPages = {
     ],
   },
 
+  omni: {
+    eyebrow: "Mobile automation \u00b7 Android",
+    title: "Emperia Omni",
+    intro:
+      "A natural-language automation harness for Android. You type what you want in plain English and it wires that sentence straight into the phone's real triggers and actions. No flowchart, no rule-builder, no recipe marketplace.",
+    facts: [
+      { label: "Platform", value: "Native Android (Kotlin). iOS coming soon." },
+      { label: "Interface", value: "Plain English, one sentence" },
+      { label: "Actions wired", value: "11, all working today" },
+      { label: "Parsing", value: "On-device first, LLM only as fallback" },
+    ],
+    sections: [
+      {
+        heading: "The wall every automation app hits",
+        body: "Tasker, IFTTT, Shortcuts, Samsung and Google Routines all share one problem: you have to learn their language before they will learn yours. Visual rule-builders, block diagrams, app-specific recipes. Every one of them is an interface you must be trained on before it becomes useful, which is why most people install one, build a single automation, and never open it again.",
+      },
+      {
+        heading: "Trigger and action, nothing else",
+        body: "Every automation that has ever existed is two primitives: something the operating system can detect, and something the operating system can do. Every tool in this category is just a different interface bolted onto that same pair. So instead of building another interface, enumerate the OS capability exhaustively and point a parser at that enumeration. The catalogue is the product. Not a chatbot wrapper, a harness.",
+      },
+      {
+        heading: "Deterministic first, model second",
+        body: "An on-device parser of roughly 1,100 lines resolves the overwhelming majority of real phrasing instantly, with no network call and no inference cost. A cloud model exists as a fallback for genuinely ambiguous prompts, but the product functions without it, and most usage never reaches it. That ordering matters commercially as much as technically: the unit economics work before a single subscriber exists.",
+      },
+      {
+        heading: "Ask, do not guess",
+        body: "Any ambiguity surfaces as an explicit choice rather than a silent assumption. Which contact, which app, which saved location. That is not politeness, it is the difference between a useful tool and a dangerous one once actions have real-world consequences. For anything irreversible the app stops short on purpose: calls open the dialer pre-filled rather than dialling, messages and emails fill the compose screen rather than sending.",
+      },
+      {
+        heading: "What it actually does today",
+        body: "Every pairing below is wired and working, not a mockup. Any trigger can drive any action, which is where the combinatorics come from.",
+        grid: [
+          {
+            label: "Triggers",
+            items: [
+              { icon: "app", label: "App opened" },
+              { icon: "place", label: "Location entered or left" },
+              { icon: "time", label: "Time or schedule" },
+              { icon: "bell", label: "Notification arrives" },
+              { icon: "volume", label: "Volume threshold" },
+              { icon: "bolt", label: "Fires immediately" },
+            ],
+          },
+          {
+            label: "Actions",
+            items: [
+              { icon: "alarm", label: "Set an alarm" },
+              { icon: "timer", label: "Set a timer" },
+              { icon: "phone", label: "Dial a call" },
+              { icon: "sms", label: "Send an SMS" },
+              { icon: "mail", label: "Send an email" },
+              { icon: "bell", label: "Show a notification" },
+              { icon: "app", label: "Open an app" },
+              { icon: "link", label: "Open a URL" },
+              { icon: "settings", label: "Open a settings page" },
+              { icon: "torch", label: "Toggle the flashlight" },
+              { icon: "volume", label: "Set exact volume" },
+            ],
+          },
+        ],
+      },
+      {
+        heading: "What it looks like to use",
+        body: "No rule-builder and no setup screen. You write the sentence, it resolves what you meant, and asks when it genuinely cannot tell.",
+        prompts: [
+          {
+            label: "Everyday",
+            layout: "split",
+            items: [
+              {
+                viz: "radar",
+                kind: "Geofence + call",
+                prompt: "If I'm at office and receive a call from a delivery partner, send a message to my Caretaker to collect it on my behalf.",
+                note: "Resolved to one named contact, message pre-filled rather than sent.",
+              },
+              {
+                viz: "pin",
+                kind: "Location entered",
+                prompt: "If I'm in Shopping mart, remind me to check Grocery list.",
+                note: "Fires the moment you cross into the saved place.",
+              },
+              {
+                viz: "apps",
+                kind: "App opened",
+                prompt: "When I open WhatsApp next time, remind me to revert to Prateek with BOM.",
+                note: "Fires once, then retires itself.",
+              },
+            ],
+          },
+          {
+            label: "Advanced capabilities",
+            layout: "feature",
+            items: [
+              {
+                viz: "sunrise",
+                title: "The Perfect Morning Routine",
+                prompt:
+                  "Every morning, start waking me up usually at 7 AM with alarms spaced 10 minutes apart until I'm awake. If I start actively scrolling through my phone or turn on my bedroom ceiling lights, consider me awake and stop the remaining alarms. Then give me a concise morning briefing with the latest news, my commute to work, today's calendar and priorities, and add to my Google Tasks the to-do list based on my conversations and interactions with you yesterday. If traffic is unusually bad, suggest when I should leave.",
+                steps: [
+                  {
+                    icon: "alarm",
+                    fragment: "start waking me up usually at 7 AM with alarms spaced 10 minutes apart until I'm awake. If I start actively scrolling through my phone or turn on my bedroom ceiling lights, consider me awake",
+                    result: "Schedules a repeating ladder of alarms from 07:00, ten minutes apart; either scrolling your phone or the bedroom lights coming on counts as awake and cancels whatever's left.",
+                    api: "AlarmManager.setExactAndAllowWhileIdle + Intent.ACTION_USER_PRESENT + AccessibilityService",
+                  },
+                  {
+                    icon: "news",
+                    fragment: "a concise morning briefing with the latest news, my commute, today's calendar, and add to my Google Tasks the to-do list",
+                    result: "Headlines, live commute time and today's events in one grouped notification, with yesterday's loose ends written to your task list.",
+                    api: "Directions API + CalendarContract.Instances + Google Tasks API + NotificationCompat.InboxStyle",
+                  },
+                ],
+              },
+              {
+                viz: "level",
+                title: "Volume That Follows the Road",
+                prompt:
+                  "When I'm driving, map my song's volume to my speed. On traffic and red lights, set volume to 10%, and on highway max speed, volume can go up to 80%.",
+                steps: [
+                  {
+                    icon: "speed",
+                    fragment: "When I'm driving, map my song's volume to my speed",
+                    result: "Picks up driving from sustained speed on its own, then maps current speed onto a volume curve rather than a single on-off rule.",
+                    api: "ActivityRecognition IN_VEHICLE + FusedLocationProviderClient getSpeed()",
+                  },
+                  {
+                    icon: "volume",
+                    fragment: "On traffic and red lights, set volume to 10%, and on highway max speed, volume can go up to 80%",
+                    result: "Near-stationary drops the stream to a tenth; the top of the curve is capped at 80% so highway speed never pins it at max.",
+                    api: "AudioManager.setStreamVolume(STREAM_MUSIC), clamped against getStreamMaxVolume()",
+                  },
+                ],
+              },
+              {
+                viz: "radar",
+                title: "Arriving at Work, Already Caught Up",
+                prompt:
+                  "When I reach my office, open Keka and mark my attendance. Then check my work items for today and send me a concise summary on Slack, including my pending tasks, deadlines, meetings, and anything that needs my attention. If I haven't checked those messages, remind me before I get caught up in work.",
+                steps: [
+                  {
+                    icon: "place",
+                    fragment: "When I reach my office, open Keka and mark my attendance",
+                    result: "A geofence on the saved office location fires once on entry and launches the attendance app straight to the action.",
+                    api: "GeofencingClient.addGeofences + PendingIntent + getLaunchIntentForPackage deep link",
+                  },
+                  {
+                    icon: "sms",
+                    fragment: "send me a concise summary on Slack. If I haven't checked those messages, remind me",
+                    result: "Today's tasks, deadlines and meetings as one digest where you already work, with a single nudge if it goes unread.",
+                    api: "CalendarContract + Tasks API + Slack webhook + NotificationListenerService",
+                  },
+                ],
+              },
+              {
+                viz: "night",
+                title: "A Nighttime Routine That Takes No For an Answer",
+                prompt:
+                  "Every night after midnight, if I open Instagram, gently suggest that I read my novel instead and offer to open my reading app. If I choose to continue using Instagram, enable my blue-light filter, postpone my morning alarms by 30 minutes, and remind me that staying up late will affect tomorrow's sleep. Don't keep interrupting me after I've made my choice.",
+                steps: [
+                  {
+                    icon: "time",
+                    fragment: "Every night after midnight, if I open Instagram, gently suggest that I read my novel instead and offer to open my reading app",
+                    result: "A time window plus that specific app coming to the foreground surfaces one actionable prompt, the reading app a single tap away.",
+                    api: "AccessibilityService TYPE_WINDOW_STATE_CHANGED + time guard + NotificationCompat.Action",
+                  },
+                  {
+                    icon: "shield",
+                    fragment: "enable my blue-light filter, postpone my morning alarms by 30 minutes. Don't keep interrupting me",
+                    result: "If you stay it limits the damage and rewrites tomorrow's alarms, then records the choice so the rule cannot fire again tonight.",
+                    api: "Settings.ACTION_NIGHT_DISPLAY_SETTINGS + AlarmManager reschedule + per-night flag",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    links: [],
+  },
+
   dadashree: {
     eyebrow: "Robotics \u00b7 Parasdham, Junagadh",
     title: "DadaShree",
@@ -123,17 +306,26 @@ const ProjectPage = () => {
           ))}
         </dl>
 
-        {project.sections.map((section) => (
-          <section key={section.heading} className='mt-12'>
-            <h2 className='text-white font-bold text-[22px] sm:text-[25px] leading-[33px]'>
-              {section.heading}
-            </h2>
-            <p className='mt-4 text-secondary text-[17px] leading-[32px]'>
-              {section.body}
-            </p>
-          </section>
-        ))}
+      </div>
 
+
+      {project.sections.map((section) => (
+        <section key={section.heading} className='mt-12'>
+          <h2 className='max-w-3xl text-white font-bold text-[22px] sm:text-[25px] leading-[33px]'>
+            {section.heading}
+          </h2>
+          <p className='max-w-3xl mt-4 text-secondary text-[17px] leading-[32px]'>
+            {section.body}
+          </p>
+          {/* Grids and prompt rows run the full page width. Inside the
+              768px prose column three cards left ~120px each for text,
+              which wrapped the sentences to one word per line. */}
+          {section.grid && <CapabilityGrid groups={section.grid} />}
+          {section.prompts && <PromptCards groups={section.prompts} />}
+        </section>
+      ))}
+
+      <div className='max-w-3xl'>
         {project.related && (
           <Link
             to={project.related.to}
@@ -175,11 +367,10 @@ const ProjectPage = () => {
       {media && (
         <section className='mt-16'>
           <h2 className='text-white font-bold text-[22px] sm:text-[25px] leading-[33px]'>
-            This project got media highlights
+            {media.heading}
           </h2>
           <p className='mt-3 text-secondary text-[16px] leading-[28px] max-w-3xl'>
-            Coverage across television, news channels and social media through
-            the festival. Pick any clip to play it.
+            {media.blurb}
           </p>
 
           {media.mentions && media.mentions.length > 0 && (

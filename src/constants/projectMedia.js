@@ -11,6 +11,9 @@
 
 const projectMedia = {
   sunaina: {
+    heading: "This project got media highlights",
+    blurb:
+      "Coverage across television, news channels and social media through the festival. Pick any clip to play it.",
     mentions: [
       { label: 'UltraTech Top 7 Pandals', note: 'Award' },
       { label: 'ABP Ananda', note: 'Television' },
@@ -105,7 +108,23 @@ const projectMedia = {
     ],
   },
 
+  omni: {
+    heading: "See it running",
+    blurb:
+      "A reel I put together myself showing the harness in use.",
+    mentions: [
+      { label: "Android, Kotlin", note: "Platform" },
+      { label: "11 actions wired", note: "Catalogue" },
+    ],
+    videos: [
+      { kind: "drive", id: "11EHuZ9VHYd-JlD7CsypZdItsiTtsShL_", label: "Demo" },
+    ],
+  },
+
   dadashree: {
+    heading: "Footage from the deployment",
+    blurb:
+      "Clips I recorded on site at Parasdham. This project had no press coverage; these are the whole record.",
     mentions: [
       { label: "Parasdham, Junagadh", note: "Deployment" },
       { label: "July to August 2025", note: "On site" },
