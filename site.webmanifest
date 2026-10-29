@@ -1,0 +1,15 @@
+{
+  "name": "Piyush Khanna",
+  "short_name": "Piyush Khanna",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#050816",
+  "background_color": "#050816",
+  "display": "standalone",
+  "start_url": "/"
+}
