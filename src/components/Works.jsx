@@ -240,4 +240,7 @@ const Works = () => {
   );
 };
 
-export default SectionWrapper(Works, "work");
+/* Stacked full-width cards on mobile make this section much taller than
+   the default 25%-of-self threshold can ever satisfy within a phone
+   viewport — see the note in SectionWrapper. */
+export default SectionWrapper(Works, "work", 0.1);

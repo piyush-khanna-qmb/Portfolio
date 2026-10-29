@@ -18,6 +18,51 @@ import ArrowUpRight from "./ArrowUpRight";
 
 const ytThumb = (id) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 
+/* Google Drive's /preview embed switches to a condensed "mobile" layout
+   (just a thin scrub bar, no real player chrome) once the iframe's
+   rendered width drops below its breakpoint — which is exactly what
+   happens in this modal on a phone. Rendering it at a fixed desktop-safe
+   size and scaling down with a transform keeps Drive on the real player
+   regardless of how narrow the actual container is. */
+const DRIVE_FRAME_WIDTH = 960;
+const DRIVE_FRAME_HEIGHT = 540;
+
+const DriveFrame = ({ item }) => {
+  const wrapRef = useRef(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const wrap = wrapRef.current;
+    if (!wrap) return undefined;
+
+    const measure = () => setScale(wrap.clientWidth / DRIVE_FRAME_WIDTH);
+    measure();
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(wrap);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={wrapRef} className='absolute inset-0 overflow-hidden'>
+      <iframe
+        key={item.id || item.url}
+        src={embedUrl(item)}
+        title={item.label}
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+        allowFullScreen
+        style={{
+          width: DRIVE_FRAME_WIDTH,
+          height: DRIVE_FRAME_HEIGHT,
+          transform: `scale(${scale})`,
+          transformOrigin: "top left",
+          border: 0,
+        }}
+      />
+    </div>
+  );
+};
+
 const embedUrl = (item) => {
   if (item.kind === "youtube") {
     return `https://www.youtube-nocookie.com/embed/${item.id}?autoplay=1&rel=0`;
@@ -166,14 +211,18 @@ const Player = ({ item, onClose }) => {
                 isPortrait(item) ? "aspect-[9/16]" : "aspect-video"
               }`}
             >
-              <iframe
-                key={item.id || item.url}
-                src={embedUrl(item)}
-                title={item.label}
-                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                allowFullScreen
-                className='absolute inset-0 w-full h-full border-0'
-              />
+              {item.kind === "drive" ? (
+                <DriveFrame item={item} />
+              ) : (
+                <iframe
+                  key={item.id || item.url}
+                  src={embedUrl(item)}
+                  title={item.label}
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowFullScreen
+                  className='absolute inset-0 w-full h-full border-0'
+                />
+              )}
             </div>
 
             <a
@@ -225,12 +274,26 @@ const MediaCarousel = ({ videos }) => {
      repeats, and there was nothing to scroll anyway. */
   const [loop, setLoop] = useState(false);
 
+  const resumeTimer = useRef(null);
+
   const scrollByCards = useCallback((direction) => {
     const track = trackRef.current;
     if (!track) return;
     const card = track.firstElementChild;
     const step = card ? card.offsetWidth + 12 : 240;
     track.scrollBy({ left: direction * step * 2, behavior: "smooth" });
+    /* The drift loop below writes scrollLeft every frame, which would
+       otherwise cancel this scroll out before it's visible (most
+       noticeable on touch, where there's no hover to pause it). */
+    setPaused(true);
+    if (resumeTimer.current) window.clearTimeout(resumeTimer.current);
+    resumeTimer.current = window.setTimeout(() => setPaused(false), 600);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (resumeTimer.current) window.clearTimeout(resumeTimer.current);
+    };
   }, []);
 
   useEffect(() => {
@@ -303,6 +366,12 @@ const MediaCarousel = ({ videos }) => {
         onMouseLeave={() => setPaused(false)}
         onFocusCapture={() => setPaused(true)}
         onBlurCapture={() => setPaused(false)}
+        /* Touch devices never fire mouseenter/leave, so without these the
+           drift loop keeps overwriting scrollLeft every frame underneath
+           a manual swipe, making the track feel stuck. */
+        onTouchStart={() => setPaused(true)}
+        onTouchEnd={() => setPaused(false)}
+        onTouchCancel={() => setPaused(false)}
         style={{
           maskImage: loop
             ? "linear-gradient(to right, transparent, #000 5%, #000 95%, transparent)"
