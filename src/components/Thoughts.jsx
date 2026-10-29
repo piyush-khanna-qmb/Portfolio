@@ -51,8 +51,8 @@ const Thoughts = () => {
         className='mt-3 text-secondary text-[15px] max-w-3xl leading-[25px]'
       >
         Longer arguments about why these things exist the way they do: the
-        naming, the architecture, and the occasional theological problem that a
-        robot creates for you.
+        naming, the architecture, and the occasional theological problem that
+        artificial intelligence creates for you.
       </motion.p>
 
       <div className='mt-8 border-b border-white/10'>

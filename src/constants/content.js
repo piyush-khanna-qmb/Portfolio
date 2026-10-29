@@ -269,7 +269,7 @@ const publications = [
     title:
       "Elevating Customer Engagement: The Role of Humanoid Robots as Receptionists",
     subtitle:
-      "Piyush Khanna, Neha Shukla",
+      "Piyush Khanna, Shubhangi Rai, Neha Shukla",
     body: "A study of what actually changes when a humanoid robot takes a receptionist's seat in an educational institution. The paper looks at multithreaded interaction handling, semantic analysis of visitor intent, and what the authors call empathetic technology, meaning the gap between a system that answers correctly and one that a person feels attended to by.",
     keywords: [
       "Humanoid Robots",
