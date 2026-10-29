@@ -1,0 +1,38 @@
+# Piyush Khanna
+
+> Software and Applied AI engineer specialising in IoT, harness engineering,
+> and robotics. Founder & CEO of Emperia Smart Solutions, building embodied
+> AI and home-automation hardware. This site is a personal portfolio:
+> engineering projects, press coverage, and long-form writing.
+
+Primary site: https://piyushkhanna.space
+Contact: via the contact form at https://piyushkhanna.space/#contact
+LinkedIn: https://www.linkedin.com/in/piyush-khanna-qmb/
+GitHub: https://github.com/piyush-khanna-qmb/
+Resume (PDF): https://piyushkhanna.space/resume.pdf
+
+## Projects
+
+- [Emperia Omni](https://piyushkhanna.space/project/omni): Natural-language
+  to native mobile automation — an LLM-driven alternative to IFTTT/Tasker.
+- [Anushka: The Humanoid](https://anushkathehumanoid.com): Humanoid robot
+  with face/object/gesture recognition and multilingual speech interaction.
+- [Sunaina Robot](https://piyushkhanna.space/project/sunaina): Animatronic
+  robotic Durga, presiding figure at Chakraberia Sarbojanin Durgotsab,
+  Kolkata, Durga Puja 2025.
+- [DadaShree Robot](https://piyushkhanna.space/project/dadashree): Wisdom-tree
+  robot deployed at Parasdham, a Jain monastery in Junagadh, Gujarat.
+
+## Writing
+
+- [The Weird (and Dangerous) Culture of the Palangtodh Sprint](https://piyushkhanna.space/thoughts/palangtodh-sprint)
+- [All Work and No Play Makes Man a Machine...?](https://piyushkhanna.space/thoughts/all-work-no-play)
+- [Why DTU Invited a Third-Year to Lecture](https://piyushkhanna.space/thoughts/guest-lecture-at-dtu)
+- [Who Is Ganpat?](https://piyushkhanna.space/thoughts/who-is-ganpat)
+- [The 4 Domains of Robotics Engineering, and My Views On Each](https://piyushkhanna.space/thoughts/four-stages-of-engineering)
+- [How (and Why) Would a Robot Have a 'Vedic' Mind](https://piyushkhanna.space/thoughts/vedic-mind-inside-anushka)
+
+## Press
+
+- [Press coverage](https://piyushkhanna.space/press): media mentions and
+  coverage of Piyush's robotics work.

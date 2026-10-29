@@ -4,8 +4,77 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Piyush's Portfolio</title>
+    <meta name="theme-color" content="#050816" />
+    <title>Piyush Khanna — Software & Applied AI Engineer, Robotics</title>
+    <meta
+      name="description"
+      content="Portfolio of Piyush Khanna: software and applied AI engineer specialising in IoT, harness engineering, and robotics. Founder of Emperia Smart Solutions. Projects, press, and writing."
+    />
+    <link rel="canonical" href="https://piyushkhanna.space/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Piyush Khanna" />
+    <meta property="og:title" content="Piyush Khanna — Software & Applied AI Engineer, Robotics" />
+    <meta
+      property="og:description"
+      content="Portfolio of Piyush Khanna: software and applied AI engineer specialising in IoT, harness engineering, and robotics. Founder of Emperia Smart Solutions. Projects, press, and writing."
+    />
+    <meta property="og:url" content="https://piyushkhanna.space/" />
+    <meta property="og:image" content="https://piyushkhanna.space/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Piyush Khanna — Software & Applied AI Engineer, Robotics" />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Piyush Khanna: software and applied AI engineer specialising in IoT, harness engineering, and robotics. Founder of Emperia Smart Solutions. Projects, press, and writing."
+    />
+    <meta name="twitter:image" content="https://piyushkhanna.space/og-image.jpg" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Piyush Khanna",
+        "url": "https://piyushkhanna.space/",
+        "image": "https://piyushkhanna.space/og-image.jpg",
+        "jobTitle": "Software and Applied AI Engineer",
+        "description": "Software and Applied AI engineer specialising in IoT, harness engineering, and robotics. Founder & CEO of Emperia Smart Solutions.",
+        "sameAs": [
+          "https://www.linkedin.com/in/piyush-khanna-qmb/",
+          "https://github.com/piyush-khanna-qmb/",
+          "https://www.instagram.com/highonelixir/"
+        ]
+      }
+    </script>
+
+    <script>
+      // Decodes the path the public/404.html shim re-encoded into a query
+      // string (see that file for why), and restores the real URL via
+      // history.replaceState before react-router mounts and reads it.
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
   </head>
 
   <body>
