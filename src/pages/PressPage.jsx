@@ -2,6 +2,7 @@ import React from "react";
 
 import { pressReleases, pressSocial } from "../constants";
 import ArrowUpRight from "../components/ArrowUpRight";
+import SEO from "../components/SEO";
 import PageShell from "./PageShell";
 
 const PressRow = ({ item }) => (
@@ -37,11 +38,17 @@ const PressRow = ({ item }) => (
 );
 
 const PressPage = () => (
-  <PageShell
-    eyebrow='What others wrote'
-    title='In the Press.'
-    intro={`Where the work has been written about, across ${pressReleases.length} publications in four languages and six countries. The pieces at the top are the ones that got at the thinking rather than only the spectacle.`}
-  >
+  <>
+    <SEO
+      title='In the Press'
+      description={`Media coverage of Piyush Khanna's robotics work, across ${pressReleases.length} publications in four languages and six countries.`}
+      path='/press'
+    />
+    <PageShell
+      eyebrow='What others wrote'
+      title='In the Press.'
+      intro={`Where the work has been written about, across ${pressReleases.length} publications in four languages and six countries. The pieces at the top are the ones that got at the thinking rather than only the spectacle.`}
+    >
     <section>
       <h2 className='text-white font-bold text-[22px] mb-2'>Publications</h2>
       <div className='border-b border-white/10'>
@@ -81,7 +88,8 @@ const PressPage = () => (
         ))}
       </div>
     </section>
-  </PageShell>
+    </PageShell>
+  </>
 );
 
 export default PressPage;

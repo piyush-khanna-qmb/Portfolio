@@ -6,6 +6,7 @@ import ArrowUpRight from "../components/ArrowUpRight";
 import CapabilityGrid from "../components/CapabilityGrid";
 import PromptCards from "../components/PromptCards";
 import MediaCarousel from "../components/MediaCarousel";
+import SEO from "../components/SEO";
 import PageShell from "./PageShell";
 
 /**
@@ -286,11 +287,13 @@ const ProjectPage = () => {
   if (!project) return <Navigate to='/' replace />;
 
   return (
-    <PageShell
-      eyebrow={project.eyebrow}
-      title={project.title}
-      intro={project.intro}
-    >
+    <>
+      <SEO title={project.title} description={project.intro} path={`/project/${slug}`} />
+      <PageShell
+        eyebrow={project.eyebrow}
+        title={project.title}
+        intro={project.intro}
+      >
       <div className='max-w-3xl'>
         {/* Fact strip */}
         <dl className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
@@ -401,7 +404,8 @@ const ProjectPage = () => {
       <p className='max-w-3xl mt-16 text-secondary/60 text-[13px] leading-[22px] border-t border-white/10 pt-6'>
         A fuller write-up of this project is in progress.
       </p>
-    </PageShell>
+      </PageShell>
+    </>
   );
 };
 

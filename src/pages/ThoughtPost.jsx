@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 
 import { thoughts } from "../constants";
 import ArrowUpRight from "../components/ArrowUpRight";
+import SEO from "../components/SEO";
 import PageShell from "./PageShell";
 
 const Block = ({ block }) => {
@@ -78,11 +79,13 @@ const ThoughtPost = () => {
   const next = thoughts[(index + 1) % thoughts.length];
 
   return (
-    <PageShell
-      eyebrow={`${post.date} · ${post.readingTime} read`}
-      title={post.title}
-      intro={post.dek}
-    >
+    <>
+      <SEO title={post.title} description={post.dek} path={`/thoughts/${post.slug}`} />
+      <PageShell
+        eyebrow={`${post.date} · ${post.readingTime} read`}
+        title={post.title}
+        intro={post.dek}
+      >
       <article className='max-w-3xl'>
         {post.body.map((block, i) => (
           <Block key={i} block={block} />
@@ -108,7 +111,8 @@ const ThoughtPost = () => {
           </Link>
         </div>
       )}
-    </PageShell>
+      </PageShell>
+    </>
   );
 };
 

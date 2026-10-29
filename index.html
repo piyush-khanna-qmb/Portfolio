@@ -8,33 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#050816" />
     <title>Piyush Khanna — Software & Applied AI Engineer, Robotics</title>
-    <meta
-      name="description"
-      content="Portfolio of Piyush Khanna: software and applied AI engineer specialising in IoT, harness engineering, and robotics. Founder of Emperia Smart Solutions. Projects, press, and writing."
-    />
-    <link rel="canonical" href="https://piyushkhanna.space/" />
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Piyush Khanna" />
-    <meta property="og:title" content="Piyush Khanna — Software & Applied AI Engineer, Robotics" />
-    <meta
-      property="og:description"
-      content="Portfolio of Piyush Khanna: software and applied AI engineer specialising in IoT, harness engineering, and robotics. Founder of Emperia Smart Solutions. Projects, press, and writing."
-    />
-    <meta property="og:url" content="https://piyushkhanna.space/" />
-    <meta property="og:image" content="https://piyushkhanna.space/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Piyush Khanna — Software & Applied AI Engineer, Robotics" />
-    <meta
-      name="twitter:description"
-      content="Portfolio of Piyush Khanna: software and applied AI engineer specialising in IoT, harness engineering, and robotics. Founder of Emperia Smart Solutions. Projects, press, and writing."
-    />
-    <meta name="twitter:image" content="https://piyushkhanna.space/og-image.jpg" />
+    <!--
+      Description/canonical/OG/Twitter tags live in src/components/SEO.jsx
+      (rendered per-route via react-helmet-async) instead of here, and get
+      baked into static HTML per-route by scripts/prerender.mjs. Helmet
+      only manages tags it creates itself, so duplicating the description
+      meta tag here would leave two copies per prerendered page, and
+      crawlers generally honor whichever copy comes first.
+    -->
 
     <!-- Structured data -->
     <script type="application/ld+json">

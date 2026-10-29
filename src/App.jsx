@@ -37,6 +37,23 @@ const ScrollToTop = () => {
   return null;
 };
 
+/**
+ * Flips a DOM marker once the matched route has mounted. React fires
+ * child effects before parent/sibling effects in render order, so as
+ * long as this sits AFTER <Routes> here, the route's own <Helmet> tags
+ * (set inside Home/PressPage/ThoughtPost/ProjectPage) have already
+ * committed by the time this runs. scripts/prerender.mjs polls for this
+ * attribute before capturing the page, instead of guessing with a fixed
+ * timeout.
+ */
+const PrerenderReadyMarker = () => {
+  useEffect(() => {
+    document.body.setAttribute("data-prerender-ready", "true");
+  }, []);
+
+  return null;
+};
+
 const App = () => {
   return (
     <BrowserRouter basename={basename}>
@@ -48,6 +65,7 @@ const App = () => {
         <Route path='/project/:slug' element={<ProjectPage />} />
         <Route path='*' element={<Navigate to='/' replace />} />
       </Routes>
+      <PrerenderReadyMarker />
     </BrowserRouter>
   );
 };
