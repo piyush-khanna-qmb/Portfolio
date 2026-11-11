@@ -2,6 +2,29 @@ import React, { useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
+const toTitleCase = (s) =>
+  s
+    .split(" ")
+    .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : w))
+    .join(" ");
+
+// Title-cases the part before the first ":" (e.g. "Second-year whiteboard
+// planning" -> "Second-year Whiteboard Planning"), then sentence-cases the
+// rest: first letter capital, and the next word after any of . ! ? :
+// capitalized too (source captions are inconsistent on this).
+const formatCaption = (text) => {
+  if (!text) return text;
+  const colonIdx = text.indexOf(":");
+  if (colonIdx === -1) {
+    return text.replace(/^(\s*)(\w)/, (_, lead, ch) => `${lead}${ch.toUpperCase()}`);
+  }
+  const before = toTitleCase(text.slice(0, colonIdx));
+  const after = text
+    .slice(colonIdx)
+    .replace(/([.!?:]\s*)(\w)/g, (_, punct, ch) => `${punct}${ch.toUpperCase()}`);
+  return `${before}${after}`;
+};
+
 /**
  * Shared zoom overlay used by both the certificate wall and the photo
  * gallery, so the two behave identically.
@@ -11,7 +34,7 @@ import { motion, AnimatePresence } from "framer-motion";
  * A fixed-position child inside that context would be trapped by it and
  * could be painted over by later sections. The portal escapes it.
  */
-const Lightbox = ({ item, onClose }) => {
+const Lightbox = ({ item, onClose, emphasizeCaption = false }) => {
   const handleKey = useCallback(
     (e) => {
       if (e.key === "Escape") onClose();
@@ -66,14 +89,16 @@ const Lightbox = ({ item, onClose }) => {
           >
             <img
               src={item.image}
-              alt={item.title}
+              alt={item.title || item.blurb || item.caption}
               className='w-full max-h-[62vh] object-contain rounded-xl bg-black/30'
             />
 
             <div className='bg-tertiary rounded-xl p-5 sm:p-6'>
-              <h3 className='text-white font-bold text-[19px] sm:text-[22px]'>
-                {item.title}
-              </h3>
+              {item.title && (
+                <h3 className='text-white font-bold text-[19px] sm:text-[22px]'>
+                  {item.title}
+                </h3>
+              )}
 
               {(item.issuer || item.date) && (
                 <p className='mt-1 text-[13px] text-[#915EFF] font-medium'>
@@ -82,8 +107,16 @@ const Lightbox = ({ item, onClose }) => {
               )}
 
               {(item.blurb || item.caption) && (
-                <p className='mt-3 text-secondary text-[15px] leading-[26px]'>
-                  {item.blurb || item.caption}
+                <p
+                  className={`mt-3 text-[15px] leading-[26px] ${
+                    emphasizeCaption
+                      ? "text-white font-medium"
+                      : "text-secondary"
+                  }`}
+                >
+                  {emphasizeCaption
+                    ? formatCaption(item.blurb || item.caption)
+                    : item.blurb || item.caption}
                 </p>
               )}
             </div>

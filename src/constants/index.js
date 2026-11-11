@@ -203,7 +203,7 @@ const projects = [
   {
     name: "Anushka: The Humanoid",
     description:
-      "Anushka is a groundbreaking humanoid robot that redefines human-robot interactions with its lifelike appearance, ability to recognize faces, objects, and gestures as well as understand and respond to human speech in multiple languages.",
+      "A humanoid robot built over four years, with lifelike appearance and the ability to recognize faces, objects, and gestures as well as understand and respond to human speech in multiple languages.",
     tags: [
       {
         name: "AI and ML",
@@ -226,8 +226,8 @@ const projects = [
     source_code_link: null,
     linked_link: "https://lnkd.in/p/gR9DaMWm",
     youtube_link: "https://www.youtube.com/watch?v=9i3s9a6siOM",
-    project_link: "https://anushkathehumanoid.com",
-    project_link_external: true,
+    project_link: "/project/anushka",
+    project_link_external: false,
   },
   {
     name: "Sunaina Robot",

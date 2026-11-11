@@ -8,9 +8,17 @@ const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
  * path (e.g. "/project/omni") so canonical/og:url stay correct without
  * each page having to know the full domain.
  */
-const SEO = ({ title, description, path = "/", image = DEFAULT_IMAGE }) => {
+const SEO = ({
+  title,
+  description,
+  path = "/",
+  image = DEFAULT_IMAGE,
+  imageAlt,
+  jsonLd,
+}) => {
   const url = `${SITE_URL}${path}`;
   const fullTitle = path === "/" ? title : `${title} | Piyush Khanna`;
+  const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
   return (
     <Helmet>
@@ -26,11 +34,18 @@ const SEO = ({ title, description, path = "/", image = DEFAULT_IMAGE }) => {
       <meta property="og:image" content={image} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
+
+      {jsonLdBlocks.map((block, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(block)}
+        </script>
+      ))}
     </Helmet>
   );
 };
