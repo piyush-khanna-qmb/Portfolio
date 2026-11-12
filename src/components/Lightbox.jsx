@@ -93,7 +93,7 @@ const Lightbox = ({ item, onClose, emphasizeCaption = false }) => {
               className='w-full max-h-[62vh] object-contain rounded-xl bg-black/30'
             />
 
-            <div className='bg-tertiary rounded-xl p-5 sm:p-6'>
+            <div className={`bg-tertiary rounded-xl p-5 sm:p-6 ${emphasizeCaption ? "text-center" : ""}`}>
               {item.title && (
                 <h3 className='text-white font-bold text-[19px] sm:text-[22px]'>
                   {item.title}

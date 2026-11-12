@@ -8,8 +8,10 @@ import PromptCards from "../components/PromptCards";
 import MediaCarousel from "../components/MediaCarousel";
 import SEO from "../components/SEO";
 import Lightbox from "../components/Lightbox";
+import { Glyph } from "../components/icons";
 import PageShell from "./PageShell";
 
+import anushkaAwardRosette from "../assets/anushka-timeline/anushka-award-rosette.png";
 import anushkaCloseup from "../assets/anushka-timeline/anushka-closeup.jpg";
 import anushkaFoundational from "../assets/anushka-timeline/anushka-foundational.jpg";
 import anushkaWithCoreTeam from "../assets/anushka-timeline/anushka-with-core-team.jpg";
@@ -294,10 +296,41 @@ const projectPages = {
     intro:
       "A humanoid robot that recognises faces, objects and gestures, and understands and responds to speech in multiple languages. Took four years to actually build, but the real story starts a lot earlier than that, in a 7th-grade bedroom, with a script that could only ever say what I'd already told it to.",
     facts: [
-      { label: "Type", value: "Humanoid robot" },
-      { label: "Built", value: "2nd to 4th year of college, unveiled 2024" },
-      { label: "Capabilities", value: "Face, object & gesture recognition; multilingual speech" },
-      { label: "Gestures", value: "64 hand gestures, 20+ eye expressions" },
+      {
+        icon: "bulb",
+        label: "The Only Robot in the World With Home Automation",
+        value: "Controls fans, lights and other appliances entirely on her own",
+        badge: true,
+      },
+      {
+        icon: "phone",
+        label: "The Only Robot in the World With an Automated Calling System",
+        value: "Places phone calls and sends WhatsApp messages, no one touches a phone",
+        badge: true,
+      },
+      {
+        icon: "pulse",
+        label: "The Robot With a Beating Heart",
+        value: "The detail that made people stop and look instead of just photographing her and moving on",
+        badge: true,
+      },
+      { icon: "face", label: "Vision Module", value: "Remembers faces, recognizes objects and interacts with them" },
+      {
+        icon: "route",
+        label: "Follow-Me",
+        value: "Tracks and follows a chosen person using computer vision alone",
+        href: `${import.meta.env.BASE_URL}#research`,
+      },
+      {
+        icon: "wave",
+        label: "Speech Sync",
+        value: "Her jaw moves in time with every word she speaks",
+      },
+    ],
+    highlightStats: [
+      { icon: "hand", value: "64+", label: "Hand Gestures" },
+      { icon: "eye", value: "20+", label: "Eye Expressions" },
+      { icon: "globe", value: "120+", label: "Languages Spoken" },
     ],
     sections: [
       {
@@ -580,6 +613,58 @@ const ProjectPage = () => {
 
   if (!project) return <Navigate to='/' replace />;
 
+  const renderFact = (fact, badgeSpanClass = "") => (
+    <div
+      key={fact.label}
+      className={`relative bg-tertiary rounded-xl ${
+        fact.badge ? `${badgeSpanClass} pl-10 pr-5 pt-6 pb-4` : "px-5 py-4"
+      }`}
+    >
+      {fact.badge && (
+        <img
+          src={anushkaAwardRosette}
+          alt=''
+          aria-hidden='true'
+          className='absolute -top-3.5 -left-3.5 w-11 h-11 object-contain rotate-6 drop-shadow-[0_3px_8px_rgba(0,0,0,0.5)]'
+        />
+      )}
+      <dt
+        className={
+          fact.badge
+            ? "flex items-center gap-2 text-white font-bold text-[16px] sm:text-[17px] leading-snug"
+            : "flex items-center gap-1.5 text-secondary text-[11px] uppercase tracking-[0.12em]"
+        }
+      >
+        {fact.icon && (
+          <span className='text-[#915EFF] shrink-0'>
+            <Glyph name={fact.icon} className={fact.badge ? "w-[18px] h-[18px]" : "w-3.5 h-3.5"} />
+          </span>
+        )}
+        {fact.label}
+      </dt>
+      {fact.href ? (
+        <dd className='mt-1'>
+          <a
+            href={fact.href}
+            className='text-white text-[15px] font-medium hover:text-[#915EFF] transition-colors'
+          >
+            {fact.value}
+          </a>
+        </dd>
+      ) : (
+        <dd
+          className={
+            fact.badge
+              ? "mt-1.5 text-secondary text-[13.5px] leading-[22px]"
+              : "mt-1 text-white text-[15px] font-medium"
+          }
+        >
+          {fact.value}
+        </dd>
+      )}
+    </div>
+  );
+
   return (
     <>
       <SEO
@@ -596,22 +681,45 @@ const ProjectPage = () => {
         intro={project.intro}
       >
       <div ref={flowRef}>
-      <div className='max-w-3xl'>
-        {/* Fact strip */}
-        <dl className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-          {project.facts.map((fact) => (
-            <div key={fact.label} className='bg-tertiary rounded-xl px-5 py-4'>
-              <dt className='text-secondary text-[11px] uppercase tracking-[0.12em]'>
-                {fact.label}
-              </dt>
-              <dd className='mt-1 text-white text-[15px] font-medium'>
-                {fact.value}
-              </dd>
+      {slug === "anushka" ? (
+        <div className='max-w-[68rem]'>
+          <div className='flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-8'>
+            <div className='max-w-3xl w-full flex flex-col gap-4'>
+              {project.facts.filter((fact) => fact.badge).map((fact) => renderFact(fact))}
             </div>
-          ))}
-        </dl>
 
-      </div>
+            {project.highlightStats && project.highlightStats.length > 0 && (
+              <div className='flex flex-col gap-4 w-full lg:w-72 lg:shrink-0'>
+                {project.highlightStats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className='bg-tertiary rounded-xl px-5 py-4 min-h-[92px] flex items-center gap-4'
+                  >
+                    <span className='text-[#915EFF] shrink-0'>
+                      <Glyph name={stat.icon} className='w-6 h-6' />
+                    </span>
+                    <div>
+                      <div className='text-white font-black text-[28px] leading-none'>{stat.value}</div>
+                      <div className='mt-1 text-secondary text-[12px] uppercase tracking-[0.1em]'>{stat.label}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <dl className='grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4'>
+            {project.facts.filter((fact) => !fact.badge).map((fact) => renderFact(fact))}
+          </dl>
+        </div>
+      ) : (
+        <div className='max-w-3xl w-full'>
+          {/* Fact strip */}
+          <dl className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+            {project.facts.map((fact) => renderFact(fact, "sm:col-span-2"))}
+          </dl>
+        </div>
+      )}
 
 
       {(() => {
