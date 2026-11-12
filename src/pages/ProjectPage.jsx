@@ -1,6 +1,8 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
+import { fadeIn } from "../utils/motion";
 import { projectMedia } from "../constants/projectMedia";
 import ArrowUpRight from "../components/ArrowUpRight";
 import CapabilityGrid from "../components/CapabilityGrid";
@@ -642,9 +644,10 @@ const ProjectPage = () => {
         <dd className='mt-1'>
           <a
             href={fact.href}
-            className='text-white text-[15px] font-medium hover:text-[#915EFF] transition-colors'
+            className='group inline-flex items-center gap-1.5 text-white text-[15px] font-medium hover:text-[#915EFF] transition-colors'
           >
             {fact.value}
+            <ArrowUpRight className='w-[20px] h-[20px] shrink-0 text-[#915EFF] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5' />
           </a>
         </dd>
       ) : (
@@ -686,6 +689,7 @@ const ProjectPage = () => {
         </div>
       )}
 
+      <div>
       {(() => {
         let photoRow = 0;
         const resolved = project.sections.map((section) => {
@@ -709,14 +713,29 @@ const ProjectPage = () => {
           }
         });
 
+        const SectionTag = slug === "anushka" ? motion.section : "section";
+        const sectionMotionProps =
+          slug === "anushka"
+            ? {
+                initial: "hidden",
+                whileInView: "show",
+                viewport: { once: true, amount: 0.3 },
+                variants: fadeIn("up", "spring", 0.1, 0.6),
+              }
+            : {};
+
         return groups.map((group, gi) =>
           group.free ? (
             <div key={gi} data-masonry='true' className='relative mt-12'>
               {group.entries.map(({ section, photoOnRight }) => (
                 <React.Fragment key={section.heading}>
-                  <div
+                  <motion.div
                     data-m-item='true'
                     data-m-col={photoOnRight ? "left" : "right"}
+                    initial='hidden'
+                    whileInView='show'
+                    viewport={{ once: true, amount: 0.4 }}
+                    variants={fadeIn(photoOnRight ? "right" : "left", "spring", 0.1, 0.6)}
                     style={{
                       "--text-w": `${section.textWidth}px`,
                       "--text-mh": `${section.textHeight || 0}px`,
@@ -730,7 +749,9 @@ const ProjectPage = () => {
                           : undefined
                       }
                     >
-                      <h2 className='text-white font-bold text-[22px] sm:text-[25px] leading-[33px]'>
+                      <h2
+                        className='text-white font-bold text-[22px] sm:text-[25px] leading-[33px]'
+                      >
                         {section.heading}
                       </h2>
                       <p className='mt-4 text-secondary text-[17px] leading-[32px]'>
@@ -753,11 +774,15 @@ const ProjectPage = () => {
                         </Link>
                       )}
                     </div>
-                  </div>
-                  <button
+                  </motion.div>
+                  <motion.button
                     type='button'
                     data-m-item='true'
                     data-m-col={photoOnRight ? "right" : "left"}
+                    initial='hidden'
+                    whileInView='show'
+                    viewport={{ once: true, amount: 0.4 }}
+                    variants={fadeIn(photoOnRight ? "left" : "right", "spring", 0.2, 0.6)}
                     onClick={() =>
                       setActivePhoto({ image: section.image, caption: section.imageAlt })
                     }
@@ -774,12 +799,16 @@ const ProjectPage = () => {
                       loading='lazy'
                       className='w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300'
                     />
-                  </button>
+                  </motion.button>
                 </React.Fragment>
               ))}
             </div>
           ) : (
-            <section key={group.entry.section.heading} className='mt-12'>
+            <SectionTag
+              key={group.entry.section.heading}
+              className='mt-12'
+              {...sectionMotionProps}
+            >
               <h2 className='max-w-3xl text-white font-bold text-[22px] sm:text-[25px] leading-[33px]'>
                 {group.entry.section.heading}
               </h2>
@@ -806,10 +835,11 @@ const ProjectPage = () => {
                   <ArrowUpRight className='w-4 h-4 text-[#915EFF] shrink-0 ml-auto transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5' />
                 </Link>
               )}
-            </section>
+            </SectionTag>
           )
         );
       })()}
+      </div>
 
       {project.photos && project.photos.length > 0 && (
         <section className='mt-16'>
@@ -969,7 +999,11 @@ const ProjectPage = () => {
           )}
 
           <div className='mt-8'>
-            <MediaCarousel videos={media.videos} showCount={slug !== "anushka"} />
+            <MediaCarousel
+              videos={media.videos}
+              showCount={slug !== "anushka"}
+              speed={slug === "anushka" ? 0.0875 : undefined}
+            />
           </div>
         </section>
       )}

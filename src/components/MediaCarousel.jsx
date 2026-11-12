@@ -265,7 +265,7 @@ const Arrow = ({ dir, onClick }) => (
   </button>
 );
 
-const MediaCarousel = ({ videos, showCount = true }) => {
+const MediaCarousel = ({ videos, showCount = true, speed = 0.35 }) => {
   const trackRef = useRef(null);
   const [active, setActive] = useState(null);
   const [paused, setPaused] = useState(false);
@@ -324,7 +324,7 @@ const MediaCarousel = ({ videos, showCount = true }) => {
       return undefined;
     }
 
-    const SPEED = 0.35; // px per ms, roughly 21px/s
+    const SPEED = speed; // px per ms
     let raf = 0;
     let last = performance.now();
 
@@ -342,7 +342,7 @@ const MediaCarousel = ({ videos, showCount = true }) => {
 
     raf = window.requestAnimationFrame(frame);
     return () => window.cancelAnimationFrame(raf);
-  }, [paused, loop]);
+  }, [paused, loop, speed]);
 
   if (!videos || videos.length === 0) return null;
 
