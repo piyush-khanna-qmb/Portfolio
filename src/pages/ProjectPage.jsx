@@ -431,10 +431,6 @@ const projectPages = {
           label: "Read: How (and Why) Would a Robot Have a 'Vedic' Mind",
         },
       },
-      {
-        heading: "Sixty-four gestures, no depth sensor",
-        body: "The feature list goes well past speech and a heartbeat, honestly. She's got sixty-four distinct hand gestures and more than twenty eye expressions, and her face recognition doesn't just clock who's standing in front of her, it changes how she greets them. The feature I'm most attached to, though, is 'Follow Me': she tracks and follows one specific person using computer vision alone, no depth-sensing camera involved, running a tracking algorithm I wrote myself instead of reaching for an off-the-shelf library. The same home automation and remote calling system I'd already built for Ganpat is wired into her too, so none of that earlier work got left behind just because the project moved from a phone app to an actual humanoid body.",
-      },
     ],
     links: [
       {
@@ -681,38 +677,7 @@ const ProjectPage = () => {
         intro={project.intro}
       >
       <div ref={flowRef}>
-      {slug === "anushka" ? (
-        <div className='max-w-[68rem]'>
-          <div className='flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-8'>
-            <div className='max-w-3xl w-full flex flex-col gap-4'>
-              {project.facts.filter((fact) => fact.badge).map((fact) => renderFact(fact))}
-            </div>
-
-            {project.highlightStats && project.highlightStats.length > 0 && (
-              <div className='flex flex-col gap-4 w-full lg:w-72 lg:shrink-0'>
-                {project.highlightStats.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className='bg-tertiary rounded-xl px-5 py-4 min-h-[92px] flex items-center gap-4'
-                  >
-                    <span className='text-[#915EFF] shrink-0'>
-                      <Glyph name={stat.icon} className='w-6 h-6' />
-                    </span>
-                    <div>
-                      <div className='text-white font-black text-[28px] leading-none'>{stat.value}</div>
-                      <div className='mt-1 text-secondary text-[12px] uppercase tracking-[0.1em]'>{stat.label}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <dl className='grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4'>
-            {project.facts.filter((fact) => !fact.badge).map((fact) => renderFact(fact))}
-          </dl>
-        </div>
-      ) : (
+      {slug !== "anushka" && (
         <div className='max-w-3xl w-full'>
           {/* Fact strip */}
           <dl className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
@@ -720,7 +685,6 @@ const ProjectPage = () => {
           </dl>
         </div>
       )}
-
 
       {(() => {
         let photoRow = 0;
@@ -871,6 +835,39 @@ const ProjectPage = () => {
             ))}
           </div>
         </section>
+      )}
+
+      {slug === "anushka" && (
+        <div className='max-w-[68rem] mt-16'>
+          <div className='flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-8'>
+            <div className='max-w-3xl w-full flex flex-col gap-4'>
+              {project.facts.filter((fact) => fact.badge).map((fact) => renderFact(fact))}
+            </div>
+
+            {project.highlightStats && project.highlightStats.length > 0 && (
+              <div className='flex flex-col gap-4 w-full lg:w-72 lg:shrink-0'>
+                {project.highlightStats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className='bg-tertiary rounded-xl px-5 py-4 min-h-[92px] flex items-center gap-4'
+                  >
+                    <span className='text-[#915EFF] shrink-0'>
+                      <Glyph name={stat.icon} className='w-6 h-6' />
+                    </span>
+                    <div>
+                      <div className='text-white font-black text-[28px] leading-none'>{stat.value}</div>
+                      <div className='mt-1 text-secondary text-[12px] uppercase tracking-[0.1em]'>{stat.label}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <dl className='grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4'>
+            {project.facts.filter((fact) => !fact.badge).map((fact) => renderFact(fact))}
+          </dl>
+        </div>
       )}
 
       <div className='max-w-3xl'>
