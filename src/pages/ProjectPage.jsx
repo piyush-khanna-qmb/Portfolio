@@ -838,14 +838,14 @@ const ProjectPage = () => {
       )}
 
       {slug === "anushka" && (
-        <div className='max-w-[68rem] mt-16'>
+        <div className='mt-[94px]'>
           <div className='flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-8'>
             <div className='max-w-3xl w-full flex flex-col gap-4'>
               {project.facts.filter((fact) => fact.badge).map((fact) => renderFact(fact))}
             </div>
 
             {project.highlightStats && project.highlightStats.length > 0 && (
-              <div className='flex flex-col gap-4 w-full lg:w-72 lg:shrink-0'>
+              <div className='flex flex-col gap-4 w-full lg:flex-1'>
                 {project.highlightStats.map((stat) => (
                   <div
                     key={stat.label}
@@ -885,7 +885,7 @@ const ProjectPage = () => {
 
         {project.links.length > 0 && (
           <section className='mt-12'>
-            <h2 className='text-white font-bold text-[20px]'>Coverage</h2>
+            <h2 className={`text-white font-bold ${slug === "anushka" ? "text-[28px] sm:text-[32px]" : "text-[20px]"}`}>Coverage</h2>
             <div className='mt-4 flex flex-col gap-2'>
               {project.links.map((link) => {
                 const sepIdx = link.label.indexOf(":");
@@ -969,15 +969,17 @@ const ProjectPage = () => {
           )}
 
           <div className='mt-8'>
-            <MediaCarousel videos={media.videos} />
+            <MediaCarousel videos={media.videos} showCount={slug !== "anushka"} />
           </div>
         </section>
       )}
 
       {/* Honest status note: this is a shell, by design, for now. */}
-      <p className='max-w-3xl mt-16 text-secondary/60 text-[13px] leading-[22px] border-t border-white/10 pt-6'>
-        A fuller write-up of this project is in progress.
-      </p>
+      {slug !== "anushka" && (
+        <p className='max-w-3xl mt-16 text-secondary/60 text-[13px] leading-[22px] border-t border-white/10 pt-6'>
+          A fuller write-up of this project is in progress.
+        </p>
+      )}
       </div>
       </PageShell>
     </>

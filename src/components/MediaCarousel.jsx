@@ -265,7 +265,7 @@ const Arrow = ({ dir, onClick }) => (
   </button>
 );
 
-const MediaCarousel = ({ videos }) => {
+const MediaCarousel = ({ videos, showCount = true }) => {
   const trackRef = useRef(null);
   const [active, setActive] = useState(null);
   const [paused, setPaused] = useState(false);
@@ -348,17 +348,21 @@ const MediaCarousel = ({ videos }) => {
 
   return (
     <>
-      <div className='flex items-center justify-between gap-4 mb-4'>
-        <p className='font-mono text-[11px] tracking-[0.12em] uppercase text-secondary/70'>
-          {videos.length} {videos.length === 1 ? "clip" : "clips"}
-        </p>
-        {loop && (
-          <div className='flex gap-2'>
-            <Arrow dir='prev' onClick={() => scrollByCards(-1)} />
-            <Arrow dir='next' onClick={() => scrollByCards(1)} />
-          </div>
-        )}
-      </div>
+      {(showCount || loop) && (
+        <div className={`flex items-center gap-4 mb-4 ${showCount ? "justify-between" : "justify-end"}`}>
+          {showCount && (
+            <p className='font-mono text-[11px] tracking-[0.12em] uppercase text-secondary/70'>
+              {videos.length} {videos.length === 1 ? "clip" : "clips"}
+            </p>
+          )}
+          {loop && (
+            <div className='flex gap-2'>
+              <Arrow dir='prev' onClick={() => scrollByCards(-1)} />
+              <Arrow dir='next' onClick={() => scrollByCards(1)} />
+            </div>
+          )}
+        </div>
+      )}
 
       <div
         ref={trackRef}

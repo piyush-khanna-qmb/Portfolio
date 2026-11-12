@@ -121,6 +121,28 @@ const projectMedia = {
     ],
   },
 
+  anushka: {
+    heading: "Clips from across the internet",
+    blurb:
+      "Reels and shorts that circulated online after she was unveiled. Pick any one to play it.",
+    videos: [
+      { kind: "youtube", id: "_DhasxjqF5Y", label: "YouTube Short" },
+      { kind: "youtube", id: "No48pwyMkYQ", label: "YouTube Short" },
+      { kind: "youtube", id: "p8jCVTSa3Ww", label: "YouTube" },
+      { kind: "youtube", id: "yc4h9O5DSXg", label: "YouTube" },
+      { kind: "youtube", id: "i8FbfEgFajQ", label: "YouTube" },
+      { kind: "youtube", id: "Ttp0m6wVFRo", label: "YouTube Short" },
+      { kind: "youtube", id: "zXVQXq7sHDU", label: "YouTube" },
+      { kind: "youtube", id: "6mUK98E0cUE", label: "YouTube" },
+      { kind: "instagram", id: "C-kxLYkNN_U", label: "Instagram Reel" },
+      { kind: "instagram", id: "C_HtfdWShnF", label: "Instagram Reel" },
+      { kind: "instagram", id: "C-j5GSFATV4", label: "Instagram Reel" },
+      { kind: "facebook", url: "https://www.facebook.com/reel/1654884745308305", label: "Facebook" },
+      { kind: "facebook", url: "https://www.facebook.com/watch/?v=1697910271048444", label: "Facebook" },
+      { kind: "facebook", url: "https://www.facebook.com/reel/291413297380088", label: "Facebook" },
+    ],
+  },
+
   dadashree: {
     heading: "Footage from the deployment",
     blurb:
