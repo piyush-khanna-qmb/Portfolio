@@ -302,7 +302,7 @@ const projectPages = {
     sections: [
       {
         heading: "A promise on the last day of school",
-        body: "It all started with an introvert boy, his laptop, and the excitement to see it speak. I remember it was the end of 7th standard, a lazy Sunday morning in a retreating winter, when I stumbled onto SAPI, the speech engine built into my Windows 8 laptop, and heard it say back, “Good morning sir.” That one line was enough to send me down a rabbit hole. I started writing Visual Basic scripts around that same engine, and what came out of it, an assistant I named Ganpat, could only answer prompts I'd already written for it myself, nothing soft about it at all. On the last day of 12th standard, I told my classmates I'd eventually build two full-scale robots: Anushka, and a second one called Vinayak.",
+        body: "It all started with an introvert boy, his laptop, and the excitement to see it speak. I remember it was the end of 7th standard, a lazy Sunday morning in a retreating winter, when I stumbled onto SAPI, the speech engine built into my Windows 8 laptop, and heard it say back, “Good morning sir.”\nThat one line was enough to send me down a rabbit hole. I started writing Visual Basic scripts around that same engine, and what came out of it, an assistant I named Ganpat, could only answer prompts I'd already written for it myself, nothing soft about it at all. On the last day of 12th standard, I told my classmates I'd eventually build two full-scale robots: Anushka, and a second one called Vinayak.",
         image: anushkaCloseup,
         imageAlt: "Anushka, years after that first promise.",
         imageWidth: 340,
@@ -340,7 +340,7 @@ const projectPages = {
       },
       {
         heading: "The three of us, most days",
-        body: "Once that worked, the project needed more hands than mine. Harsh took on the mechanical structure, the base, and mounting the rebuilt arms onto the mannequin. Atul Sir, who ran the lab we set up Anushka's torso in, handled the electrical side. Phase 1 ran from around October 2022 through to a functioning prototype by January 2023. Phase 2 followed: a new base module, cut and built once university exams ended in March 2023.",
+        body: "Once that worked, the project needed more hands than mine. Harsh took on the mechanical structure, the base, and mounting the rebuilt arms onto the mannequin. Atul Sir, who ran the lab we set up Anushka's torso in, handled the electrical side.\nPhase 1 ran from around October 2022 through to a functioning prototype by January 2023. Phase 2 followed: a new base module, cut and built once university exams ended in March 2023.",
         image: anushkaFriendsAtWork,
         imageAlt: "Early motor and joystick testing, well before the wheeled base took its final shape.",
         imageWidth: 520,
@@ -350,13 +350,17 @@ const projectPages = {
       },
       {
         heading: "The hardest summer",
-        body: "Phase 3 started right after my birthday that year. Summer arrived and brought the heaviest stretch of the whole build with it. We all fell sick around the same time the seasons changed, and kept working anyway, eleven in the morning to seven the next. The last stretch was a three-day no-sleep push to get the whole assembly working together, and it did. That's when Anushka actually became a face.",
+        body: "Phase 3 started right after my birthday that year. Summer arrived and brought the heaviest stretch of the whole build with it. We all fell sick around the same time the seasons changed, and kept working anyway, eleven in the morning to seven the next. The last stretch was a three-day no-sleep push to get the whole assembly working together, and it did. That's when Anushka actually became a face, and when the Palangtodh Sprint, the sprint format my team kept running well after Anushka was done, got its name.",
         image: anushkaSleeplessNights,
         imageAlt: "One of many late nights spent fitting a module in.",
         imageWidth: 330,
         imageHeight: 444,
         textWidth: 730,
         textHeight: 377,
+        related: {
+          to: "/thoughts/palangtodh-sprint",
+          label: "Read: The Weird (and Dangerous) Culture of the Palangtodh Sprint",
+        },
       },
       {
         heading: "Showing her to the world",
@@ -668,7 +672,7 @@ const ProjectPage = () => {
                       {section.related && (
                         <Link
                           to={section.related.to}
-                          className='group mt-6 flex items-center gap-3 bg-tertiary rounded-xl px-5 py-4 border border-transparent hover:border-[#915EFF]/40 transition-colors duration-300'
+                          className='group mt-6 inline-flex items-center gap-3 max-w-[360px] bg-tertiary rounded-xl px-5 py-4 border border-transparent hover:border-[#915EFF]/40 transition-colors duration-300'
                         >
                           <span className='text-white text-[15px] font-medium group-hover:text-[#915EFF] transition-colors'>
                             {section.related.label}
