@@ -1009,7 +1009,7 @@ const ProjectPage = () => {
       )}
 
       {/* Honest status note: this is a shell, by design, for now. */}
-      {slug !== "anushka" && (
+      {slug !== "anushka" && slug !== "omni" && (
         <p className='max-w-3xl mt-16 text-secondary/60 text-[13px] leading-[22px] border-t border-white/10 pt-6'>
           A fuller write-up of this project is in progress.
         </p>
