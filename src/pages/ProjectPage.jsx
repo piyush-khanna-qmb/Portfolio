@@ -365,7 +365,7 @@ const projectPages = {
       },
       {
         heading: "Toy cars wearing the word 'robot'",
-        body: "College had only just reopened after the lockdown year, and I went straight to the robotics lab expecting more than I found there: toy cars, RC cars, line-followers, all filed under 'robots.' What did catch my attention was a set of actuator arms. I remember picturing them immediately: taken apart, rebuilt longer with heavier motors, mounted on a mannequin as the start of something with an actual presence. It worked. The first time it moved, the lab erupted.",
+        body: "College had only just reopened after the lockdown year, and I went straight to the robotics lab expecting more than I found there: toy cars, RC cars, line-followers, all filed under 'robots.' What did catch my attention was a set of actuator arms. I remember picturing them immediately: taken apart, rebuilt longer with heavier motors, mounted on a mannequin as the start of something with an actual presence. It worked. The first time it moved, the lab erupted. It wasn't just students crowding around either, teachers, HoDs and even the helping staff came by to see the torso move.",
         image: anushkaInitialCoding,
         imageAlt: "Early days: the torso on the bench while the code behind it got written.",
         imageWidth: 500,
