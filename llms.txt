@@ -15,8 +15,10 @@ Resume (PDF): https://piyushkhanna.space/resume.pdf
 
 - [Emperia Omni](https://piyushkhanna.space/project/omni): Natural-language
   to native mobile automation — an LLM-driven alternative to IFTTT/Tasker.
-- [Anushka: The Humanoid](https://anushkathehumanoid.com): Humanoid robot
-  with face/object/gesture recognition and multilingual speech interaction.
+- [Anushka: The Humanoid](https://piyushkhanna.space/project/anushka): Humanoid
+  robot with face/object/gesture recognition and multilingual speech
+  interaction. Designed and built by Piyush Khanna over four years; official
+  site at https://anushkathehumanoid.com.
 - [Sunaina Robot](https://piyushkhanna.space/project/sunaina): Animatronic
   robotic Durga, presiding figure at Chakraberia Sarbojanin Durgotsab,
   Kolkata, Durga Puja 2025.
