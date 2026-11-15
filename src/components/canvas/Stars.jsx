@@ -3,6 +3,9 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
 
+import useInView from "../../hooks/useInView";
+import useGLRecovery from "../../hooks/useGLRecovery";
+
 const Stars = (props) => {
   const ref = useRef();
   const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.2 }));
@@ -28,15 +31,20 @@ const Stars = (props) => {
 };
 
 const StarsCanvas = () => {
-  return (
-    <div className='w-full h-auto absolute inset-0 z-[-1]'>
-      <Canvas camera={{ position: [0, 0, 1] }}>
-        <Suspense fallback={null}>
-          <Stars />
-        </Suspense>
+  const [ref, inView] = useInView();
+  const { glKey, onCreated } = useGLRecovery();
 
-        <Preload all />
-      </Canvas>
+  return (
+    <div ref={ref} className='w-full h-auto absolute inset-0 z-[-1]'>
+      {inView && (
+        <Canvas key={glKey} onCreated={onCreated} camera={{ position: [0, 0, 1] }}>
+          <Suspense fallback={null}>
+            <Stars />
+          </Suspense>
+
+          <Preload all />
+        </Canvas>
+      )}
     </div>
   );
 };

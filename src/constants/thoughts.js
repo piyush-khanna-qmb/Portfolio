@@ -21,10 +21,58 @@ import {
   portfolioPhoto,
   profilePhoto,
   galleryTeamEmperia,
+  piyushWithAnushka,
 } from "../assets";
 
 const thoughts = [
 
+  {
+    slug: "four-years-of-anushka",
+    title: "The Journey of Creating Anushka, India's Most Advanced Humanoid Robot",
+    dek: "15th of November, 2022. Chasing signatures, skipping lunch, heels over toes to get a dream project approved. Four years later, this is the day I keep coming back to.",
+    date: "15 Nov 2026",
+    readingTime: "5 min",
+    body: [
+      {
+        type: "p",
+        text: "15th of November, 2022. That's when it all started. An afternoon of stress, chaos and part management. I was roaming around the college, chasing signatures of the officials, coordinating team, skipped lunch, skipped classes. The moment I heard that the possibility of getting to work on my dream project, Humanoid Robot, existed, I was heels over toes to get it done. ASAP.",
+      },
+      {
+        type: "p",
+        text: "No one told me building a robot would start with paperwork. I did not care. I had been waiting for this since seventh grade, a laptop, and a speech engine that once said 'Good morning sir' back to me and started the whole obsession. By the time I was running between office cabins that afternoon, Ganpat already existed in some scrappy form, the promise to my 12th standard classmates already existed, Anushka already had a name. All that was missing was a lab, a team, and someone's signature saying go ahead.",
+      },
+      {
+        type: "p",
+        text: "I got the go-ahead the same day. Walked straight into the robotics lab expecting robots and found toy cars, RC cars, line-followers, everything filed under that word except an actual robot. Then I saw them: a set of actuator arms, barely a foot and a half long, sitting there unbothered. Nobody else looked twice. I looked for a long time. Longer arms, heavier motors, a mannequin to hold it all up, I had the whole thing pictured before I even left the room.",
+      },
+      {
+        type: "p",
+        text: "After that it moved fast. Harsh came on for the mechanical structure and the base. Atul Sir, who ran the lab, took the electrical side so current reached every microcontroller without frying it. Phase 1 ran October through January, a functioning prototype by early 2023. Slow at first. Parts missing, joints re-soldered that looked fine the day before, that kind of slow.",
+      },
+      {
+        type: "p",
+        text: "Then came the summer that broke all of us a little. Phase 3, right after my birthday, and it did not let up. We fell sick around the same time, one after another, and kept going anyway, eleven in the morning to seven the next morning some days. One stretch was three days with no real sleep, just to get the full assembly talking to itself. That stretch did not have a name yet. It got one later. We called it the Palangtodh Sprint.",
+      },
+      {
+        type: "quote",
+        text: "You do not plan the hardest summer of your life. You just notice, afterward, that it was.",
+      },
+      {
+        type: "image",
+        src: piyushWithAnushka,
+        alt: "Piyush Khanna with Anushka",
+        caption: "With Anushka, after the part that took four years stopped being theoretical.",
+      },
+      {
+        type: "p",
+        text: "Phase 3 ended with a demo at IIT Bombay, first of August 2023. After that, people I never expected started showing up to see her: Atul Kothari, General Secretary of the RSS, and Uttar Pradesh's Chief Minister Yogi Adityanath, who formally inaugurated her. But the thing people actually remembered, more than the titles standing in the room, was a mechanically simulated heartbeat. Sixty-four hand gestures, twenty-plus eye expressions, a whole decision-making model borrowed from the antahkarana, none of that is what made people stop. The heartbeat did.",
+      },
+      {
+        type: "p",
+        text: "Four years from that one chaotic afternoon of signatures and skipped lunches to a robot with a pulse people noticed. I don't have a neat way to mark that, so I'm just writing it down. Still the same guy chasing something ASAP. Just a bigger thing to chase.",
+      },
+    ],
+  },
   {
     slug: "palangtodh-sprint",
     title: "The Weird (and Dangerous) Culture of the Palangtodh Sprint",

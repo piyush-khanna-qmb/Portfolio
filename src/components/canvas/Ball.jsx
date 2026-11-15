@@ -9,6 +9,9 @@ import {
 } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
+import useInView from "../../hooks/useInView";
+import useIsMobile from "../../hooks/useIsMobile";
+import useGLRecovery from "../../hooks/useGLRecovery";
 
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
@@ -38,19 +41,28 @@ const Ball = (props) => {
 };
 
 const BallCanvas = ({ icon }) => {
-  return (
-    <Canvas
-      frameloop='demand'
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} />
-        <Ball imgUrl={icon} />
-      </Suspense>
+  const isMobile = useIsMobile();
+  const [ref, inView] = useInView();
+  const { glKey, onCreated } = useGLRecovery();
 
-      <Preload all />
-    </Canvas>
+  return (
+    <div ref={ref} className='w-full h-full'>
+      {inView && (
+        <Canvas
+          key={glKey}
+          onCreated={onCreated}
+          frameloop='demand'
+          dpr={isMobile ? 1 : [1, 2]}
+        >
+          <Suspense fallback={<CanvasLoader />}>
+            <OrbitControls enableZoom={false} />
+            <Ball imgUrl={icon} />
+          </Suspense>
+
+          <Preload all />
+        </Canvas>
+      )}
+    </div>
   );
 };
 
