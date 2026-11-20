@@ -1,5 +1,5 @@
 // Shared, machine-facing structured-data builders. Nothing here renders
-// visibly — these are <script type="application/ld+json"> blocks consumed
+// visibly: these are <script type="application/ld+json"> blocks consumed
 // by search engines/AI crawlers, not page content.
 
 const SITE_URL = "https://piyushkhanna.space";

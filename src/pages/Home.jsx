@@ -24,8 +24,8 @@ const Home = () => (
      clip the fixed navbar. */
   <div className='relative z-0 bg-primary [overflow-x:clip]'>
     <SEO
-      title='Piyush Khanna — Creator of Anushka Humanoid Robot | Software & Applied AI Engineer'
-      description="Piyush Khanna, creator of Anushka, India's humanoid robot. Software and applied AI engineer in IoT and robotics. Projects, press, and writing."
+      title='Piyush Khanna: Software & Applied AI Engineer, Robotics'
+      description='Portfolio of Piyush Khanna: software and applied AI engineer specialising in IoT, harness engineering, and robotics. Projects, press, and writing.'
       path='/'
       jsonLd={homeJsonLd}
     />
