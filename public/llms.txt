@@ -1,9 +1,9 @@
 # Piyush Khanna
 
-> Software and Applied AI engineer specialising in IoT, harness engineering,
-> and robotics. Founder & CEO of Emperia Smart Solutions, building embodied
-> AI and home-automation hardware. This site is a personal portfolio:
-> engineering projects, press coverage, and long-form writing.
+> Creator of Anushka, India's humanoid robot. Software and Applied AI engineer
+> specialising in IoT, harness engineering, and robotics. This site is a
+> personal portfolio: engineering projects, press coverage, and long-form
+> writing.
 
 Primary site: https://piyushkhanna.space
 Contact: via the contact form at https://piyushkhanna.space/#contact

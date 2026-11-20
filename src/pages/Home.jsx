@@ -15,6 +15,7 @@ import {
   CertificateWall,
 } from "../components";
 import SEO from "../components/SEO";
+import { homeJsonLd } from "../constants/seo";
 
 const Home = () => (
   /* overflow-x:clip contains the certificate wall's full-bleed brick layer,
@@ -23,9 +24,10 @@ const Home = () => (
      clip the fixed navbar. */
   <div className='relative z-0 bg-primary [overflow-x:clip]'>
     <SEO
-      title='Piyush Khanna: Software & Applied AI Engineer, Robotics'
-      description='Portfolio of Piyush Khanna: software and applied AI engineer specialising in IoT, harness engineering, and robotics. Founder of Emperia Smart Solutions. Projects, press, and writing.'
+      title='Piyush Khanna — Creator of Anushka Humanoid Robot | Software & Applied AI Engineer'
+      description="Piyush Khanna, creator of Anushka, India's humanoid robot. Software and applied AI engineer in IoT and robotics. Projects, press, and writing."
       path='/'
+      jsonLd={homeJsonLd}
     />
     <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
       <Navbar />

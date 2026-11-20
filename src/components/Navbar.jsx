@@ -46,7 +46,7 @@ const Navbar = () => {
               deployed base path too (Standing Rule 5). */}
           <img
             src={`${import.meta.env.BASE_URL}Main.png`}
-            alt='logo'
+            alt='Piyush Khanna'
             className='w-9 h-9 object-contain'
           />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>

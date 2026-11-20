@@ -4,6 +4,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { thoughts } from "../constants";
 import ArrowUpRight from "../components/ArrowUpRight";
 import SEO from "../components/SEO";
+import { blogPostingJsonLd, breadcrumbJsonLd } from "../constants/seo";
 import PageShell from "./PageShell";
 
 const Block = ({ block }) => {
@@ -80,7 +81,15 @@ const ThoughtPost = () => {
 
   return (
     <>
-      <SEO title={post.title} description={post.dek} path={`/thoughts/${post.slug}`} />
+      <SEO
+        title={post.title}
+        description={post.dek}
+        path={`/thoughts/${post.slug}`}
+        jsonLd={[
+          blogPostingJsonLd(post),
+          breadcrumbJsonLd("Thoughts", "thoughts", post.title, `/thoughts/${post.slug}`),
+        ]}
+      />
       <PageShell
         eyebrow={`${post.date} · ${post.readingTime} read`}
         title={post.title}

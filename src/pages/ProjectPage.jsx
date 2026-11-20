@@ -11,6 +11,7 @@ import MediaCarousel from "../components/MediaCarousel";
 import SEO from "../components/SEO";
 import Lightbox from "../components/Lightbox";
 import { Glyph } from "../components/icons";
+import { personJsonLd, breadcrumbJsonLd } from "../constants/seo";
 import PageShell from "./PageShell";
 
 import anushkaAwardRosette from "../assets/anushka-timeline/anushka-award-rosette.png";
@@ -81,6 +82,15 @@ const projectPages = {
         url: "https://www.youtube.com/watch?v=9ApBbPmAdUE",
       },
     ],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      name: "Sunaina",
+      description:
+        "Robotic Durga idol, presiding figure at Chakraberia Sarbojanin Durgotsab, Kolkata, Durga Puja 2025.",
+      creator: personJsonLd,
+      url: "https://piyushkhanna.space/project/sunaina",
+    },
   },
 
   omni: {
@@ -262,6 +272,17 @@ const projectPages = {
       },
     ],
     links: [],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: "Emperia Omni",
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "Android",
+      description:
+        "Natural-language automation harness for Android: plain-English triggers and actions, no flowchart or rule-builder.",
+      creator: personJsonLd,
+      url: "https://piyushkhanna.space/project/omni",
+    },
   },
 
   dadashree: {
@@ -290,6 +311,15 @@ const projectPages = {
       },
     ],
     links: [],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      name: "DadaShree",
+      description:
+        "Wisdom tree robot deployed at Parasdham, a Jain monastery in Junagadh, Gujarat.",
+      creator: personJsonLd,
+      url: "https://piyushkhanna.space/project/dadashree",
+    },
   },
 
   anushka: {
@@ -672,7 +702,14 @@ const ProjectPage = () => {
         path={`/project/${slug}`}
         image={project.ogImage}
         imageAlt={project.ogImageAlt}
-        jsonLd={project.jsonLd}
+        jsonLd={[
+          ...(Array.isArray(project.jsonLd)
+            ? project.jsonLd
+            : project.jsonLd
+            ? [project.jsonLd]
+            : []),
+          breadcrumbJsonLd("Projects", "projects", project.title, `/project/${slug}`),
+        ]}
       />
       <PageShell
         eyebrow={project.eyebrow}
