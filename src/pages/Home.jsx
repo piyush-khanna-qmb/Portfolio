@@ -23,7 +23,7 @@ const Home = () => (
      clip the fixed navbar. */
   <div className='relative z-0 bg-primary [overflow-x:clip]'>
     <SEO
-      title='Piyush Khanna — Software & Applied AI Engineer, Robotics'
+      title='Piyush Khanna: Software & Applied AI Engineer, Robotics'
       description='Portfolio of Piyush Khanna: software and applied AI engineer specialising in IoT, harness engineering, and robotics. Founder of Emperia Smart Solutions. Projects, press, and writing.'
       path='/'
     />
