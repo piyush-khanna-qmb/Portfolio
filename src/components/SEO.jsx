@@ -16,7 +16,11 @@ const SEO = ({
   imageAlt,
   jsonLd,
 }) => {
-  const url = `${SITE_URL}${path}`;
+  // Every nested route is served by GitHub Pages as dist/<route>/index.html,
+  // a directory, so the bare path 301s to the trailing-slash version. The
+  // canonical/og:url has to be the URL that actually resolves with 200, or
+  // Google flags it as a redirect error and won't index it.
+  const url = path === "/" ? SITE_URL + "/" : `${SITE_URL}${path}/`;
   const fullTitle = path === "/" ? title : `${title} | Piyush Khanna`;
   const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 

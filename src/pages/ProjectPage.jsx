@@ -89,7 +89,7 @@ const projectPages = {
       description:
         "Robotic Durga idol, presiding figure at Chakraberia Sarbojanin Durgotsab, Kolkata, Durga Puja 2025.",
       creator: personJsonLd,
-      url: "https://piyushkhanna.space/project/sunaina",
+      url: "https://piyushkhanna.space/project/sunaina/",
     },
   },
 
@@ -281,7 +281,7 @@ const projectPages = {
       description:
         "Natural-language automation harness for Android: plain-English triggers and actions, no flowchart or rule-builder.",
       creator: personJsonLd,
-      url: "https://piyushkhanna.space/project/omni",
+      url: "https://piyushkhanna.space/project/omni/",
     },
   },
 
@@ -318,7 +318,7 @@ const projectPages = {
       description:
         "Wisdom tree robot deployed at Parasdham, a Jain monastery in Junagadh, Gujarat.",
       creator: personJsonLd,
-      url: "https://piyushkhanna.space/project/dadashree",
+      url: "https://piyushkhanna.space/project/dadashree/",
     },
   },
 
@@ -502,7 +502,7 @@ const projectPages = {
           name: "Piyush Khanna",
           url: "https://piyushkhanna.space/",
         },
-        url: "https://piyushkhanna.space/project/anushka",
+        url: "https://piyushkhanna.space/project/anushka/",
         sameAs: ["https://anushkathehumanoid.com"],
         image: "https://piyushkhanna.space/piyush-khanna-creator-of-anushka-robot.jpg",
       },
